@@ -5,12 +5,10 @@
 
 class Walker {
 public:
-    static const int LOW;
-    static const int NORMAL;
-    static const int HIGH;
+
+    static const int FWD;
     
-    static const int RIGHT;
-    static const int LEFT;
+    static const int TURN;
 
     Walker(ev3api::Motor& leftWheel,
                     ev3api::Motor& rightWheel);
