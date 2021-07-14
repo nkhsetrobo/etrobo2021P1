@@ -1,13 +1,9 @@
 #include "Walker.h"
 
 // 定数宣言
-const int Walker::LOW    = 100;    // 低速
-const int Walker::NORMAL = 500;    // 通常
-const int Walker::HIGH   = 700;    // 高速
+const int Walker::FWD;
 
-const int Walker::RIGHT  = 0;     // 左方向
-const int Walker::LEFT   = 1;     // 右方向
-
+const int Walker::TURN;//マイナスが左、プラスが右
 /**
  * コンストラクタ
  * @param leftWheel  左モータ
@@ -17,8 +13,8 @@ Walker::Walker(ev3api::Motor& leftWheel,
                                  ev3api::Motor& rightWheel)
     : mLeftWheel(leftWheel),
       mRightWheel(rightWheel),
-      mForward(LOW),
-      mTurn(RIGHT) {
+      mForward(FWD),
+      mTurn(TURN) {
 }
 
 /**
@@ -29,10 +25,10 @@ void Walker::run() {
     int rightPWM = 0;
     int leftPWM = 0;
     
-    if(mTurn == RIGHT) {
+    if(mTurn > 0) {
         rightPWM = 0;
         leftPWM = mForward;
-    } else if(mTurn == LEFT) {
+    } else if(mTurn < 0) {
         rightPWM = mForward;
         leftPWM = 0;
     } else {
@@ -61,4 +57,7 @@ void Walker::init() {
 void Walker::setCommand(int forward, int turn) {
     mForward = forward;
     mTurn    = turn;
+    mLeftWheel = mForward-mTurn;
+    mRightWheel =  mForward+mTurn;
+
 }

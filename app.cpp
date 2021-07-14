@@ -5,7 +5,7 @@
  *  Author: Kazuhiro.Kawachi
  *  Copyright (c) 2015 Embedded Technology Software Design Robot Contest
  *****************************************************************************/
-//テスト
+
 #include "app.h"
 #include "RandomWalker.h"
 
