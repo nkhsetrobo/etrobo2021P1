@@ -57,7 +57,7 @@ void Walker::init() {
 void Walker::setCommand(int forward, int turn) {
     mForward = forward;
     mTurn    = turn;
-    mLeftWheel = mForward-mTurn;
-    mRightWheel =  mForward+mTurn;
+    mLeftWheel = mForward - mTurn;
+    mRightWheel =  mForward + mTurn;
 
 }
