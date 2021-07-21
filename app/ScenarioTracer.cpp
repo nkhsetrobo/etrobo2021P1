@@ -61,7 +61,7 @@ void ScenarioTracer::setCommand(SceneCommands command) {
       turn = Walker::TURN;
     }
 
-    mWalker->setCommand(Walker::FWU, turn);
+    mWalker->setCommand(Walker::FWD, turn);
 }
 
 /**

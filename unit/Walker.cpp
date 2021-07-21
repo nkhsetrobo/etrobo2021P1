@@ -1,9 +1,9 @@
 #include "Walker.h"
 
 // 定数宣言
-const int Walker:: FWD=200;
+const int Walker:: FWD=40;
 
-const int Walker::TURN=2;//マイナスが左、プラスが右
+const int Walker::TURN=10;//マイナスが左、プラスが右
 /**
  * コンストラクタ
  * @param leftWheel  左モータ
@@ -58,7 +58,7 @@ void Walker::init() {
 void Walker::setCommand(int forward, int turn) {
     mForward = forward;
     mTurn    = turn;
-    mLeftWheel = mForward - mTurn;
-    mRightWheel =  mForward + mTurn;
+    mLeftWheel.setPWM(mForward - mTurn);
+    mRightWheel.setPWM(mForward + mTurn);
 
 }

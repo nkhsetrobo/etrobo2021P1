@@ -49,9 +49,9 @@ void LineTracer::run() {
 int LineTracer::calcDirection(bool isOnLine) {
     if (isOnLine) {
         // ライン上にある場合
-        return Walker::TURN=20;
+        return Walker::TURN;
     } else {
         // ライン外にある場合
-        return Walker::TURN=-20;
+        return Walker::TURN;
     }
 }
