@@ -3,10 +3,11 @@
 
 class Bright{
     public:
+        static const float Bvalue;
         Main_Bright();
-        Bvalue();
-        Bload();
-        get_Bvalue();
+        void  Bload();
+        float get_Bvalue();
+
 
     private:
 

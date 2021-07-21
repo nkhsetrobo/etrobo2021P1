@@ -1,13 +1,10 @@
 #include "bright.h"
 
+const float Bright::Bvalue;
+
 Bright::Main_Bright()
 {
 
-}
-
-float Bright::Bvalue()
-{
-    return 0;
 }
 
 void Bright::Bload()
