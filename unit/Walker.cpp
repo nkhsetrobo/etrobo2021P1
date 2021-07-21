@@ -1,9 +1,9 @@
 #include "Walker.h"
 
 // 定数宣言
-const int Walker::FWD;
+const int Walker:: FWD=200;
 
-const int Walker::TURN;//マイナスが左、プラスが右
+const int Walker::TURN=2;//マイナスが左、プラスが右
 /**
  * コンストラクタ
  * @param leftWheel  左モータ
