@@ -56,12 +56,12 @@ void ScenarioTracer::initAction() {
 void ScenarioTracer::setCommand(SceneCommands command) {
     int turn = -1;
     if (command == TURN_LEFT) {
-      turn = Walker::LEFT;
+      turn = Walker::TURN;
     } else if (command == TURN_RIGHT) {
-      turn = Walker::RIGHT;
+      turn = Walker::TURN;
     }
 
-    mWalker->setCommand(Walker::LOW, turn);
+    mWalker->setCommand(Walker::FWU, turn);
 }
 
 /**
