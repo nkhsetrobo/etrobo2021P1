@@ -1,7 +1,7 @@
 #include "Walker.h"
 
 // 定数宣言
-const int Walker:: FWD=40;
+const int Walker::FWD=40;
 
 const int Walker::TURN=10;//マイナスが左、プラスが右
 /**
