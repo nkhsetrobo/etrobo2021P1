@@ -1,12 +1,12 @@
 #include "Main_Measure.h"
 
 
-void main_measure :: get_value()
+void Main_Measure:: get_value();
 {
 
 }
 
-float main_measure :: load()
+float Main_Measure:: load();
 {
     
 }
