@@ -20,8 +20,8 @@ public:
 private:
     ev3api::Motor& mLeftWheel;
     ev3api::Motor& mRightWheel;
-    int mForward=300;
-    int mTurn=30;
+    int mForward;
+    int mTurn;
 };
 
 #endif  // EV3_UNIT_WALKER_H_
