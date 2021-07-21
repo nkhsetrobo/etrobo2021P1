@@ -3,7 +3,13 @@
 
 class Bright{
     public:
+        Main_Bright();
+        Bvalue();
+        Bload();
+        get_Bvalue();
 
-    
     private:
-}
+
+};
+
+#endif 
