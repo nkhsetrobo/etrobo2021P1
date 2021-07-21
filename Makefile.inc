@@ -9,7 +9,8 @@ APPL_CXXOBJS += \
 	LineMonitor.o \
 	Starter.o \
 	SimpleTimer.o \
-	Main_Measure.o
+	Main_Measure.o \
+	Bright.o
 
 
 SRCLANG := c++
@@ -21,9 +22,10 @@ include $(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile
 
 endif
 
-APPL_DIRS += $(mkfile_path)app $(mkfile_path)unit $(mkfile_path)measure
+APPL_DIRS += $(mkfile_path)app $(mkfile_path)unit $(mkfile_path)measure $(mkfile_path)bright
 
 INCLUDES += \
 	-I$(mkfile_path)app \
-	-I$(mkfile_path)unit\
-	-I$(mkfile_path)measure
+	-I$(mkfile_path)unit \
+	-I$(mkfile_path)measure \
+	-I$(mkfile_path)bright
