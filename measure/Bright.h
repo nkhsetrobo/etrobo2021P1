@@ -3,9 +3,8 @@
 
 class Bright{
     public:
-        static const float Bvalue;
-        Main_Bright();
-        void  load();
+        Bright();
+        void  load(float mload);
         float get_value();
 
 

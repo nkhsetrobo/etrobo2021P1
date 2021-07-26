@@ -1,15 +1,14 @@
 #include "Bright.h"
-#include "ColorSensor.cpp"
 
 
-Bright::Main_Bright()
+Bright::Bright()
 {
 }
 
  
-void Bright::load(int mload)
+void Bright::load(float mload)
 {
-    mload=
+    bvalue=mload;
 }
 
 float Bright::get_value()

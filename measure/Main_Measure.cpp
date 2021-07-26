@@ -5,11 +5,11 @@ Main_Measure::Main_Measure()
 
 }
 
-virtual float Main_Measure::get_value()
+float Main_Measure::get_value()
 {
     return 0;
 }
-virtual void Main_Measure::load()
+void Main_Measure::load(float mload)
 {
     
 }

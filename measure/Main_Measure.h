@@ -4,8 +4,8 @@
 class Main_Measure{
     public:
         Main_Measure();
-        virtual void  get_value();
-        float load();
+        virtual float  get_value();
+        void load(float mload);
 
 
     private:
