@@ -1,6 +1,6 @@
 #include "Tail.h"
 
-Tail::Angle()
+Tail::Tail()
 {    
 }
 
