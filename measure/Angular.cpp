@@ -12,7 +12,7 @@ void Angular::load(float mload)
 
 void Angular::reset()
 {
-    Anguler.reset();
+
 }
 
 float Angular::get_value()
