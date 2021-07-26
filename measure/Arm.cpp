@@ -1,7 +1,8 @@
 #include "Arm.h"
 
-Arm::Angle()
-{    
+Arm::Arm()
+{
+        
 }
 
 void Arm::load(float mload)
