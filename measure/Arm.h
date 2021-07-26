@@ -6,7 +6,7 @@ class Arm{
         Arm();
         void load(float mload);
         float get_value();
-        void *.reset();
+        void init();
 
     private:
 

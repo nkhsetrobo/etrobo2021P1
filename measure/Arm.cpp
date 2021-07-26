@@ -1,6 +1,6 @@
 #include "Arm.h"
 
-Arm::Angle()
+Arm::Arm()
 {    
 }
 
@@ -14,7 +14,7 @@ float Arm::get_value()
     return avalue;
 }
 
-void Arm::reset()
+void Arm::init()
 {
-    .reset();
+    
 }
