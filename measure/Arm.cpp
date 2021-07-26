@@ -17,5 +17,5 @@ float Arm::get_value()
 
 void Arm::reset()
 {
-    .reset();
+    avalue.reset();
 }
