@@ -16,5 +16,5 @@ float Arm::get_value()
 
 void Arm::init()
 {
-    Arm_angle.reset();
+
 }

@@ -8,7 +8,7 @@ class Tail{
         float get_value();
 
     private:
-        float tvalue;
+        float Tail_angle;
 };
 
 #endif

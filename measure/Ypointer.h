@@ -6,6 +6,7 @@ class Ypointer{
         Ypointer();
         void load(float mload);
         float get_value();
+        void  init();
 
     private:
 
