@@ -6,11 +6,11 @@ class Turn{
         Turn();
         void load(float mload);
         float get_value();
-        void .reset();
+        void init();
 
     private:
 
         float ttvalue;
-}
+};
 
 #endif

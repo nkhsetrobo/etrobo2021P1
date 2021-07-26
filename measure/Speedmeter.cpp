@@ -5,7 +5,7 @@ Speedmeter::Speedmeter()
 
 }
 
-void Speedmeter::load(float mload,/*int Measurement_time*/)
+void Speedmeter::load(float mload)
 {
     speed = mload;
 }

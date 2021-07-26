@@ -5,7 +5,7 @@ class Angular{
     public:
         Angular();
         void load(float mload);
-        void reset();
+        void init();
         float get_value();
 
     private:
