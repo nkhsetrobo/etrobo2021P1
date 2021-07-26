@@ -15,7 +15,7 @@ float Xpointer::get_value()
     return x_coordinates;
 }
 
-void Xpointer::reset()
+void Xpointer::init()
 {
     x_coordinates.reset();
 }
