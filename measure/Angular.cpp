@@ -10,9 +10,8 @@ void Angular::load(float mload)
     angular_rate = mload;
 }
 
-void Angular::reset()
+void Angular::init()
 {
-
 }
 
 float Angular::get_value()

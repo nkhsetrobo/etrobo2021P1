@@ -15,7 +15,7 @@ float Turn::get_value()
     return ttvalue;
 }
 
-void Turn::reset()
+void Turn::init()
 {
     ttvalue.reset();
 }
