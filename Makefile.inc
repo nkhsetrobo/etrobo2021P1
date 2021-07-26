@@ -12,8 +12,15 @@ APPL_CXXOBJS += \
 	Main_Measure.o \
 	Bright.o \
 	Tail.o\
-	ColorMeasure.o
-
+	ColorMeasure.o\
+	Angular.o\
+	Arm.o\
+	Get_tsk\
+	Odometer.o\
+	Speedometer.o\
+	TAil.o\
+	Turn.o\
+	Xpounter.o
 
 
 SRCLANG := c++
