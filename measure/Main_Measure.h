@@ -4,7 +4,7 @@
 class Main_Measure{
     public:
         Main_Measure();
-        void  get_value();
+        virtual void  get_value();
         float load();
 
 

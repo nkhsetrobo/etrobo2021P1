@@ -5,12 +5,13 @@ class Bright{
     public:
         static const float Bvalue;
         Main_Bright();
-        void  Bload();
-        float get_Bvalue();
+        void  load();
+        float get_value();
 
 
     private:
 
+        float bvalue;
 };
 
 #endif 
