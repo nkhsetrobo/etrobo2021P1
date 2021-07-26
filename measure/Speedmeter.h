@@ -4,7 +4,7 @@
 class Speedmeter{
     public:
         Speedmeter();
-        void load(float mload,/*int Measurement_time*/);
+        void load(float mload);
         float get_value();
 
 

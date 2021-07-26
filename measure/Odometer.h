@@ -5,7 +5,7 @@ class Odometer{
     public:
         Odometer();
         void load(float mload);
-        void reset();
+        void init();
         float get_value();
 
 

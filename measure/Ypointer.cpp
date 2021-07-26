@@ -15,7 +15,3 @@ float Ypointer::get_value()
     return y_coordinates;
 }
 
-void Ypointer::init()
-{
-    y_coordinates.reset();
-}

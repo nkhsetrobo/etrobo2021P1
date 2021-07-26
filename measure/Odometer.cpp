@@ -12,7 +12,7 @@ void Odometer::load(float mload)
 
 void Odometer::init()
 {
-    mileage.reset();
+
 }
 
 float Odometer::get_value()

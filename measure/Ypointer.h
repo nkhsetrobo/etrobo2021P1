@@ -6,11 +6,10 @@ class Ypointer{
         Ypointer();
         void load(float mload);
         float get_value();
-        void .reset();
 
     private:
 
         float y_coordinates;
-}
+};
 
 #endif
