@@ -64,6 +64,7 @@ void ScenarioTracer::setCommand(SceneCommands command) {
     mWalker->setCommand(Walker::FWD, turn);
 }
 
+
 /**
  * シーン変更処理
  */

@@ -61,6 +61,15 @@ void RandomWalker::run() {
 }
 
 /**
+ * 乱数を取得する
+ * @retrun 乱数
+ */
+int RandomWalker::getRandomTime() {
+    return MIN_TIME +
+        static_cast<int>(static_cast<double>(rand()) *
+                         (MAX_TIME - MIN_TIME + 1.0) / (1.0 + RAND_MAX));
+}
+/**
  * シーン変更処理
  */
 void RandomWalker::modeChangeAction() {
