@@ -1,8 +1,7 @@
 #include "Arm.h"
 
 Arm::Arm()
-{
-        
+{    
 }
 
 void Arm::load(float mload)
@@ -17,5 +16,5 @@ float Arm::get_value()
 
 void Arm::init()
 {
-    avalue.reset();
+    
 }
