@@ -9,6 +9,7 @@ class Bright{
 
 
     private:
+        
 
         float bvalue;
 };
