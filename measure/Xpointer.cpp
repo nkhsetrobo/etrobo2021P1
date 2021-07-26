@@ -17,5 +17,5 @@ float Xpointer::get_value()
 
 void Xpointer::reset()
 {
-    *.reset();
+    .reset();
 }
