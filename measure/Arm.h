@@ -10,7 +10,7 @@ class Arm{
 
     private:
 
-        float avalue;
+        float Arm_angle;
 };
 
 #endif

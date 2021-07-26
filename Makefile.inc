@@ -1,4 +1,4 @@
-mkfile_path := $(dir $(lastword $(MAKEFILE_LIST)))
+ mkfile_path := $(dir $(lastword $(MAKEFILE_LIST)))
 
 APPL_CXXOBJS += \
 	Walker.o \
@@ -18,12 +18,8 @@ APPL_CXXOBJS += \
 	Speedmeter.o\
 	Tail.o\
 	Turn.o\
-<<<<<<< HEAD
-	Xpointer.o
-=======
 	Xpointer.o\
 	Ypointer.o
->>>>>>> d1a200f979bcd68dab4477b62c1623887d9a4f2f
 
 
 SRCLANG := c++

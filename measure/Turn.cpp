@@ -7,12 +7,12 @@ Turn::Turn()
 
 void Turn::load(float mload)
 {
-    ttvalue=mload;
+    Turn_angle=mload;
 }
 
 float Turn::get_value()
 {
-    return ttvalue;
+    return Turn_angle;
 }
 
 void Turn::init()

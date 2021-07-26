@@ -14,4 +14,3 @@ float Ypointer::get_value()
 {
     return y_coordinates;
 }
-
