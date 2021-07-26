@@ -10,7 +10,8 @@ APPL_CXXOBJS += \
 	Starter.o \
 	SimpleTimer.o \
 	Main_Measure.o \
-	Bright.o
+	Bright.o \
+	Tail.o
 
 
 SRCLANG := c++
@@ -28,4 +29,5 @@ INCLUDES += \
 	-I$(mkfile_path)app \
 	-I$(mkfile_path)unit \
 	-I$(mkfile_path)measure \
-	-I$(mkfile_path)bright
+	-I$(mkfile_path)bright \
+	-I$(mkfile_path)tail 
