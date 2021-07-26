@@ -14,7 +14,6 @@ APPL_CXXOBJS += \
 	ColorMeasure.o\
 	Angular.o\
 	Arm.o\
-	Get_tsk\
 	Odometer.o\
 	Speedmeter.o\
 	Tail.o\
