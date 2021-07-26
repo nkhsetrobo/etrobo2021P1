@@ -5,11 +5,7 @@ Speedmeter::Speedmeter()
 
 }
 
-<<<<<<< HEAD
-void Speedmeter::load(float mload,/*int Measurement_time*/)
-=======
-void Speedmeter::load(float mload/*int Measurement_time*/)
->>>>>>> 8eab3bef2cb909a652a87a2adc847337c4a3a6c5
+void Speedmeter::load(float mload)
 {
     speed = mload;
 }

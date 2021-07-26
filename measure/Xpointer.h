@@ -6,7 +6,7 @@ class Xpointer{
         Xpointer();
         void load(float mload);
         float get_value();
-        void .reset();
+        void  init();
 
     private:
 

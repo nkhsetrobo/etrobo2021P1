@@ -11,16 +11,16 @@ APPL_CXXOBJS += \
 	SimpleTimer.o \
 	Main_Measure.o \
 	Bright.o \
-	Tail.o\
 	ColorMeasure.o\
 	Angular.o\
 	Arm.o\
 	Get_tsk\
 	Odometer.o\
-	Speedometer.o\
-	TAil.o\
+	Speedmeter.o\
+	Tail.o\
 	Turn.o\
-	Xpounter.o
+	Xpointer.o\
+	Ypointer.o
 
 
 SRCLANG := c++

@@ -6,15 +6,15 @@ Arm::Arm()
 
 void Arm::load(float mload)
 {
-    avalue=mload;
+    Arm_angle=mload;
 }
 
 float Arm::get_value()
 {
-    return avalue;
+    return Arm_angle;
 }
 
 void Arm::init()
 {
-    
+    Arm_angle.reset();
 }
