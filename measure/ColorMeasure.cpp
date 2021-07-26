@@ -5,11 +5,13 @@ ColorMeasure::ColorMeasure()
 }
 
 
-void ColorMeasure::get_rgb()
+void ColorMeasure::get_rgb(float cvalue)
 {
+    cvalue;
 }
 
 
-void ColorMeasure::load()
+void ColorMeasure::load(float mload)
 {
+    =mload
 }
