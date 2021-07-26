@@ -10,7 +10,7 @@ class Xpointer{
 
     private:
 
-        float xvalue;
+        float x_coordinates;
 }
 
 #endif

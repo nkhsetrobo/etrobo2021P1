@@ -1,5 +1,5 @@
-#ifndef EV3_UNIT_BRIGHT_H_
-#define EV3_UNIT_BRIGHT_H_
+#ifndef EV3_UNIT_ANGULAR_H_
+#define EV3_UNIT_ANGULAR_H_
 
 class Angular{
     public:
@@ -10,7 +10,7 @@ class Angular{
 
     private:
     
-        float avalue;
+        float angular_rate;
 };
 
 #endif 

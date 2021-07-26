@@ -7,7 +7,7 @@ Angular::Angular()
 
 void Angular::load(float mload)
 {
-    avalue = mload;
+    angular_rate = mload;
 }
 
 void Angular::reset()
@@ -17,5 +17,5 @@ void Angular::reset()
 
 float Angular::get_value()
 {
-    return avalue;
+    return angular_rate;
 }
