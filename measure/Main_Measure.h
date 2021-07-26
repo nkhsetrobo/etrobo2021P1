@@ -1,4 +1,15 @@
-#ifndef EV3_UNIT_WALKER_H_
-#define EV3_UNIT_WALKER_H_
+#ifndef EV3_UNIT_MAINMEASURE_H_
+#define EV3_UNIT_MAINMEASURE_H_
 
-void 
+class Main_Measure{
+    public:
+        Main_Measure();
+        virtual float  get_value();
+        void load(float mload);
+
+
+    private:
+
+};
+
+#endif 
