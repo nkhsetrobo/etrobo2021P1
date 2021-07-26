@@ -17,5 +17,5 @@ float Turn::get_value()
 
 void Turn::reset()
 {
-    .reset();
+    ttvalue.reset();
 }
