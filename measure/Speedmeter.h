@@ -1,9 +1,9 @@
-#ifndef EV3_UNIT_SPEEDOMETER_H_
-#define EV3_UNIT_SPEEDOMETER_H_
+#ifndef EV3_UNIT_SPEEDMETER_H_
+#define EV3_UNIT_SPEEDMETER_H_
 
-class Speedometer{
+class Speedmeter{
     public:
-        Speedometer();
+        Speedmeter();
         void load(float mload,/*int Measurement_time*/);
         float get_value();
 
