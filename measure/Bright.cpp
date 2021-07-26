@@ -3,6 +3,7 @@
 
 Bright::Bright()
 {
+    
 }
 
  
