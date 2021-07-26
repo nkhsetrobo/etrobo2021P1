@@ -7,12 +7,12 @@ Xpointer::Xpointer()
 
 void Xpointer::load(float mload)
 {
-    xvalue=mload;
+    x_coordinates=mload;
 }
 
 float Xpointer::get_value()
 {
-    return xvalue;
+    return x_coordinates;
 }
 
 void Xpointer::reset()

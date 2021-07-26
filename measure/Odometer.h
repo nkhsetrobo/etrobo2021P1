@@ -1,5 +1,5 @@
-#ifndef EV3_UNIT_BRIGHT_H_
-#define EV3_UNIT_BRIGHT_H_
+#ifndef EV3_UNIT_ODOMETER_H_
+#define EV3_UNIT_ODOMETER_H_
 
 class Odometer{
     public:

@@ -1,7 +1,5 @@
-#ifndef EV3_UNIT_BRIGHT_H_
-#define EV3_UNIT_BRIGHT_H_
-#include "ColorSensor.h"
-#include "Bright.h"
+#ifndef EV3_UNIT_COLORMEASURE_H_
+#define EV3_UNIT_COLORMEASURE_H_
 
 class ColorMeasure{
     public:
