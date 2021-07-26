@@ -33,7 +33,7 @@ extern "C" {
 extern void main_task(intptr_t exinf);
 extern void tracer_task(intptr_t exinf);
 extern void ev3_cyc_tracer(intptr_t exinf);
-
+extern void polling_task(intptr_t exinf);
 #endif /* TOPPERS_MACRO_ONLY */
 
 #ifdef __cplusplus

@@ -1,5 +1,5 @@
 #include "Bright.h"
-
+#include "ev3api.h"
 
 Bright::Bright()
 {

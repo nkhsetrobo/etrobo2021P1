@@ -8,6 +8,8 @@
 
 #include "app.h"
 #include "RandomWalker.h"
+#include "ColorMeasure.h"
+#include "Bright.h"
 
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
@@ -37,6 +39,8 @@ static LineTracer      *gLineTracer;
 static Scenario        *gScenario;
 static ScenarioTracer  *gScenarioTracer;
 static RandomWalker    *gRandomWalker;
+static ColorMeasure    *gColorMeasure;
+static Bright          *gBright;
 
 // scene object
 static Scene gScenes[] = {
@@ -70,6 +74,8 @@ static void user_system_create() {
                                         gStarter,
                                         gWalkerTimer);
 
+    gBright          =  new Bright();
+    gColorMeasure   =   new ColorMeasure(gColorSensor,gBright);
     // シナリオを構築する
     for (uint32_t i = 0; i < (sizeof(gScenes)/sizeof(gScenes[0])); i++) {
         gScenario->add(&gScenes[i]);
@@ -104,11 +110,13 @@ void main_task(intptr_t unused) {
 
     // 周期ハンドラ開始
     sta_cyc(CYC_TRACER);
+    sta_cyc(CYC_POLLING);
 
     slp_tsk();  // バックボタンが押されるまで待つ
 
     // 周期ハンドラ停止
     stp_cyc(CYC_TRACER);
+    stp_cyc(CYC_POLLING);
 
     user_system_destroy();  // 終了処理
 
@@ -125,5 +133,10 @@ void tracer_task(intptr_t exinf) {
         gRandomWalker->run();  // 走行
     }
 
+    ext_tsk();
+}
+
+void polling_task(intptr_t exinf) {
+   gColorMeasure->get_rgb();
     ext_tsk();
 }
