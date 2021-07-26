@@ -10,9 +10,9 @@ class Odometer{
 
 
     private:
-    
 
-        float ovalue;
+
+        float mileage;
 };
 
 #endif 

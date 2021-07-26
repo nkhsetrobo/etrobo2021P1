@@ -11,7 +11,7 @@ class Speedometer{
     private:
 
 
-        float svalue;
+        float speed;
 };
 
 #endif
