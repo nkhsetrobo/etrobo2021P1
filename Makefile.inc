@@ -19,7 +19,8 @@ APPL_CXXOBJS += \
 	Tail.o\
 	Turn.o\
 	Xpointer.o\
-	Ypointer.o
+	Ypointer.o\
+	MotorControl.o
 
 
 SRCLANG := c++
