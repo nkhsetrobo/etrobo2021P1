@@ -20,7 +20,8 @@ APPL_CXXOBJS += \
 	Turn.o\
 	Xpointer.o\
 	Ypointer.o\
-	MotorControl.o
+	MotorControl.o\
+	PID.o
 
 
 SRCLANG := c++
