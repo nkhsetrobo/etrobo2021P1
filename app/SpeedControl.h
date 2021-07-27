@@ -4,6 +4,8 @@
 class SpeedControl{
     public:
         void getFWD();
+        void init();
+        void addspeed();
 
     private:
         float nspeed;

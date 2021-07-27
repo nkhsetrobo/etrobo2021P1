@@ -10,14 +10,14 @@
 
 /**
  * コンストラクタ
- * @param walker          走行
+ * @param drive          走行
  * @param scenario        シナリオ
  * @param timer           タイマ
  */
-ScenarioTracer::ScenarioTracer(Walker* walker,
+ScenarioTracer::ScenarioTracer(Drive* drive,
                                Scenario* scenario,
                                SimpleTimer* timer)
-    : mWalker(walker),
+    : mDrive(drive),
       mScenario(scenario),
       mSimpleTimer(timer),
       mState(UNDEFINED) {
@@ -46,7 +46,7 @@ void ScenarioTracer::run() {
  * シナリオトレース初期化処理
  */
 void ScenarioTracer::initAction() {
-    mWalker->init();
+    mDrive->init();
 }
 
 /**
@@ -56,12 +56,12 @@ void ScenarioTracer::initAction() {
 void ScenarioTracer::setCommand(SceneCommands command) {
     int turn = -1;
     if (command == TURN_LEFT) {
-      turn = Walker::TURN;
+      turn = Drive::TURN;
     } else if (command == TURN_RIGHT) {
-      turn = Walker::TURN;
+      turn = Drive::TURN;
     }
 
-    mWalker->setCommand(Walker::FWD, turn);
+    mDrive->setCommand(Drive::FWD, turn);
 }
 
 
@@ -100,7 +100,7 @@ void ScenarioTracer::execInitial() {
  * 走行中状態の処理
  */
 void ScenarioTracer::execWalking() {
-    mWalker->run();             // do アクティビティ
+    mDrive->run();             // do アクティビティ
 
     if (mSimpleTimer->isTimedOut()) {   // イベントチェック
         mSimpleTimer->stop();   // exit アクション

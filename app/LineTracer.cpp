@@ -11,12 +11,12 @@
 /**
  * コンストラクタ
  * @param lineMonitor     ライン判定
- * @param walker 走行
+ * @param Drive 走行
  */
 LineTracer::LineTracer(const LineMonitor* lineMonitor,
-                       Walker* walker)
+                       Drive* drive)
     : mLineMonitor(lineMonitor),
-      mWalker(walker),
+      mDrive(drive),
       mIsInitialized(false) {
 }
 
@@ -25,7 +25,7 @@ LineTracer::LineTracer(const LineMonitor* lineMonitor,
  */
 void LineTracer::run() {
     if (mIsInitialized == false) {
-        mWalker->init();
+        mDrive->init();
         mIsInitialized = true;
     }
 
@@ -34,10 +34,10 @@ void LineTracer::run() {
     // 走行体の向きを計算する
     int direction = calcDirection(isOnLine);
 
-    mWalker->setCommand(Walker::FWD, direction);
+    mDrive->setCommand(Drive::FWD, direction);
 
     // 走行を行う
-    mWalker->run();
+    mDrive->run();
 }
 
 /**
@@ -49,9 +49,9 @@ void LineTracer::run() {
 int LineTracer::calcDirection(bool isOnLine) {
     if (isOnLine) {
         // ライン上にある場合
-        return Walker::TURN;
+        return Drive::TURN;
     } else {
         // ライン外にある場合
-        return Walker::TURN;
+        return Drive::TURN;
     }
 }

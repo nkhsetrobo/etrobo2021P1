@@ -9,13 +9,13 @@
 #ifndef EV3_APP_SCENARIOTRACER_H_
 #define EV3_APP_SCENARIOTRACER_H_
 
-#include "Walker.h"
+#include "Drive.h"
 #include "SimpleTimer.h"
 #include "Scenario.h"
 
 class ScenarioTracer {
 public:
-    ScenarioTracer(Walker* walker,
+    ScenarioTracer(Drive* drive,
                    Scenario* scenario,
                    SimpleTimer* timer);
 
@@ -28,7 +28,7 @@ private:
         WALKING
     };
 
-    Walker* mWalker;
+    Drive* mDrive;
     Scenario* mScenario;
     SimpleTimer* mSimpleTimer;
     State mState;

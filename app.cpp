@@ -30,7 +30,7 @@ Motor       gRightWheel(PORT_B);
 Clock       gClock;
 
 // オブジェクトの定義
-static Walker          *gWalker;
+static Drive           *gDrive;
 static LineMonitor     *gLineMonitor;
 static Starter         *gStarter;
 static SimpleTimer     *gScenarioTimer;
@@ -58,15 +58,15 @@ static void user_system_create() {
     tslp_tsk(2U * 1000U);
 
     // オブジェクトの作成
-    gWalker          = new Walker(gLeftWheel,
+    gDrive          = new Drive(gLeftWheel,
                                   gRightWheel);
     gStarter         = new Starter(gTouchSensor);
     gLineMonitor     = new LineMonitor(gColorSensor);
     gScenarioTimer   = new SimpleTimer(gClock);
     gWalkerTimer     = new SimpleTimer(gClock);
-    gLineTracer      = new LineTracer(gLineMonitor, gWalker);
+    gLineTracer      = new LineTracer(gLineMonitor, gDrive);
     gScenario        = new Scenario(0);
-    gScenarioTracer  = new ScenarioTracer(gWalker,
+    gScenarioTracer  = new ScenarioTracer(gDrive,
                                           gScenario,
                                           gScenarioTimer);
     gRandomWalker    = new RandomWalker(gLineTracer,
@@ -99,7 +99,7 @@ static void user_system_destroy() {
     delete gScenarioTimer;
     delete gLineMonitor;
     delete gStarter;
-    delete gWalker;
+    delete gDrive;
 }
 
 /**

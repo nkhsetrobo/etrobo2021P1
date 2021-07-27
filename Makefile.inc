@@ -1,7 +1,7 @@
  mkfile_path := $(dir $(lastword $(MAKEFILE_LIST)))
 
 APPL_CXXOBJS += \
-	Walker.o \
+	Drive.o \
 	LineTracer.o \
 	Scenario.o \
 	ScenarioTracer.o \
@@ -21,8 +21,7 @@ APPL_CXXOBJS += \
 	Xpointer.o\
 	Ypointer.o\
 	MotorControl.o\
-	PID.o\
-	SpeedControl.o
+	PID.o
 
 
 SRCLANG := c++
