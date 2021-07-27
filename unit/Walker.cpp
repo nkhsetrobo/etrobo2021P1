@@ -1,9 +1,9 @@
 #include "Walker.h"
 
 // 定数宣言
-const int Walker::FWD=40;
+const int Walker::FWD=80;
 
-const int Walker::TURN=10;//マイナスが左、プラスが右
+const int Walker::TURN=0;//マイナスが左、プラスが右
 /**
  * コンストラクタ
  * @param leftWheel  左モータ
@@ -19,7 +19,7 @@ Walker::Walker(ev3api::Motor& leftWheel,
 
 /**
  * 走行する
- */
+ * */
 void Walker::run() {
     // 左右モータに回転を指示する
     int rightPWM = 0;
