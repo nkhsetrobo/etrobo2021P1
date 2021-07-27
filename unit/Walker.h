@@ -4,7 +4,7 @@
 class Walker{
     public:
         Walker();
-        virtual float  run();
+        void run();
         void init();
 
 };
