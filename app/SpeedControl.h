@@ -1,0 +1,2 @@
+#ifndef EV3_SPEEDCONTROL_H_
+#define EV3_SPEEDCONTROL_H_
