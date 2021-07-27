@@ -8,11 +8,19 @@
 
 MotorControl::MotorControl( ev3api::Motor& leftWheel,
                             ev3api::Motor& rightWheel,
-                            Tail* mTail,Arm* mArm,Odometer* mOdometer,Speedmeter* mSpeedmeter,
-                            Turn* mTurn,Xpointer* mXpointer,Ypointer* mYpointer)
+                            Tail* tail,Arm* arm,Odometer* odometer,Speedmeter* speedmeter,
+                            Turn* turn,Xpointer* xpointer,Ypointer* ypointer)
                     : mLeftWheel(leftWheel),
-                      mRightWheel(rightWheel)
-{
+                      mRightWheel(rightWheel),
+                      mTail(tail),
+                      mArm(arm),
+                      mOdometer(odometer),
+                      mSpeedmeter(speedmeter),
+                      mTurn(turn),
+                      mXpointer(xpointer),
+                      mYpointer(ypointer)
+
+                      {
 
 }
 

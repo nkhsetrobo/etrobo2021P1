@@ -13,8 +13,8 @@ class MotorControl{
     public:
         explicit MotorControl( ev3api::Motor& leftWheel,
                     ev3api::Motor& rightWheel,
-                    Tail* mTail,Arm* mArm,Odometer* mOdometer,Speedmeter* mSpeedmeter,
-                    Turn* mTurn,Xpointer* mXpointer,Ypointer* mYpointer);
+                    Tail* tail,Arm* arm,Odometer* odometer,Speedmeter* speedmeter,
+                    Turn* turn,Xpointer* xpointer,Ypointer* ypointer);
         void runcontrol(int rPWM,int lPWM);
         void armcontrol(int PWM);
         void tailcontrol(int PWM);
