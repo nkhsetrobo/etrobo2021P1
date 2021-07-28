@@ -3,16 +3,17 @@
 #include "Drive.h"
 #include "PID.h"
 
+
 class Walker{
     public:
         Walker();
-        explicit Walker(Drive* drive)
+        explicit Walker(Drive* drive,PID* pid);
         void  run();
         void init();
     
     private:
         Drive* drive;
-        PID *mPid;
+        PID* pid;
         int mForward;
         int mTurn;
 

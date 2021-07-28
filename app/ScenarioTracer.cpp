@@ -14,7 +14,6 @@
  * @param scenario        シナリオ
  * @param timer           タイマ
  */
-   @param  
 ScenarioTracer::ScenarioTracer(Drive* drive,
                                 Walker* walker,
                                Scenario* scenario,

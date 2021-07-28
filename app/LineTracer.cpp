@@ -14,11 +14,12 @@
  * @param Drive 走行
  */
 LineTracer::LineTracer(const LineMonitor* lineMonitor,
-                       Drive* drive)
+                       Drive* drive,PID* pid)
     : Walker(drive),
      mLineMonitor(lineMonitor),
-      mDrive(drive),
-            mIsInitialized(false) {
+     mDrive(drive),
+     mPID(pid),
+     mIsInitialized(false) {
 }
 
 /**
@@ -42,8 +43,8 @@ void LineTracer::run() {
 }
 
 
-void LineTracr::init(){
-    mDrive->init(Drive::FWD,direction);
+void LineTracer::init(){
+    mDrive->init();
 }
 
 /**

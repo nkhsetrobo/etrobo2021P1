@@ -11,13 +11,9 @@ Drive::Drive()
 }
 
 
-/*
- * 走行に必要なものをリセットする
- */
-void Drive::init() {
-    // モータをリセットする
-    mLeftWheel.reset();
-    mRightWheel.reset();
+void Drive::init(){
+    mForward = 0;
+    mTurn    = 0;
 }
 
 /**

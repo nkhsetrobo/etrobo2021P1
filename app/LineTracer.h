@@ -10,24 +10,23 @@
 #define EV3_APP_LINETRACER_H_
 
 #include "LineMonitor.h"
-
 #include "Walker.h"
 
-class LineTracer : Walker {
-public:
-    LineTracer(const LineMonitor* lineMonitor,
-               Drive* drive,PID* pid);
+class LineTracer : Walker{
+    public:
+        LineTracer(const LineMonitor* lineMonitor,
+                    Drive* drive,PID* pid);
 
-    void run();
-    void init();
+        void run();
+        void init();
 
-private:
-    const LineMonitor* mLineMonitor;
-    Drive* mDrive;
-    PID* mPID;
-    bool mIsInitialized;
+    private:
+        const LineMonitor* mLineMonitor;
+        Drive* mDrive;
+        PID* mPID;
+        bool mIsInitialized;
 
-    int calcDirection(bool isOnLine);
+        int calcDirection(bool isOnLine);
 };
 
 #endif  // EV3_APP_LINETRACER_H_

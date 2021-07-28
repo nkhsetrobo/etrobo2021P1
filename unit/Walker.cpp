@@ -1,10 +1,10 @@
 #include "Walker.h"
 
 
-Walker::Walker(Drive* drive)
+Walker::Walker(Drive* drive,PID* mPID)
     :mDrive(drive)
 {
-    mPid = new PID();
+    mPID = new PID();
 }
 
 void Walker::run()
