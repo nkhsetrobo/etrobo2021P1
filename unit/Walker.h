@@ -13,7 +13,7 @@ class Walker{
     
     private:
         Drive* drive;
-        PID* pid;
+        PID* mPID;
         int mForward;
         int mTurn;
 

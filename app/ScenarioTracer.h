@@ -31,7 +31,7 @@ private:
     };
 
     Drive* mDrive;
-    Walker* walker;
+    Walker* mWalker;
     Scenario* mScenario;
     SimpleTimer* mSimpleTimer;
     State mState;
