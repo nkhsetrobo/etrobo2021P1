@@ -1,7 +1,7 @@
 #include "ColorMeasure.h"
 
 ColorMeasure::ColorMeasure(const ev3api::ColorSensor& colorSensor,Bright* bright)
-    :  mColorSensor(colorSensor),mbright(bright),Main_Measure()
+    :  Main_Measure(),mColorSensor(colorSensor),mbright(bright)
 {
 }
 
