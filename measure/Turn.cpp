@@ -1,6 +1,7 @@
 #include "Turn.h"
 
 Turn::Turn()
+    : Main_Measure()
 {
 
 }

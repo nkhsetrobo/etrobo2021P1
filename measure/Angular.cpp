@@ -1,6 +1,7 @@
 #include "Angular.h"
 
 Angular::Angular()
+    : Main_Measure()
 {
 
 }

@@ -1,7 +1,9 @@
 #ifndef EV3_UNIT_XPOINTER_H_
 #define EV3_UNIT_XPOINTER_H_
 
-class Xpointer{
+#include "Main_Measure.h"
+
+class Xpointer : Main_Measure{
     public:
         Xpointer();
         void load(float mload);
