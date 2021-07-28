@@ -1,7 +1,9 @@
 #ifndef EV3_UNIT_YPOINTER_H_
 #define EV3_UNIT_YPOINTER_H_
 
-class Ypointer{
+#include "Main_Measure.h"
+
+class Ypointer : Main_Measure{
     public:
         Ypointer();
         void load(float mload);

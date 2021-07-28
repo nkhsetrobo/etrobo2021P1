@@ -1,7 +1,9 @@
 #ifndef EV3_UNIT_TAIL_H_
 #define EV3_UNIT_TAIL_H_
 
-class Tail{
+#include "Main_Measure.h"
+
+class Tail : Main_Measure{
     public:
         Tail();
         void  load(float mload);

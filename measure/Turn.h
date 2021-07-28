@@ -1,7 +1,9 @@
 #ifndef EV3_UNIT_TURN_H_
 #define EV3_UNIT_TURN_H_
 
-class Turn{
+#include "Main_Measure.h"
+
+class Turn : Main_Measure{
     public:
         Turn();
         void load(float mload);

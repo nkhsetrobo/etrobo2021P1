@@ -1,7 +1,9 @@
 #ifndef EV3_UNIT_ANGULAR_H_
 #define EV3_UNIT_ANGULAR_H_
 
-class Angular{
+#include "Main_Measure.h"
+
+class Angular : Main_Measure{
     public:
         Angular();
         void load(float mload);

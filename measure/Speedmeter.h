@@ -1,7 +1,9 @@
 #ifndef EV3_UNIT_SPEEDMETER_H_
 #define EV3_UNIT_SPEEDMETER_H_
 
-class Speedmeter{
+#include "Main_Measure.h"
+
+class Speedmeter : Main_Measure{
     public:
         Speedmeter();
         void load(float mload);

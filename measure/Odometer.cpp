@@ -1,6 +1,7 @@
 #include "Odometer.h"
 
 Odometer::Odometer()
+    : Main_Measure()
 {
 
 }

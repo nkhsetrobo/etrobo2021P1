@@ -1,6 +1,7 @@
 #include "Ypointer.h"
 
 Ypointer::Ypointer()
+    : Main_Measure()
 {
 
 }

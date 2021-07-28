@@ -1,7 +1,9 @@
 #ifndef EV3_UNIT_ARM_H_
 #define EV3_UNIT_ARM_H_
 
-class Arm{
+#include "Main_Measure.h"
+
+class Arm : Main_Measure{
     public:
         Arm();
         void load(float mload);

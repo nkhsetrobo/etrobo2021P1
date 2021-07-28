@@ -1,6 +1,7 @@
 #include "Speedmeter.h"
 
 Speedmeter::Speedmeter()
+    : Main_Measure()
 {
 
 }

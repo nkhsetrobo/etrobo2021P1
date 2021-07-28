@@ -1,6 +1,7 @@
 #include "Xpointer.h"
 
 Xpointer::Xpointer()
+    : Main_Measure()
 {
 
 }

@@ -1,7 +1,9 @@
 #include "Arm.h"
 
 Arm::Arm()
-{    
+    : Main_Measure()
+{
+    
 }
 
 void Arm::load(float mload)

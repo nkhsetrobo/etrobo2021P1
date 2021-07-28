@@ -1,6 +1,7 @@
 #include "Tail.h"
 
 Tail::Tail()
+    :Main_Measure()
 {    
     
 }
