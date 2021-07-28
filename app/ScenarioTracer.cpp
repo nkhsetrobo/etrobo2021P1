@@ -14,10 +14,13 @@
  * @param scenario        シナリオ
  * @param timer           タイマ
  */
+   @param  
 ScenarioTracer::ScenarioTracer(Drive* drive,
+                                Walker* walker,
                                Scenario* scenario,
                                SimpleTimer* timer)
     : mDrive(drive),
+      mWalker(walker),
       mScenario(scenario),
       mSimpleTimer(timer),
       mState(UNDEFINED) {
@@ -100,7 +103,7 @@ void ScenarioTracer::execInitial() {
  * 走行中状態の処理
  */
 void ScenarioTracer::execWalking() {
-    mDrive->run();             // do アクティビティ
+    mWalker->run();             // do アクティビティ
 
     if (mSimpleTimer->isTimedOut()) {   // イベントチェック
         mSimpleTimer->stop();   // exit アクション

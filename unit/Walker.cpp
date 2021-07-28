@@ -1,15 +1,23 @@
 #include "Walker.h"
 
-Walker::Walker()
-{
 
+Walker::Walker(Drive* drive)
+    :mDrive(drive)
+{
+    
 }
 
 void Walker::run()
 {
-    
+
+    mDrive->setCommand(mForword,mTurn);
+
 }
 void Walker::init()
 {
     
+}
+void Walker::setCommand(int forward, int turn) {
+    mForward = forward;
+    mTurn    = turn;
 }
