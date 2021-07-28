@@ -15,7 +15,7 @@
 class LineTracer : Walker{
     public:
         LineTracer(const LineMonitor* lineMonitor,
-                    Drive* drive,PID* pid);
+                    Drive* drive);
 
         void run();
         void init();
@@ -23,7 +23,6 @@ class LineTracer : Walker{
     private:
         const LineMonitor* mLineMonitor;
         Drive* mDrive;
-        PID* mPID;
         bool mIsInitialized;
 
         int calcDirection(bool isOnLine);

@@ -5,15 +5,20 @@ const int Drive::FWD=80;
 
 const int Drive::TURN=0;//マイナスが左、プラスが右
 
-Drive::Drive()
+Drive::Drive(const MotorControl* motorcontrol)
       :mForward(FWD),
-       mTurn(TURN) {
+       mTurn(TURN),
+       mMotorControl(motorcontrol) {
 }
 
 
 void Drive::init(){
     mForward = 0;
     mTurn    = 0;
+}
+
+void Drive::run(){
+    mMotorControl->runcontrol();
 }
 
 /**

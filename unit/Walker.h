@@ -6,13 +6,13 @@
 
 class Walker{
     public:
-        Walker();
-        explicit Walker(Drive* drive,PID* pid);
+         Walker(Drive* drive);
         void  run();
         void init();
+        void setCommand(int forward, int turn);
     
     private:
-        Drive* drive;
+        Drive* mDrive;
         PID* mPID;
         int mForward;
         int mTurn;

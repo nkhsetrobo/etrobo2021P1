@@ -11,14 +11,13 @@
 /**
  * コンストラクタ
  * @param lineMonitor     ライン判定
- * @param Drive 走行
+ * @param Drive 走行0
  */
 LineTracer::LineTracer(const LineMonitor* lineMonitor,
-                       Drive* drive,PID* pid)
+                       Drive* drive)
     : Walker(drive),
      mLineMonitor(lineMonitor),
      mDrive(drive),
-     mPID(pid),
      mIsInitialized(false) {
 }
 
@@ -41,6 +40,7 @@ void LineTracer::run() {
     // 走行を行う
     mDrive->run();
 }
+    
 
 
 void LineTracer::init(){

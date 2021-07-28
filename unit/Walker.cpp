@@ -10,7 +10,7 @@ Walker::Walker(Drive* drive)
 void Walker::run()
 {
 
-    mDrive->setCommand(mForword,mTurn);
+    mDrive->setCommand(mForward,mTurn);
 
 }
 void Walker::init()

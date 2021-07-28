@@ -31,6 +31,7 @@ Clock       gClock;
 
 // オブジェクトの定義
 static Drive           *gDrive;
+static Walker           *gWalker;
 static LineMonitor     *gLineMonitor;
 static Starter         *gStarter;
 static SimpleTimer     *gScenarioTimer;
@@ -58,8 +59,7 @@ static void user_system_create() {
     tslp_tsk(2U * 1000U);
 
     // オブジェクトの作成
-    gDrive          = new Drive(gLeftWheel,
-                                  gRightWheel);
+    gDrive          = new Drive();
     gStarter         = new Starter(gTouchSensor);
     gLineMonitor     = new LineMonitor(gColorSensor);
     gScenarioTimer   = new SimpleTimer(gClock);
@@ -67,6 +67,7 @@ static void user_system_create() {
     gLineTracer      = new LineTracer(gLineMonitor, gDrive);
     gScenario        = new Scenario(0);
     gScenarioTracer  = new ScenarioTracer(gDrive,
+                                          gWalker,
                                           gScenario,
                                           gScenarioTimer);
     gRandomWalker    = new RandomWalker(gLineTracer,

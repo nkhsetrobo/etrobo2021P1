@@ -7,11 +7,11 @@
 
 class ColorMeasure : Main_Measure{
     public:
-        explicit ColorMeasure(const ev3api::ColorSensor& colorSensor,Bright* mbright);
+        explicit ColorMeasure(const ev3api::ColorSensor& colorSensor,Bright* bright);
         void get_rgb();
 
     private:
         const ev3api::ColorSensor& mColorSensor;
-        Bright* mbright;
+        Bright* mBright;
 };
 #endif
