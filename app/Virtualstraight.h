@@ -26,6 +26,10 @@ private:
     bool mIsInitialized;
 
     int calcDirection(bool isOnLine);
+    float xstart();
+    float ystart();
+    float xend();
+    float yend();
 };
 
 #endif  // EV3_APP_LINETRACER_H_
