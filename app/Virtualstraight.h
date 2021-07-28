@@ -17,6 +17,7 @@ public:
     LineTracer(const LineMonitor* lineMonitor,
                Walker* walker);
 
+    
     void run();
 
 private:
