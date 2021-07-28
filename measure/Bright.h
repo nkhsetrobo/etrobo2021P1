@@ -1,7 +1,9 @@
 #ifndef EV3_UNIT_BRIGHT_H_
 #define EV3_UNIT_BRIGHT_H_
 
-class Bright{
+#include "Main_Measure.h"
+
+class Bright : Main_Measure{
     public:
         Bright();
         void  load(float mload);

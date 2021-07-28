@@ -2,6 +2,7 @@
 #include "ev3api.h"
 
 Bright::Bright()
+    : Main_Measure()
 {
     
 }

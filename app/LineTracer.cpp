@@ -15,9 +15,10 @@
  */
 LineTracer::LineTracer(const LineMonitor* lineMonitor,
                        Drive* drive)
-    : mLineMonitor(lineMonitor),
+    : Walker(drive),
+     mLineMonitor(lineMonitor),
       mDrive(drive),
-      mIsInitialized(false) {
+            mIsInitialized(false) {
 }
 
 /**
@@ -38,6 +39,11 @@ void LineTracer::run() {
 
     // 走行を行う
     mDrive->run();
+}
+
+
+void LineTracr::init(){
+    mDrive->init(Drive::FWD,direction);
 }
 
 /**

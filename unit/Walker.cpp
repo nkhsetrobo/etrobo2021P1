@@ -4,7 +4,7 @@
 Walker::Walker(Drive* drive)
     :mDrive(drive)
 {
-    
+    mPid = new PID();
 }
 
 void Walker::run()
