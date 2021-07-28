@@ -11,9 +11,9 @@ public:
     
     static const int TURN;
 
-    Drive(const MotorControl* motorcontrol);
+    Drive( MotorControl* motorcontrol);
     void init();
-    void run();
+    void run(int mForword,int mTurn);
     void setCommand(int forward, int turn);
 
 private:

@@ -24,7 +24,6 @@ class LineTracer : Walker{
         const LineMonitor* mLineMonitor;
         Drive* mDrive;
         bool mIsInitialized;
-
         int calcDirection(bool isOnLine);
 };
 

@@ -7,37 +7,20 @@
  */
 
 MotorControl::MotorControl( ev3api::Motor& leftWheel,
-                            ev3api::Motor& rightWheel,
-                            Tail* tail,Arm* arm,Odometer* odometer,Speedmeter* speedmeter,
-                            Turn* turn,Xpointer* xpointer,Ypointer* ypointer)
+                            ev3api::Motor& rightWheel)
                     : mLeftWheel(leftWheel),
-                      mRightWheel(rightWheel),
-                      mTail(tail),
-                      mArm(arm),
-                      mOdometer(odometer),
-                      mSpeedmeter(speedmeter),
-                      mTurn(turn),
-                      mXpointer(xpointer),
-                      mYpointer(ypointer)
-
+                      mRightWheel(rightWheel)
                       {
 
 }
 
 void MotorControl::runcontrol( int rPWM,int lPWM){
-   
+  if(rPWM>-101 and rPWM<101)
     mLeftWheel.setPWM(lPWM);
+  if(lPWM>-101 and rPWM<101)
     mRightWheel.setPWM(rPWM);
 }
 
-void MotorControl::armcontrol(int PWM){
+//void MotorControl::armcontrol(int PWM){}
 
-}
-
-void MotorControl::tailcontrol(int PWM){
-
-}
-
-void virtualposition(){
-
-}
+//void MotorControl::tailcontrol(int PWM){}

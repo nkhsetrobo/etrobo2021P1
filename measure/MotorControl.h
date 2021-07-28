@@ -12,23 +12,16 @@
 class MotorControl{
     public:
         explicit MotorControl( ev3api::Motor& leftWheel,
-                    ev3api::Motor& rightWheel,
-                    Tail* tail,Arm* arm,Odometer* odometer,Speedmeter* speedmeter,
-                    Turn* turn,Xpointer* xpointer,Ypointer* ypointer);
+                    ev3api::Motor& rightWheel);
         void runcontrol(int rPWM,int lPWM);
-        void armcontrol(int PWM);
-        void tailcontrol(int PWM);
-        void virtualposition();
+        //void armcontrol(int PWM);
+        //void tailcontrol(int PWM);
     private:
         ev3api::Motor& mLeftWheel;
         ev3api::Motor& mRightWheel;
-        Tail* mTail;
-        Arm* mArm;
-        Odometer* mOdometer;
-        Speedmeter* mSpeedmeter;
-        Turn* mTurn;
-        Xpointer* mXpointer;
-        Ypointer* mYpointer;
+        //Tail* mTail;
+        //Arm* mArm;
+        //Turn* mTurn;
 
 };
 #endif

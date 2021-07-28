@@ -35,10 +35,9 @@ void LineTracer::run() {
     // 走行体の向きを計算する
     int direction = calcDirection(isOnLine);
 
-    mDrive->setCommand(Drive::FWD, direction);
 
     // 走行を行う
-    mDrive->run();
+    mDrive->run(Drive::FWD, direction);
 }
     
 

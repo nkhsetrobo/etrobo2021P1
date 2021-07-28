@@ -42,6 +42,7 @@ static ScenarioTracer  *gScenarioTracer;
 static RandomWalker    *gRandomWalker;
 static ColorMeasure    *gColorMeasure;
 static Bright          *gBright;
+static MotorControl    *gMotorControl;
 
 // scene object
 static Scene gScenes[] = {
@@ -59,11 +60,13 @@ static void user_system_create() {
     tslp_tsk(2U * 1000U);
 
     // オブジェクトの作成
-    gDrive          = new Drive();
     gStarter         = new Starter(gTouchSensor);
     gLineMonitor     = new LineMonitor(gColorSensor);
     gScenarioTimer   = new SimpleTimer(gClock);
     gWalkerTimer     = new SimpleTimer(gClock);
+    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel);
+    gDrive           = new Drive(gMotorControl);
+    gWalker          = new Walker(gDrive);
     gLineTracer      = new LineTracer(gLineMonitor, gDrive);
     gScenario        = new Scenario(0);
     gScenarioTracer  = new ScenarioTracer(gDrive,
@@ -74,9 +77,9 @@ static void user_system_create() {
                                         gScenarioTracer,
                                         gStarter,
                                         gWalkerTimer);
-
     gBright          =  new Bright();
-    gColorMeasure   =   new ColorMeasure(gColorSensor,gBright);
+    gColorMeasure    =  new ColorMeasure(gColorSensor,gBright);
+
     // シナリオを構築する
     for (uint32_t i = 0; i < (sizeof(gScenes)/sizeof(gScenes[0])); i++) {
         gScenario->add(&gScenes[i]);
@@ -131,7 +134,10 @@ void tracer_task(intptr_t exinf) {
     if (ev3_button_is_pressed(BACK_BUTTON)) {
         wup_tsk(MAIN_TASK);  // バックボタン押下
     } else {
-        gRandomWalker->run();  // 走行
+        gWalker->setCommand(50,20);
+        gWalker->run();
+        //gRandomWalker->run();  // 走行
+
     }
 
     ext_tsk();

@@ -63,7 +63,7 @@ void ScenarioTracer::setCommand(SceneCommands command) {
       turn = Drive::TURN;
     }
 
-    mDrive->setCommand(Drive::FWD, turn);
+    mDrive->run(Drive::FWD, turn);
 }
 
 
