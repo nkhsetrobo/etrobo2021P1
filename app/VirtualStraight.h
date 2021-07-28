@@ -17,6 +17,7 @@ public:
     LineTracer(const LineMonitor* lineMonitor,
                Walker* walker);
 
+    
     void run();
 
 private:
@@ -25,6 +26,7 @@ private:
     bool mIsInitialized;
 
     int calcDirection(bool isOnLine);
+   
 };
 
 #endif  // EV3_APP_LINETRACER_H_
