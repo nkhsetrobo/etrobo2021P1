@@ -7,7 +7,7 @@ class Distance_Judge{
         bool judge();
         
     private:
-        float  distance();
+        float distance();
 
 };
 
