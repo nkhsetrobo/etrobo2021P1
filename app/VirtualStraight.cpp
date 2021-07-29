@@ -30,7 +30,10 @@ void LineTracer::run() {
     }
 
     bool isOnLine = mLineMonitor->isOnLine();
-    
+    float X_start()
+    float y_start()
+    float x_end()
+    float y_end()
 
     // 走行体の向きを計算する
     int direction = calcDirection(isOnLine);
