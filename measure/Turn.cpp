@@ -18,4 +18,5 @@ float Turn::get_value()
 
 void Turn::init()
 {
+    
 }
