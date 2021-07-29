@@ -1,4 +1,4 @@
-# include "Bright_Judge.h"
+#include "Bright_Judge.h"
 
 Bright_Judge::Bright_Judge()
     : Main_Judge()
