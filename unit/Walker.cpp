@@ -4,7 +4,7 @@
 Walker::Walker(Drive* drive, Bright* bright, 
                 Xpointer* xpointer, Ypointer* ypointer)
     :mDrive(drive),
-    Bright(bright),
+    mBright(bright),
     mXpointer(xpointer),
     mYpointer(ypointer)
 {
