@@ -3,17 +3,19 @@
 #include "Drive.h"
 #include "PID.h"
 
-
-class Walker{
+class Walker {
     public:
          Walker(Drive* drive);
-        void  run();
+        void run();
         void init();
         void setCommand(int forward, int turn);
     
     private:
         Drive* mDrive;
         PID* mPID;
+        Bright* mBright;
+        Xpointer* mXpointer;
+        Ypointer* mYpointer;
         int mForward;
         int mTurn;
 
