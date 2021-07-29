@@ -1,4 +1,5 @@
 #include "Main_Judge.h"
+extern static Bright          *gBright;
 
 Main_Judge::Main_Judge()
 {
@@ -8,14 +9,4 @@ Main_Judge::Main_Judge()
 bool Main_Judge::judge()
 {
     return false;
-}
-
-float Main_Judge::get_value()
-{
-    return 0;
-}
-
-void Main_Judge::set()
-{
-    
 }

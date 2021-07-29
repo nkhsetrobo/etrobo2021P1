@@ -6,12 +6,7 @@ Distance_Judge::Distance_Judge()
 
 }
 
-float Distance_Judge::distance()
-{
-    return 0;
-}
-
-bool Distance_Judge::judge()
+bool Distance_Judge::d_judge()
 {
     return false;
 }

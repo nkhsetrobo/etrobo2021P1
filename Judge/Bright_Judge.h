@@ -4,10 +4,10 @@
 class Bright_Judge{
     public:
         Bright_Judge()
-        bool judge();
+        bool b_judge();
         
     private:
-        float bright();
+        
 
 };
 

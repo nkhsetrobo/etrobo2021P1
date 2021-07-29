@@ -6,12 +6,7 @@ Turn_Judge::Turn_Judge()
 
 }
 
-float Turn_Judge::turn()
-{
-    return 0;
-}
-
-bool Turn_Judge::judge()
+bool Turn_Judge::t_judge()
 {
     return false;
 }
