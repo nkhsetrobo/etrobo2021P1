@@ -2,8 +2,11 @@
 #define EV3_UNIT_WALKER_H_
 #include "Drive.h"
 #include "PID.h"
+#include "Bright.h"
+#include "Xpointer.h"
+#include "Ypointer.h"
 
-class Walker {
+class Walker{
     public:
          Walker(Drive* drive);
         void run();
