@@ -13,10 +13,8 @@
  * @param lineMonitor     ライン判定
  * @param Drive 走行0
  */
-LineTracer::LineTracer(const LineMonitor* lineMonitor,
-                       Drive* drive)
+LineTracer::LineTracer(const Drive* drive)
     : Walker(drive),
-     mLineMonitor(lineMonitor),
      mDrive(drive),
      mIsInitialized(false) {
 }
@@ -30,7 +28,7 @@ void LineTracer::run() {
         mIsInitialized = true;
     }
 
-    bool isOnLine = mLineMonitor->isOnLine();
+    //bool isOnLine = mLineMonitor->isOnLine();
 
     // 走行体の向きを計算する
     int direction = calcDirection(isOnLine);
