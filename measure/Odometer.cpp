@@ -13,7 +13,7 @@ void Odometer::load(float mload)
 
 void Odometer::init()
 {
-
+    mileage=0;
 }
 
 float Odometer::get_value()

@@ -1,6 +1,6 @@
 #include "Drive.h"
 
-Drive::Drive( MotorControl* motorcontrol)
+Drive::Drive(MotorControl* motorcontrol)
       :mForward(0),
        mTurn(0),
        mMotorControl(motorcontrol) {

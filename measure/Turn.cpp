@@ -18,5 +18,5 @@ float Turn::get_value()
 
 void Turn::init()
 {
-    
+    Turn_angle=0;
 }

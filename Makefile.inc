@@ -21,7 +21,8 @@ APPL_CXXOBJS += \
 	Ypointer.o\
 	MotorControl.o\
 	PID.o\
-	Walker.o
+	Walker.o\
+	VirtualPointer.o
 
 
 SRCLANG := c++

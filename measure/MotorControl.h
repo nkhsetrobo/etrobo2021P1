@@ -14,6 +14,8 @@ class MotorControl{
         explicit MotorControl( ev3api::Motor& leftWheel,
                     ev3api::Motor& rightWheel);
         void runcontrol(int rPWM,int lPWM);
+        int get_rightMotor();
+        int get_leftMotor();
         //void armcontrol(int PWM);
         //void tailcontrol(int PWM);
     private:

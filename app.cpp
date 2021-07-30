@@ -10,7 +10,7 @@
 #include "RandomWalker.h"
 #include "ColorMeasure.h"
 #include "Bright.h"
-
+#include "VirtualPointer.h"
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
 void *__dso_handle=0;
@@ -42,6 +42,11 @@ static RandomWalker    *gRandomWalker;
 static ColorMeasure    *gColorMeasure;
 static Bright          *gBright;
 static MotorControl    *gMotorControl;
+static Xpointer        *gXpointer;
+static Ypointer        *gYpointer;
+static Odometer        *gOdometer;
+static VirtualPointer  *gVirtualPointer;
+static Turn            *gTurn;
 
 // scene object
 static Scene gScenes[] = {
@@ -65,6 +70,10 @@ static void user_system_create() {
     gMotorControl    = new MotorControl(gLeftWheel,gRightWheel);
     gDrive           = new Drive(gMotorControl);
     gBright          = new Bright();
+    gXpointer        = new Xpointer();
+    gYpointer        = new Ypointer();
+    gOdometer        = new Odometer();
+    gTurn            = new Turn();
     gWalker          = new Walker(gDrive,gBright);
     gLineTracer      = new LineTracer(gDrive,gBright);
     gScenario        = new Scenario(0);
@@ -76,7 +85,8 @@ static void user_system_create() {
                                         gScenarioTracer,
                                         gStarter,
                                         gWalkerTimer);
-    gColorMeasure    =  new ColorMeasure(gColorSensor,gBright);
+    gColorMeasure    = new ColorMeasure(gColorSensor,gBright);
+    gVirtualPointer  = new VirtualPointer(gMotorControl,gXpointer,gYpointer,gOdometer,gTurn);
 
     // シナリオを構築する
     for (uint32_t i = 0; i < (sizeof(gScenes)/sizeof(gScenes[0])); i++) {
@@ -97,10 +107,14 @@ static void user_system_destroy() {
     delete gScenarioTracer;
     delete gScenario;
     delete gLineTracer;
+    delete gWalker;
     delete gWalkerTimer;
     delete gScenarioTimer;
     delete gStarter;
-
+       
+    
+    
+    
 }
 
 /**
@@ -143,5 +157,6 @@ void tracer_task(intptr_t exinf) {
 
 void polling_task(intptr_t exinf) {
    gColorMeasure->get_rgb();
+   gVirtualPointer->calc();
     ext_tsk();
 }
