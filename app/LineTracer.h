@@ -15,7 +15,7 @@ class LineTracer : Walker{
     public:
         LineTracer(Drive* drive,Bright* bright);
         void run();
-        void init();
+        void init(double status[]);
 
     private:
         bool  mIsInitialized;
