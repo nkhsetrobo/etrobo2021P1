@@ -8,7 +8,7 @@
 
 class Walker{
     public:
-         Walker(Drive* drive);
+        Walker(Drive* drive);
         void run();
         void init();
         void setCommand(int forward, int turn);
