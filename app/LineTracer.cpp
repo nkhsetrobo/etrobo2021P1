@@ -13,12 +13,16 @@
  * @param lineMonitor     ライン判定
  * @param Drive 走行0
  */
-LineTracer::LineTracer(const LineMonitor* lineMonitor,
-                       Drive* drive)
-    : Walker(drive),
-     mLineMonitor(lineMonitor),
-     mDrive(drive),
-     mIsInitialized(false) {
+LineTracer::LineTracer(Drive* drive,Bright* bright)
+    : Walker(drive,bright),
+    mIsInitialized(false),
+    p(0),
+    i(0),
+    d(0),
+    forw(0),
+    dire(0),
+    bias(0),
+    edge(0){
 }
 
 /**
@@ -30,34 +34,30 @@ void LineTracer::run() {
         mIsInitialized = true;
     }
 
-    bool isOnLine = mLineMonitor->isOnLine();
-
     // 走行体の向きを計算する
-    int direction = calcDirection(isOnLine);
-
-
+    float direction=mPID->getOperation(mBright->get_value());
     // 走行を行う
-    mDrive->run(Drive::FWD, direction);
+    mDrive->run(50,direction);
 }
     
 
 
-void LineTracer::init(){
-    mDrive->init();
-}
+void LineTracer::init(double status[]){
+    //double status[];
+                    /*0=p,1=i,2=d,3=FWD,
+                   4=direction,5=edge,6=bias,*/
+    mPID->setKp(40);
+    /*p=satus[0];
+    mPID->setKp(status[0]);*/
+    mPID->setKi(1);
+    /*i=satus[1];
+    mPID->setKi(status[1]);*/
+    mPID->setKd(5);
+    /*d=satus[2];
+    mPID->setKd(status[2]);
+    forw=status[3];
+    dire=status[4];
+    edge=satus[5];
+    bias=status[6];*/
 
-/**
- * 走行体の向きを計算する
- * @param isOnLine true:ライン上/false:ライン外
- * @retval RIGHT  ライン上にある場合(右旋回指示)
- * @retval LEFT ライン外にある場合(左旋回指示)
- */
-int LineTracer::calcDirection(bool isOnLine) {
-    if (isOnLine) {
-        // ライン上にある場合
-        return Drive::TURN;
-    } else {
-        // ライン外にある場合
-        return Drive::TURN;
-    }
 }

@@ -90,6 +90,7 @@ void RandomWalker::execUndefined() {
 void RandomWalker::execWaitingForStart() {
     if (mStarter->isPushed()) {
         mState = LINE_TRACING;
+        //edgeのはんだん？
 
         modeChangeAction();
     }
@@ -99,6 +100,7 @@ void RandomWalker::execWaitingForStart() {
  * ライントレース状態の処理
  */
 void RandomWalker::execLineTracing() {
+    mLineTracer->init();
     mLineTracer->run();
 
     if (mSimpleTimer->isTimedOut()) {

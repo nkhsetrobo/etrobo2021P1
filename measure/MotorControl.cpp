@@ -15,9 +15,7 @@ MotorControl::MotorControl( ev3api::Motor& leftWheel,
 }
 
 void MotorControl::runcontrol( int rPWM,int lPWM){
-  if(rPWM>-101 and rPWM<101)
     mLeftWheel.setPWM(lPWM);
-  if(lPWM>-101 and rPWM<101)
     mRightWheel.setPWM(rPWM);
 }
 
