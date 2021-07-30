@@ -100,7 +100,8 @@ void RandomWalker::execWaitingForStart() {
  * ライントレース状態の処理
  */
 void RandomWalker::execLineTracing() {
-    mLineTracer->init();
+    double status[]={40,1,5,50,0,-1,10};
+    mLineTracer->init(status);
     mLineTracer->run();
 
     if (mSimpleTimer->isTimedOut()) {

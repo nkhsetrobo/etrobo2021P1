@@ -33,11 +33,15 @@ void LineTracer::run() {
         mDrive->init();
         mIsInitialized = true;
     }
-
+    dire=mPID->getOperation(mBright->get_value()); 
+    dire=bias+dire;
+    if(edge==-1)
+    {
+        dire=dire*-1.0;
+    }
     // 走行体の向きを計算する
-    float direction=mPID->getOperation(mBright->get_value());
     // 走行を行う
-    mDrive->run(50,direction);
+    mDrive->run(forw,dire);
 }
     
 
@@ -46,18 +50,15 @@ void LineTracer::init(double status[]){
     //double status[];
                     /*0=p,1=i,2=d,3=FWD,
                    4=direction,5=edge,6=bias,*/
-    mPID->setKp(40);
-    /*p=satus[0];
-    mPID->setKp(status[0]);*/
-    mPID->setKi(1);
-    /*i=satus[1];
-    mPID->setKi(status[1]);*/
-    mPID->setKd(5);
-    /*d=satus[2];
+    p=status[0];
+    mPID->setKp(status[0]);
+    i=status[1];
+    mPID->setKi(status[1]);
+    d=status[2];
     mPID->setKd(status[2]);
     forw=status[3];
     dire=status[4];
-    edge=satus[5];
-    bias=status[6];*/
+    edge=status[5];
+    bias=status[6];
 
 }
