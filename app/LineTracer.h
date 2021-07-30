@@ -22,7 +22,7 @@ class LineTracer : Walker{
         float p;
         float i;
         float d;
-        int forw;
+        float forw;
         float dire;
         float bias;
         float edge;
