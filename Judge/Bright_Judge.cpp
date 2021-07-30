@@ -6,12 +6,7 @@ Bright_Judge::Bright_Judge()
 
 }
 
-float Bright_Judge::bright()
-{
-    return 0;
-}
-
-bool Bright_Judge::judge()
+bool Bright_Judge::b_judge()
 {
     return false;
 }

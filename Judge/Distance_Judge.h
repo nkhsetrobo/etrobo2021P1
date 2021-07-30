@@ -1,14 +1,15 @@
 #ifndef EV3_UNIT_DISTANCEJUDGE_H_
 #define EV3_UNIT_DISTANCEJUDGE_H_
 
-class Distance_Judge{
+#include "Main_Judge.h"
+
+class Distance_Judge : Main_Judge {
     public:
-        Distance_Judge()
-        bool judge();
+        Distance_Judge();
+        bool d_judge();
         
     private:
-        float distance();
-
+        
 };
 
-#endif 
+#endif

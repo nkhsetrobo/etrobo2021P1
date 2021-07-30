@@ -4,10 +4,10 @@
 class Turn_Judge{
     public:
         Turn_Judge()
-        bool judge();
+        bool t_judge();
         
     private:
-        float turn();
+        
 
 };
 
