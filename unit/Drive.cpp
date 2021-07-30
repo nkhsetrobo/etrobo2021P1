@@ -15,6 +15,31 @@ void Drive::init(){
 void Drive::run(int mForword,int mTurn){
     int rPWM=mForword+mTurn;
     int lPWM=mForword-mTurn;
+    fwd + turn = rPWM
+    fwd - turn = lPWM
+
+
+    if (a >= 85){               /*aが85より大きいときは*/
+	    a-85 = n;
+	
+	    if (b >= 85){
+		    b-85 = m;
+		
+		    if (a > b){         /*両方でかいときはここで大きさ比較する*/
+			    b-n = new b;
+	    	}
+		    else (a < b){
+			    a-m = new a;
+    		}
+	    }
+	    b-n = new b;	
+    }
+
+    else (b >= 85){
+	    b-85 = m;
+	    a-m = new a;
+    }
+
     mMotorControl->runcontrol(rPWM,lPWM);
 }
 
