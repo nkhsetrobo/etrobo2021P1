@@ -47,17 +47,17 @@ void LineTracer::init(double status[]){
                     /*0=p,1=i,2=d,3=FWD,
                    4=direction,5=edge,6=bias,*/
     mPID->setKp(40);
-    /*satus[0]=p;
+    /*p=satus[0];
     mPID->setKp(status[0]);*/
     mPID->setKi(1);
-    /*satus[1]=i;
+    /*i=satus[1];
     mPID->setKi(status[1]);*/
     mPID->setKd(5);
-    /*satus[2]=d;
+    /*d=satus[2];
     mPID->setKd(status[2]);
-    status[3]=forw;
-    status[4]=dire;
-    satus[5]=edge;
-    status[6]=bias;*/
+    forw=status[3];
+    dire=status[4];
+    edge=satus[5];
+    bias=status[6];*/
 
 }
