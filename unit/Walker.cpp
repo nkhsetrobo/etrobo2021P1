@@ -1,12 +1,9 @@
 #include "Walker.h"
 
 
-Walker::Walker(Drive* drive, Bright* bright, 
-                Xpointer* xpointer, Ypointer* ypointer)
+Walker::Walker(Drive* drive,Bright* bright)
     :mDrive(drive),
-    mBright(bright),
-    mXpointer(xpointer),
-    mYpointer(ypointer)
+    mBright(bright)
 {
     mPID = new PID();
 }

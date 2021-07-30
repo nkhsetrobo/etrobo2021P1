@@ -31,8 +31,7 @@ Clock       gClock;
 
 // オブジェクトの定義
 static Drive           *gDrive;
-static Walker           *gWalker;
-static LineMonitor     *gLineMonitor;
+static Walker          *gWalker;
 static Starter         *gStarter;
 static SimpleTimer     *gScenarioTimer;
 static SimpleTimer     *gWalkerTimer;
@@ -61,13 +60,13 @@ static void user_system_create() {
 
     // オブジェクトの作成
     gStarter         = new Starter(gTouchSensor);
-    gLineMonitor     = new LineMonitor(gColorSensor);
     gScenarioTimer   = new SimpleTimer(gClock);
     gWalkerTimer     = new SimpleTimer(gClock);
     gMotorControl    = new MotorControl(gLeftWheel,gRightWheel);
     gDrive           = new Drive(gMotorControl);
-    gWalker          = new Walker(gDrive);
-    gLineTracer      = new LineTracer(gLineMonitor, gDrive);
+    gBright          = new Bright();
+    gWalker          = new Walker(gDrive,gBright);
+    gLineTracer      = new LineTracer(gDrive,gBright);
     gScenario        = new Scenario(0);
     gScenarioTracer  = new ScenarioTracer(gDrive,
                                           gWalker,
@@ -77,7 +76,6 @@ static void user_system_create() {
                                         gScenarioTracer,
                                         gStarter,
                                         gWalkerTimer);
-    gBright          =  new Bright();
     gColorMeasure    =  new ColorMeasure(gColorSensor,gBright);
 
     // シナリオを構築する
@@ -101,9 +99,8 @@ static void user_system_destroy() {
     delete gLineTracer;
     delete gWalkerTimer;
     delete gScenarioTimer;
-    delete gLineMonitor;
     delete gStarter;
-    delete gDrive;
+
 }
 
 /**
@@ -134,9 +131,10 @@ void tracer_task(intptr_t exinf) {
     if (ev3_button_is_pressed(BACK_BUTTON)) {
         wup_tsk(MAIN_TASK);  // バックボタン押下
     } else {
-        gWalker->setCommand(50,20);
-        gWalker->run();
-        //gRandomWalker->run();  // 走行
+        gWalker->setCommand(50,0);
+        /*gLineTracer->init();
+        gLineTracer->run();*/
+        gRandomWalker->run();
 
     }
 

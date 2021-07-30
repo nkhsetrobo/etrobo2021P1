@@ -56,14 +56,10 @@ void ScenarioTracer::initAction() {
  * @param command 走行向き
  */
 void ScenarioTracer::setCommand(SceneCommands command) {
-    int turn = -1;
     if (command == TURN_LEFT) {
-      turn = Drive::TURN;
     } else if (command == TURN_RIGHT) {
-      turn = Drive::TURN;
     }
 
-    mDrive->run(Drive::FWD, turn);
 }
 
 

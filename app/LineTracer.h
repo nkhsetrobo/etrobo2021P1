@@ -13,15 +13,20 @@
 
 class LineTracer : Walker{
     public:
-        LineTracer(const Drive* drive);
-
+        LineTracer(Drive* drive,Bright* bright);
         void run();
         void init();
 
     private:
-        Drive* mDrive;
-        bool mIsInitialized;
-        int calcDirection(bool isOnLine);
+        bool  mIsInitialized;
+        float p;
+        float i;
+        float d;
+        int forw;
+        float dire;
+        float bias;
+        float edge;
+
 };
 
 #endif  // EV3_APP_LINETRACER_H_

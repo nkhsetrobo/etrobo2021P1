@@ -15,5 +15,6 @@ void Bright::load(float mload)
 
 float Bright::get_value()
 {
+    printf("%f\n",bvalue);
     return bvalue;
 }

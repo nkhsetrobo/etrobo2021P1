@@ -1,13 +1,8 @@
 #include "Drive.h"
 
-// 定数宣言
-const int Drive::FWD=80;
-
-const int Drive::TURN=0;//マイナスが左、プラスが右
-
 Drive::Drive( MotorControl* motorcontrol)
-      :mForward(FWD),
-       mTurn(TURN),
+      :mForward(0),
+       mTurn(0),
        mMotorControl(motorcontrol) {
 }
 
