@@ -20,7 +20,6 @@ LineTracer::LineTracer(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* 
     i(0),
     d(0),
     forw(0),
-    dire(0),
     bias(0),
     edge(0){
 }
@@ -29,10 +28,12 @@ LineTracer::LineTracer(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* 
  * ライントレースする
  */
 void LineTracer::run() {
+    float dire=0.0;
     if (mIsInitialized == false) {
         mDrive->init();
         mIsInitialized = true;
     }
+    //mPID->setTarget(0);
     dire=mPID->getOperation(mBright->get_value()); 
     dire=bias+dire;
     if(edge==-1)
@@ -48,8 +49,7 @@ void LineTracer::run() {
 
 void LineTracer::init(double status[]){
     //double status[];
-                    /*0=p,1=i,2=d,3=FWD,
-                   4=direction,5=edge,6=bias,*/
+                    /*0=p,1=i,2=d,3=FWD,4=edge,5=bias,*/
     p=status[0];
     mPID->setKp(status[0]);
     i=status[1];
@@ -57,8 +57,7 @@ void LineTracer::init(double status[]){
     d=status[2];
     mPID->setKd(status[2]);
     forw=status[3];
-    dire=status[4];
-    edge=status[5];
-    bias=status[6];
+    edge=status[4];
+    bias=status[5];
 
 }

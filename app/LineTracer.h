@@ -23,10 +23,8 @@ class LineTracer : Walker{
         float i;
         float d;
         float forw;
-        float dire;
         float bias;
         float edge;
 
 };
-
 #endif  // EV3_APP_LINETRACER_H_

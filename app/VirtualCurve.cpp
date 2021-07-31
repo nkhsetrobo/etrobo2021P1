@@ -1,13 +1,46 @@
 #include "VirtualCurve.h"
 
-VirtualCurve::Curve(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn)
+VirtualCurve::VirtualCurve(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn)
     :Walker(drive,bright,xpointer,ypointer,turn),
+    mIsInitialized(false),
+    rx(0),
+    ry(0),
+    sx(0),
+    sy(0),
+    body(5.0),
+    p(0),
+    i(0),
+    d(0),
+    forw(0),
+    bias(0),
+    mdistance(0),
+    dire(0)
+    
 {
 
 }
 
-void curve(){
+void VirtualCurve::run(){
+    float dire;
+    if (mIsInitialized == false) {
+        mDrive->init();
+        mIsInitialized = true;
+    }
+    float x=mXpointer->get_value();//機体のx座標
+    float y=mYpointer->get_value();//機体のy座標
+    float theta=mTurn->get_value();//角度
 
+    x=body*cos(theta)+x;
+    y=body*sin(theta)+y;
+    float distance=calc_distance(rx,ry,x,y);
+    printf("%f,%f,%f,%f\n",x,y,rx,ry);
+    dire=mPID->getOperation(distance);
+    if(0>mdistance)//左回りのときに入る
+    {
+        dire=dire*-1.0;
+    }  
+    dire=bias+dire;
+    mDrive->run(forw,dire);
 }
 
 
@@ -15,22 +48,34 @@ void curve(){
 
 
 
-void calc(){
+void VirtualCurve::init(double status[]){
+    
+    p=status[0];
+    mPID->setKp(status[0]);
+    i=status[1];
+    mPID->setKi(status[1]);
+    d=status[2];
+    mPID->setKd(status[2]);
+    forw=status[3];
+    bias=status[4];
+    mdistance=status[5];
+
     float x=mXpointer->get_value();//機体のx座標
     float y=mYpointer->get_value();//機体のy座標
     float theta=mTurn->get_value();//角度
-    float rx;//円の中心のx座標（円で移動するため）
-    float ry;//円の中心のy座標
-    float sx=x-body;//センサーのx
-    float sy=y-body;//センサーのｙ
-    float body=5.0;//車体幅
-    float diameter;//直径
 
-    sx=sx*cos(theta);
-    sy=sy*sin(theta);
+    sx=body*cos(theta)+x;
+    sy=body*sin(theta)+y;
     
-    rx=x+diameter*cos(theta);
-    ry=y+diameter*sin(theta);
+    rx=x+mdistance*sin(theta);
+    ry=y+mdistance*cos(theta);
+    
+    mPID->setTarget(fabs(mdistance));
+    printf("%f,%f,%f,%f\n",sx,sy,rx,ry);
+}
 
-
+float VirtualCurve::calc_distance(float x1,float y1,float x2,float y2){
+    float dis=sqrt(pow(x1-x2,2)+pow(y1-y2,2));
+    printf ("%f\n",dis);
+    return dis;
 }

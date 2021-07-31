@@ -13,11 +13,13 @@
 #include "SimpleTimer.h"
 
 #include "LineTracer.h"
+#include "VirtualCurve.h"
 #include "ScenarioTracer.h"
 
 class RandomWalker {
 public:
     RandomWalker(LineTracer* lineTracer,
+                VirtualCurve* VirtualCurve,
                  ScenarioTracer* scenarioTracer,
                  const Starter* starter,
                  SimpleTimer* simpleTimer);
@@ -36,6 +38,7 @@ private:
     static const int MAX_TIME;
 
     LineTracer* mLineTracer;
+    VirtualCurve* mVirtualCurve;
     ScenarioTracer* mScenarioTracer;
     const Starter* mStarter;
     SimpleTimer* mSimpleTimer;

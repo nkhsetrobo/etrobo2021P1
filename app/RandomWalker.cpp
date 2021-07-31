@@ -23,10 +23,12 @@ const int RandomWalker::MAX_TIME = 15000 * 1000;   // 切り替え時間の最�
  * @param simpleTimer     タイマ
  */
 RandomWalker::RandomWalker(LineTracer* lineTracer,
+                           VirtualCurve* virtualcurve,
                            ScenarioTracer* scenarioTracer,
                            const Starter* starter,
                            SimpleTimer* simpleTimer)
     : mLineTracer(lineTracer),
+      mVirtualCurve(virtualcurve),
       mScenarioTracer(scenarioTracer),
       mStarter(starter),
       mSimpleTimer(simpleTimer),
@@ -90,8 +92,8 @@ void RandomWalker::execUndefined() {
 void RandomWalker::execWaitingForStart() {
     if (mStarter->isPushed()) {
         mState = LINE_TRACING;
-        //edgeのはんだん？
-
+        double status[]={30,1,5,50,0,40};
+        mVirtualCurve->init(status);
         modeChangeAction();
     }
 }
@@ -100,9 +102,11 @@ void RandomWalker::execWaitingForStart() {
  * ライントレース状態の処理
  */
 void RandomWalker::execLineTracing() {
-    double status[]={40,1,5,50,0,1,10};
-    mLineTracer->init(status);
-    mLineTracer->run();
+   
+    /*mLineTracer->init(status);
+    mLineTracer->run();*/
+    
+    mVirtualCurve->run();
 
     if (mSimpleTimer->isTimedOut()) {
         mSimpleTimer->stop();

@@ -36,6 +36,7 @@ static Starter         *gStarter;
 static SimpleTimer     *gScenarioTimer;
 static SimpleTimer     *gWalkerTimer;
 static LineTracer      *gLineTracer;
+static VirtualCurve    *gVirtualCurve;
 static Scenario        *gScenario;
 static ScenarioTracer  *gScenarioTracer;
 static RandomWalker    *gRandomWalker;
@@ -76,12 +77,14 @@ static void user_system_create() {
     gTurn            = new Turn();
     gWalker          = new Walker(gDrive,gBright,gXpointer,gYpointer,gTurn);
     gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn);
+    gVirtualCurve    = new VirtualCurve(gDrive,gBright,gXpointer,gYpointer,gTurn);
     gScenario        = new Scenario(0);
     gScenarioTracer  = new ScenarioTracer(gDrive,
                                           gWalker,
                                           gScenario,
                                           gScenarioTimer);
     gRandomWalker    = new RandomWalker(gLineTracer,
+                                        gVirtualCurve,
                                         gScenarioTracer,
                                         gStarter,
                                         gWalkerTimer);
@@ -107,6 +110,7 @@ static void user_system_destroy() {
     delete gScenarioTracer;
     delete gScenario;
     delete gLineTracer;
+    delete gVirtualCurve;
     delete gWalker;
     delete gWalkerTimer;
     delete gScenarioTimer;
