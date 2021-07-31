@@ -1,9 +1,12 @@
 #include "Walker.h"
 
 
-Walker::Walker(Drive* drive,Bright* bright)
-    :mDrive(drive),
-    mBright(bright)
+Walker::Walker(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn)
+   :mDrive(drive),
+    mBright(bright),
+    mXpointer(xpointer),
+    mYpointer(ypointer),
+    mTurn(turn)
 {
     mPID = new PID();
 }
@@ -11,7 +14,7 @@ Walker::Walker(Drive* drive,Bright* bright)
 void Walker::run()
 {
 
-    mDrive->run(mForward,mTurn);
+    mDrive->run(tForward,tTurn);
 
 }
 void Walker::init()
@@ -20,6 +23,6 @@ void Walker::init()
 }
 
 void Walker::setCommand(int forward, int turn) {
-    mForward = forward;
-    mTurn    = turn;
+    tForward = forward;
+    tTurn    = turn;
 }

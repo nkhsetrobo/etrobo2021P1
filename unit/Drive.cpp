@@ -15,30 +15,60 @@ void Drive::init(){
 void Drive::run(int mForword,int mTurn){
     int rPWM=mForword+mTurn;
     int lPWM=mForword-mTurn;
-    fwd + turn = rPWM
-    fwd - turn = lPWM
+    int a = rPWM;
+    int b = lPWM;
+    int n=0;
+    int m=0;
+    
 
 
-    if (a >= 85){               /*aが85より大きいときは*/
-	    a-85 = n;
+    if (a>85){               /*rPWMが85より大きいときは*/
+	    n=a-85;
 	
-	    if (b >= 85){
-		    b-85 = m;
+	    if(b>85){
+		    m=b-85;
 		
-		    if (a > b){         /*両方でかいときはここで大きさ比較する*/
-			    b-n = new b;
-	    	}
-		    else (a < b){
-			    a-m = new a;
+		    if (a>b){         /*両方85より大きいときはここで大きさ比較する*/
+			    a=a-n;
+                b=b-n;
+	    	}else if(a<b){
+			    a=a-m;
+                b=b-m;
     		}
 	    }
-	    b-n = new b;	
+	    a=a-n;              /*a>85かつb<85の時*/
+        b=b-n;	
     }
 
-    else (b >= 85){
-	    b-85 = m;
-	    a-m = new a;
+    if(b > 85){
+	    b=b-m;             /*lBPMが85より大きくrPBMが85以下の時*/
+	    a=a-m;
     }
+
+    if (a<-85){               /*rPWMが-85未満ときは*/
+	    n=a+85;
+	
+	    if(b<-85){
+		    m=b+85;
+		
+		    if (a<b){         /*両方-85未満の時ここで大きさ比較する*/
+			    a=a-n;
+                b=b-n;
+	    	}else if(a<b){
+			    a=a-m;
+                b=b-m;
+    		}
+	    }
+	    a=a-n;              /*a<-85かつb>-85の時*/
+        b=b-n;	
+    }
+
+    if(b<-85){
+	    b=b-m;             /*lBPMが-85未満かつrPBMが-85未満の時*/
+	    a=a-m;
+    }
+    rPWM=a;
+    lPWM=b;
 
     mMotorControl->runcontrol(rPWM,lPWM);
 }

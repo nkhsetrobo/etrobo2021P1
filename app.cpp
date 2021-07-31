@@ -74,8 +74,8 @@ static void user_system_create() {
     gYpointer        = new Ypointer();
     gOdometer        = new Odometer();
     gTurn            = new Turn();
-    gWalker          = new Walker(gDrive,gBright);
-    gLineTracer      = new LineTracer(gDrive,gBright);
+    gWalker          = new Walker(gDrive,gBright,gXpointer,gYpointer,gTurn);
+    gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn);
     gScenario        = new Scenario(0);
     gScenarioTracer  = new ScenarioTracer(gDrive,
                                           gWalker,

@@ -6,7 +6,7 @@
 #include "Odometer.h"
 #include "Turn.h"
 #include "math.h"
-#define M_PI 3.14159265//π
+#define M_PI 3.14159265358979323846//π
 #define D_LEFT 9.0//タイヤの円周
 #define D_RIGHT 9.0//タイヤの円周
 #define TREAD 13.8//車体幅

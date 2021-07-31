@@ -36,7 +36,6 @@ void VirtualPointer::calc()
 	y+= (len_r+len_l)/2.0*sin(th+dth/2.0); //横	
 	th+=dth; // 左旋回＋、右旋回-
 	sumlen += (len_r+len_l)/2.0;
-    printf("%f,%f,%f,%f\n",x,y,sumlen,th);
     mXpointer->load(x);
     mYpointer->load(y);
     mOdometer->load(sumlen);
