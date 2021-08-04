@@ -1,14 +1,16 @@
-#ifndef EV3_UNIT_TURNJUDGE_H_
-#define EV3_UNIT_TURNJUDGE_H_
-
-class Turn_Judge{
+#ifndef EV3_JUDGE_TURNJUDGE_H_
+#define EV3_JUDGE_TURNJUDGE_H_
+#include "Main_Judge.h"
+class Turn_Judge : Main_Judge{
     public:
-        Turn_Judge()
-        bool t_judge();
+        Turn_Judge();
+        bool judge();
+        void init(double status[]);
         
     private:
-        
+        Main_Judge* mMain_Judge;
+        float tvalue;
+        float baseline;
 
 };
-
 #endif 

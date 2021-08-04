@@ -1,5 +1,5 @@
-#ifndef EV3_UNIT_MAINMEASURE_H_
-#define EV3_UNIT_MAINMEASURE_H_
+#ifndef EV3_MEASURE_MAINMEASURE_H_
+#define EV3_MEASURE_MAINMEASURE_H_
 
 class Main_Measure{
     public:
@@ -8,8 +8,5 @@ class Main_Measure{
         void load(float mload);
 
 
-    private:
-
 };
-
 #endif 

@@ -23,7 +23,11 @@ APPL_CXXOBJS += \
 	PID.o\
 	Walker.o\
 	VirtualPointer.o\
-	VirtualCurve.o
+	VirtualCurve.o\
+	Main_Judge.o\
+	Bright_Judge.o\
+	Turn_Judge.o\
+	Distance_Judge.o
 
 
 SRCLANG := c++
@@ -35,9 +39,10 @@ include $(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile
 
 endif
 
-APPL_DIRS += $(mkfile_path)app $(mkfile_path)unit $(mkfile_path)measure
+APPL_DIRS += $(mkfile_path)app $(mkfile_path)unit $(mkfile_path)measure $(mkfile_path)Judge
 
 INCLUDES += \
 	-I$(mkfile_path)app \
 	-I$(mkfile_path)unit \
-	-I$(mkfile_path)measure 
+	-I$(mkfile_path)measure \
+	-I$(mkfile_path)Judge

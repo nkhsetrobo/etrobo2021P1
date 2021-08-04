@@ -10,7 +10,9 @@
 #include "Clock.h"
 
 #include "RandomWalker.h"
-
+extern Bright_Judge *gBright_Judge;
+extern Turn_Judge *gTurn_Judge;
+extern Distance_Judge *gDistance_Judge;
 // 定数宣言
 const int RandomWalker::MIN_TIME = 5000 * 1000;    // 切り替え時間の最小値
 const int RandomWalker::MAX_TIME = 15000 * 1000;   // 切り替え時間の最大値
@@ -38,6 +40,9 @@ RandomWalker::RandomWalker(LineTracer* lineTracer,
     srand(clock->now());  // 乱数をリセットする
 
     delete clock;
+    mBright_Judge=gBright_Judge;
+    mTurn_Judge=gTurn_Judge;
+    mDistance_Judge=gDistance_Judge;
 }
 
 /**
@@ -92,8 +97,10 @@ void RandomWalker::execUndefined() {
 void RandomWalker::execWaitingForStart() {
     if (mStarter->isPushed()) {
         mState = LINE_TRACING;
-        double status[]={30,1,5,50,0,40};
-        mVirtualCurve->init(status);
+        double status[]={0};
+        double status2[]={40,2,3,40,0,40};
+        mVirtualCurve->init(status2);
+        mTurn_Judge->init(status);
         modeChangeAction();
     }
 }
@@ -103,10 +110,10 @@ void RandomWalker::execWaitingForStart() {
  */
 void RandomWalker::execLineTracing() {
    
-    /*mLineTracer->init(status);
-    mLineTracer->run();*/
     
     mVirtualCurve->run();
+    bool a=mTurn_Judge->judge();
+    printf("%d\n",a);
 
     if (mSimpleTimer->isTimedOut()) {
         mSimpleTimer->stop();

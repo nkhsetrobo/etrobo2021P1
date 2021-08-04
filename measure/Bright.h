@@ -5,15 +5,16 @@
 
 class Bright : Main_Measure{
     public:
+        
         Bright();
         void  load(float mload);
         float get_value();
 
 
     private:
-        
 
         float bvalue;
+
 };
 
 #endif 
