@@ -27,7 +27,7 @@ APPL_CXXOBJS += \
 	Main_Judge.o\
 	Bright_Judge.o\
 	Turn_Judge.o\
-	Distance_Judge.o
+	Distance_Judge.o\
 	VirtualStraight.o
 
 
