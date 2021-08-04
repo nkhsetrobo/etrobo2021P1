@@ -14,6 +14,7 @@
 
 #include "LineTracer.h"
 #include "VirtualCurve.h"
+#include "VirtualStraight.h"
 #include "ScenarioTracer.h"
 #include "Bright_Judge.h"
 #include "Turn_Judge.h"
@@ -23,6 +24,7 @@ class RandomWalker {
 public:
     RandomWalker(LineTracer* lineTracer,
                 VirtualCurve* VirtualCurve,
+                VirtualStraight* VirtualStraight,
                  ScenarioTracer* scenarioTracer,
                  const Starter* starter,
                  SimpleTimer* simpleTimer);
@@ -41,6 +43,7 @@ private:
 
     LineTracer* mLineTracer;
     VirtualCurve* mVirtualCurve;
+    VirtualStraight* mVirtualStraight;
     ScenarioTracer* mScenarioTracer;
     const Starter* mStarter;
     SimpleTimer* mSimpleTimer;

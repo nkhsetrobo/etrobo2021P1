@@ -56,9 +56,9 @@ void VirtualCurve::init(double status[]){
     mPID->setKi(status[1]);
     d=status[2];
     mPID->setKd(status[2]);
-    forw=status[3];
-    bias=status[4];
-    mdistance=status[5];
+    forw=status[3];      
+    bias=status[4];      
+    mdistance=status[5]; //半径の距離の維持
 
     float x=mXpointer->get_value();//機体のx座標
     float y=mYpointer->get_value();//機体のy座標

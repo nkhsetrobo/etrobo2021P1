@@ -26,11 +26,13 @@ const int RandomWalker::MAX_TIME = 15000 * 1000;   // 切り替え時間の最�
  */
 RandomWalker::RandomWalker(LineTracer* lineTracer,
                            VirtualCurve* virtualcurve,
+                           VirtualStraight* virtualstraight,
                            ScenarioTracer* scenarioTracer,
                            const Starter* starter,
                            SimpleTimer* simpleTimer)
     : mLineTracer(lineTracer),
       mVirtualCurve(virtualcurve),
+      mVirtualStraight(virtualstraight),
       mScenarioTracer(scenarioTracer),
       mStarter(starter),
       mSimpleTimer(simpleTimer),
@@ -97,10 +99,14 @@ void RandomWalker::execUndefined() {
 void RandomWalker::execWaitingForStart() {
     if (mStarter->isPushed()) {
         mState = LINE_TRACING;
-        double status[]={0};
-        double status2[]={40,2,3,40,0,40};
-        mVirtualCurve->init(status2);
-        mTurn_Judge->init(status);
+
+        /*
+        double status[]={30,1,5,50,0,40};
+        mVirtualCurve->init(status);
+        */
+
+        double status[]={30,5,1,10,-90};
+        mVirtualStraight->init(status);
         modeChangeAction();
     }
 }
@@ -111,9 +117,7 @@ void RandomWalker::execWaitingForStart() {
 void RandomWalker::execLineTracing() {
    
     
-    mVirtualCurve->run();
-    bool a=mTurn_Judge->judge();
-    printf("%d\n",a);
+    mVirtualStraight->run();
 
     if (mSimpleTimer->isTimedOut()) {
         mSimpleTimer->stop();
