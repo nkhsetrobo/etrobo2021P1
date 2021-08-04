@@ -1,32 +1,28 @@
-/******************************************************************************
- *  LineTracer.h (for LEGO Mindstorms EV3)
- *  Created on: 2015/01/25
- *  Definition of the Class LineTracer
- *  Author: Kazuhiro Kawachi
- *  Copyright (c) 2015 Embedded Technology Software Design Robot Contest
- *****************************************************************************/
-
-#ifndef EV3_APP_LINETRACER_H_
-#define EV3_APP_LINETRACER_H_
-
-#include "LineMonitor.h"
+#ifndef EV3_APP_VIRTUALSTRAIGHT_H_
+#define EV3_APP_VIRTUALSTRAIGHT_H_
 #include "Walker.h"
-
-class LineTracer {
-public:
-    LineTracer(const LineMonitor* lineMonitor,
-               Walker* walker);
-
-    
-    void run();
-
-private:
-    const LineMonitor* mLineMonitor;
-    Walker* mWalker;
-    bool mIsInitialized;
-
-    int calcDirection(bool isOnLine);
-   
+#include "math.h"
+class VirtualStraight : Walker{
+    public:
+        VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn);
+        void run();
+        void init(double status[]);
+    private:
+        Walker* mWalker;
+        bool mIsInitialized;
+        float sx;   //走行体のスタートのX座標   ﾒﾓ:X
+        float sy;   //走行体のスタートのY座標   ﾒﾓ:Y
+        float gx;   //ゴールのx座標     ﾒﾓ:x1
+        float gy;   //ゴールのy座標     ﾒﾓ:y1
+        float body; //車体縦幅
+        float p;    //PIDの値
+        float i;
+        float d;
+        float forw;//forword
+        float theta;//θ(シータ)
+        float mdistance;   //センサーの射程
+        float dire;         //ディレイ
+        float calc_distance(float a,float b,float c,
+                                float d,float f,float g);//計算機、計算スペース
 };
-
-#endif  // EV3_APP_LINETRACER_H_
+#endif

@@ -11,6 +11,8 @@
 #include "ColorMeasure.h"
 #include "Bright.h"
 #include "VirtualPointer.h"
+#include "VirtualStraight.h"
+
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
 void *__dso_handle=0;
@@ -37,6 +39,7 @@ static SimpleTimer     *gScenarioTimer;
 static SimpleTimer     *gWalkerTimer;
 static LineTracer      *gLineTracer;
 static VirtualCurve    *gVirtualCurve;
+static VirtualStraight *gVirtualStraight;
 static Scenario        *gScenario;
 static ScenarioTracer  *gScenarioTracer;
 static RandomWalker    *gRandomWalker;
@@ -77,6 +80,7 @@ static void user_system_create() {
     gTurn            = new Turn();
     gWalker          = new Walker(gDrive,gBright,gXpointer,gYpointer,gTurn);
     gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn);
+    gVirtualStraight = new VirtualStraight(gDrive,gBright,gXpointer,gYpointer,gTurn);
     gVirtualCurve    = new VirtualCurve(gDrive,gBright,gXpointer,gYpointer,gTurn);
     gScenario        = new Scenario(0);
     gScenarioTracer  = new ScenarioTracer(gDrive,
@@ -85,6 +89,7 @@ static void user_system_create() {
                                           gScenarioTimer);
     gRandomWalker    = new RandomWalker(gLineTracer,
                                         gVirtualCurve,
+                                        gVirtualStraight,
                                         gScenarioTracer,
                                         gStarter,
                                         gWalkerTimer);

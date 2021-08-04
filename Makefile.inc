@@ -23,7 +23,8 @@ APPL_CXXOBJS += \
 	PID.o\
 	Walker.o\
 	VirtualPointer.o\
-	VirtualCurve.o
+	VirtualCurve.o\
+	VirtualStraight.o
 
 
 SRCLANG := c++
