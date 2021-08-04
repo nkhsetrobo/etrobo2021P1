@@ -10,7 +10,9 @@
 #include "Clock.h"
 
 #include "RandomWalker.h"
-
+extern Bright_Judge *gBright_Judge;
+extern Turn_Judge *gTurn_Judge;
+extern Distance_Judge *gDistance_Judge;
 // 定数宣言
 const int RandomWalker::MIN_TIME = 5000 * 1000;    // 切り替え時間の最小値
 const int RandomWalker::MAX_TIME = 15000 * 1000;   // 切り替え時間の最大値
@@ -40,6 +42,9 @@ RandomWalker::RandomWalker(LineTracer* lineTracer,
     srand(clock->now());  // 乱数をリセットする
 
     delete clock;
+    mBright_Judge=gBright_Judge;
+    mTurn_Judge=gTurn_Judge;
+    mDistance_Judge=gDistance_Judge;
 }
 
 /**
@@ -111,8 +116,6 @@ void RandomWalker::execWaitingForStart() {
  */
 void RandomWalker::execLineTracing() {
    
-    /*mLineTracer->init(status);
-    mLineTracer->run();*/
     
     mVirtualStraight->run();
 

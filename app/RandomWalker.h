@@ -16,6 +16,9 @@
 #include "VirtualCurve.h"
 #include "VirtualStraight.h"
 #include "ScenarioTracer.h"
+#include "Bright_Judge.h"
+#include "Turn_Judge.h"
+#include "Distance_Judge.h"
 
 class RandomWalker {
 public:
@@ -25,8 +28,7 @@ public:
                  ScenarioTracer* scenarioTracer,
                  const Starter* starter,
                  SimpleTimer* simpleTimer);
-
-    void run();
+                void run();
 
 private:
     enum State {
@@ -46,6 +48,9 @@ private:
     const Starter* mStarter;
     SimpleTimer* mSimpleTimer;
     State mState;
+    Bright_Judge* mBright_Judge;
+    Turn_Judge* mTurn_Judge;
+    Distance_Judge* mDistance_Judge;
 
     int getRandomTime();
     void modeChangeAction();

@@ -9,8 +9,15 @@
 #include "app.h"
 #include "RandomWalker.h"
 #include "ColorMeasure.h"
-#include "Bright.h"
+#include "Main_Measure.h"
+#include "Main_Judge.h"
 #include "VirtualPointer.h"
+#include "Bright_Judge.h"
+#include "Distance_Judge.h"
+#include "Turn_Judge.h"
+#include "Bright.h"
+#include "Turn.h"
+#include "Odometer.h"
 #include "VirtualStraight.h"
 
 // デストラクタ問題の回避
@@ -33,6 +40,7 @@ Clock       gClock;
 
 // オブジェクトの定義
 static Drive           *gDrive;
+static ColorMeasure    *gColorMeasure;
 static Walker          *gWalker;
 static Starter         *gStarter;
 static SimpleTimer     *gScenarioTimer;
@@ -43,15 +51,19 @@ static VirtualStraight *gVirtualStraight;
 static Scenario        *gScenario;
 static ScenarioTracer  *gScenarioTracer;
 static RandomWalker    *gRandomWalker;
-static ColorMeasure    *gColorMeasure;
-static Bright          *gBright;
 static MotorControl    *gMotorControl;
+static Main_Measure    *gMain_Measure;
 static Xpointer        *gXpointer;
 static Ypointer        *gYpointer;
-static Odometer        *gOdometer;
+Odometer        *gOdometer;
+Turn            *gTurn;
+static Speedmeter      *gSpeedmeter;
+Bright_Judge    *gBright_Judge;
+Distance_Judge  *gDistance_Judge;
+Turn_Judge      *gTurn_Judge;
+static Main_Judge      *gMain_Judge;
+Bright          *gBright;
 static VirtualPointer  *gVirtualPointer;
-static Turn            *gTurn;
-
 // scene object
 static Scene gScenes[] = {
     { TURN_LEFT,   1250 * 1000, 0 },  // 左旋回1.25秒
@@ -73,12 +85,18 @@ static void user_system_create() {
     gWalkerTimer     = new SimpleTimer(gClock);
     gMotorControl    = new MotorControl(gLeftWheel,gRightWheel);
     gDrive           = new Drive(gMotorControl);
+    gMain_Measure    = new Main_Measure();
     gBright          = new Bright();
     gXpointer        = new Xpointer();
     gYpointer        = new Ypointer();
     gOdometer        = new Odometer();
     gTurn            = new Turn();
+    gSpeedmeter      = new Speedmeter();
     gWalker          = new Walker(gDrive,gBright,gXpointer,gYpointer,gTurn);
+    gMain_Judge      = new Main_Judge();
+    gBright_Judge    = new Bright_Judge();
+    gDistance_Judge  = new Distance_Judge();
+    gTurn_Judge      = new Turn_Judge();
     gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn);
     gVirtualStraight = new VirtualStraight(gDrive,gBright,gXpointer,gYpointer,gTurn);
     gVirtualCurve    = new VirtualCurve(gDrive,gBright,gXpointer,gYpointer,gTurn);
