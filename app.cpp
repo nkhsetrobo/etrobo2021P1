@@ -26,16 +26,20 @@
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
 void *__dso_handle=0;
 
-// using宣言
-using ev3api::ColorSensor;
+//using宣言
+/*using ev3api::ColorSensor;
 using ev3api::TouchSensor;
 using ev3api::Motor;
 using ev3api::Clock;
+using ev3api::SonarSensor;
+*/
+using namespace ev3api;
 
 // Device objects
 // オブジェクトを静的に確保する
 ColorSensor gColorSensor(PORT_2);
 TouchSensor gTouchSensor(PORT_1);
+SonarSensor gSonorSensor(PORT_3);
 Motor       gMotor_Arm(PORT_A);
 Motor       gLeftWheel(PORT_C);
 Motor       gRightWheel(PORT_B);
@@ -88,7 +92,7 @@ static void user_system_create() {
     gStarter         = new Starter(gTouchSensor);
     gScenarioTimer   = new SimpleTimer(gClock);
     gWalkerTimer     = new SimpleTimer(gClock);
-    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm);
+    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm,gSonarSensor);
     gDrive           = new Drive(gMotorControl);
     gMain_Measure    = new Main_Measure();
     gBright          = new Bright();
@@ -136,7 +140,8 @@ static void user_system_destroy() {
     gLeftWheel.reset();
     gRightWheel.reset();
     gMotor_Arm.reset();
-
+    gSonarSensor.reset();
+    
     delete gRandomWalker;
     delete gScenarioTracer;
     delete gScenario;

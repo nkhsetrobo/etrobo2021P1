@@ -7,10 +7,49 @@ ArmControl::ArmControl(ev3api::Motor& motor_arm,Drive* drive,Bright* bright,Xpoi
     i(0),
     d(0),
     theta(),
-    check(0)
+    check(0),
+    mState(UNDEFINED),
+    Brake_Mood(false)
     {
         mMotor_Arm.reset();
     }
+
+void ArmControl::run(){
+   switch (mState) {
+    case UNDEFINED:
+        first_angle();
+        break;
+    case LINE_TRACING:
+        angle_fixed();
+        break;
+    case SCENARIO_TRACING:
+        angle_specification();
+        break;
+    default:
+        break;
+    }
+
+}
+
+void ArmControl::first_angle(){
+    float theta2=mArm->get_value();
+    mMotor_Arm.setPWM(-1);
+    printf("F:%f\n",theta2);
+        if(theta2 <= -50){
+            mState=LINE_TRACING;
+            }
+}
+
+void ArmControl::angle_fixed(){
+    float dire=0.0;
+    if(Brake_Mood==false){
+        mMotor_Arm.setBrake(Brake_Mood);
+         mMotor_Arm.setPWM(dire);
+        printf("F2:%f\n",mArm->get_value());
+    }else{
+        mState=SCENARIO_TRACING;
+    }
+}
 
 void ArmControl::angle_specification(){
 
@@ -18,7 +57,6 @@ void ArmControl::angle_specification(){
     float theta2=mArm->get_value();
     dire=mPID->getOperation(theta2);
     mMotor_Arm.setPWM(dire);
-    printf("%f\n",dire);
 }
 
 void ArmControl::init(double status[]){
@@ -33,9 +71,3 @@ void ArmControl::init(double status[]){
     mPID->setTarget(theta);
 }
 
-void ArmControl::run(){
-   
-
-//if
-    angle_specification();
-}
