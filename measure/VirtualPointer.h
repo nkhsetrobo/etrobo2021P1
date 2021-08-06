@@ -10,7 +10,7 @@
 #define M_PI 3.14159265358979323846//π
 #define D_LEFT 9.0//タイヤの円周
 #define D_RIGHT 9.0//タイヤの円周
-#define TREAD 13.6//車体幅
+#define TREAD 14.1//車体幅 元13.8
 
 
 class VirtualPointer{
