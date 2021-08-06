@@ -22,6 +22,9 @@
 #include "Arm.h"
 #include "ArmControl.h"
 
+
+#include "SonarSensor.h"
+
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
 void *__dso_handle=0;
