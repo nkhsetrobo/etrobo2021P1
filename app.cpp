@@ -42,7 +42,7 @@ Motor       gRightWheel(PORT_B);
 Clock       gClock;
 
 // オブジェクトの定義
-static Drive           *gDrive;
+Drive           *gDrive;
 static ColorMeasure    *gColorMeasure;
 Walker          *gWalker;
 static Starter         *gStarter;

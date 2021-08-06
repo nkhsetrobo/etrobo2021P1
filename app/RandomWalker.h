@@ -21,6 +21,7 @@
 #include "Distance_Judge.h"
 #include "Section.h"    //de
 #include "enum.h"    //de
+#include "Drive.h"
 
 class RandomWalker {
 public:

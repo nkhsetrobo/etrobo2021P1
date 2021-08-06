@@ -29,7 +29,7 @@ APPL_CXXOBJS += \
 	Turn_Judge.o\
 	Distance_Judge.o\
 	VirtualStraight.o\
-	Section.o
+	Section.o \
 	ArmControl.o
 
 

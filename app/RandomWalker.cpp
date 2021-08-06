@@ -11,6 +11,7 @@
 
 #include "RandomWalker.h"
 
+extern Drive*   gDrive;
 extern Bright_Judge *gBright_Judge;
 extern Turn_Judge *gTurn_Judge;
 extern Distance_Judge *gDistance_Judge;
@@ -125,8 +126,13 @@ void RandomWalker::execWaitingForStart() {
 void RandomWalker::execLineTracing() {
    
     //mVirtualStraight->run();
+    
     bool x = mSection->run();    //デバック用
-    printf("%d\n",x);
+    //printf("%d\n",x);   
+    
+    if(x==true){
+        gDrive->run(0,0);
+    }
 
     if (mSimpleTimer->isTimedOut()) {
         mSimpleTimer->stop();
