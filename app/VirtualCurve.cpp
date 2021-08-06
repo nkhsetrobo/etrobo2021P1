@@ -1,7 +1,7 @@
 #include "VirtualCurve.h"
 
-VirtualCurve::VirtualCurve(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn)
-    :Walker(drive,bright,xpointer,ypointer,turn),
+VirtualCurve::VirtualCurve(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm)
+    :Walker(drive,bright,xpointer,ypointer,turn,arm),
     mIsInitialized(false),
     rx(0),
     ry(0),

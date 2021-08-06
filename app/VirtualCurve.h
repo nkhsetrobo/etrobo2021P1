@@ -5,7 +5,7 @@
 
 class VirtualCurve : public Walker{
     public:
-        VirtualCurve(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn);
+        VirtualCurve(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm);
         void run();
         void init(double status[]);
     private:

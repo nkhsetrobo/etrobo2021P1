@@ -30,6 +30,7 @@ APPL_CXXOBJS += \
 	Distance_Judge.o\
 	VirtualStraight.o\
 	Section.o
+	ArmControl.o
 
 
 SRCLANG := c++
