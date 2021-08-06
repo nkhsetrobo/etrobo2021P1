@@ -1,7 +1,7 @@
 #include "VirtualStraight.h"
 
-VirtualStraight::VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn)
-    :Walker(drive,bright,xpointer,ypointer,turn),
+VirtualStraight::VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm)
+    :Walker(drive,bright,xpointer,ypointer,turn,arm),
     mIsInitialized(false),
     sx(0),
     sy(0),

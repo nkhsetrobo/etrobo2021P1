@@ -12,15 +12,18 @@
 class MotorControl{
     public:
         explicit MotorControl( ev3api::Motor& leftWheel,
-                    ev3api::Motor& rightWheel);
+                    ev3api::Motor& rightWheel,
+                    ev3api::Motor& motor_arm);
         void runcontrol(int rPWM,int lPWM);
+        void setMotor(int aPWM);
         int get_rightMotor();
         int get_leftMotor();
-        //void armcontrol(int PWM);
+        int get_motor_arm();
         //void tailcontrol(int PWM);
     private:
         ev3api::Motor& mLeftWheel;
         ev3api::Motor& mRightWheel;
+        ev3api::Motor& mMotor_Arm;
         //Tail* mTail;
         //Arm* mArm;
         //Turn* mTurn;

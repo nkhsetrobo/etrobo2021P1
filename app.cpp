@@ -19,6 +19,8 @@
 #include "Turn.h"
 #include "Odometer.h"
 #include "VirtualStraight.h"
+#include "Arm.h"
+#include "ArmControl.h"
 
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
@@ -34,6 +36,7 @@ using ev3api::Clock;
 // オブジェクトを静的に確保する
 ColorSensor gColorSensor(PORT_2);
 TouchSensor gTouchSensor(PORT_1);
+Motor       gMotor_Arm(PORT_A);
 Motor       gLeftWheel(PORT_C);
 Motor       gRightWheel(PORT_B);
 Clock       gClock;
@@ -61,9 +64,11 @@ static Speedmeter      *gSpeedmeter;
 Bright_Judge    *gBright_Judge;
 Distance_Judge  *gDistance_Judge;
 Turn_Judge      *gTurn_Judge;
+static Arm             *gArm;
 static Main_Judge      *gMain_Judge;
 Bright          *gBright;
 static VirtualPointer  *gVirtualPointer;
+static ArmControl *gArmControl;
 // scene object
 static Scene gScenes[] = {
     { TURN_LEFT,   1250 * 1000, 0 },  // 左旋回1.25秒
@@ -83,23 +88,25 @@ static void user_system_create() {
     gStarter         = new Starter(gTouchSensor);
     gScenarioTimer   = new SimpleTimer(gClock);
     gWalkerTimer     = new SimpleTimer(gClock);
-    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel);
+    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm);
     gDrive           = new Drive(gMotorControl);
     gMain_Measure    = new Main_Measure();
     gBright          = new Bright();
+    gArm             = new Arm();
     gXpointer        = new Xpointer();
     gYpointer        = new Ypointer();
     gOdometer        = new Odometer();
     gTurn            = new Turn();
     gSpeedmeter      = new Speedmeter();
-    gWalker          = new Walker(gDrive,gBright,gXpointer,gYpointer,gTurn);
+    gWalker          = new Walker(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
     gMain_Judge      = new Main_Judge();
     gBright_Judge    = new Bright_Judge();
     gDistance_Judge  = new Distance_Judge();
     gTurn_Judge      = new Turn_Judge();
-    gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn);
-    gVirtualStraight = new VirtualStraight(gDrive,gBright,gXpointer,gYpointer,gTurn);
-    gVirtualCurve    = new VirtualCurve(gDrive,gBright,gXpointer,gYpointer,gTurn);
+    gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
+    gArmControl      = new ArmControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
+    gVirtualStraight = new VirtualStraight(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
+    gVirtualCurve    = new VirtualCurve(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
     gScenario        = new Scenario(0);
     gScenarioTracer  = new ScenarioTracer(gDrive,
                                           gWalker,
@@ -112,7 +119,7 @@ static void user_system_create() {
                                         gStarter,
                                         gWalkerTimer);
     gColorMeasure    = new ColorMeasure(gColorSensor,gBright);
-    gVirtualPointer  = new VirtualPointer(gMotorControl,gXpointer,gYpointer,gOdometer,gTurn);
+    gVirtualPointer  = new VirtualPointer(gMotorControl,gXpointer,gYpointer,gOdometer,gTurn,gArm);
 
     // シナリオを構築する
     for (uint32_t i = 0; i < (sizeof(gScenes)/sizeof(gScenes[0])); i++) {
@@ -128,6 +135,7 @@ static void user_system_create() {
 static void user_system_destroy() {
     gLeftWheel.reset();
     gRightWheel.reset();
+    gMotor_Arm.reset();
 
     delete gRandomWalker;
     delete gScenarioTracer;
@@ -176,7 +184,10 @@ void tracer_task(intptr_t exinf) {
         /*gLineTracer->init();
         gLineTracer->run();*/
         gRandomWalker->run();
-
+        double status[]={0,-50};
+        gArmControl->init(status);
+        gArmControl->run();
+        
     }
 
     ext_tsk();

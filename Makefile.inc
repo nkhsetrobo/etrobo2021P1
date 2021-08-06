@@ -28,7 +28,8 @@ APPL_CXXOBJS += \
 	Bright_Judge.o\
 	Turn_Judge.o\
 	Distance_Judge.o\
-	VirtualStraight.o
+	VirtualStraight.o\
+	ArmControl.o
 
 
 SRCLANG := c++

@@ -4,7 +4,7 @@
 #include "math.h"
 class VirtualStraight : Walker{
     public:
-        VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn);
+        VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm);
         void run();
         void init(double status[]);
     private:

@@ -6,12 +6,13 @@
 #include "Xpointer.h"
 #include "Ypointer.h"
 #include "Turn.h"
+#include "Arm.h"
 
 class Walker{
     public:
-        Walker(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn);
-        void run();
-        void init();
+        Walker(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm);
+        virtual void run();
+        virtual void init(double status[]);
         void setCommand(int forward, int turn);
         Drive* mDrive;
         PID* mPID;
@@ -19,6 +20,7 @@ class Walker{
         Xpointer* mXpointer;
         Ypointer* mYpointer;
         Turn*   mTurn;
+        Arm* mArm;
 
     private:
         int tForward;

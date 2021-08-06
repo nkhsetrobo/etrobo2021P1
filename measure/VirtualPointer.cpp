@@ -1,13 +1,14 @@
 #include "VirtualPointer.h"
 
 VirtualPointer::VirtualPointer(MotorControl* motorcontrol,Xpointer* xpointer,Ypointer* ypointer,
-                            Odometer* odometer,Turn* turn)
+                            Odometer* odometer,Turn* turn,Arm* arm)
     :
         mMotorControl(motorcontrol),
         mXpointer(xpointer),
         mYpointer(ypointer),
         mOdometer(odometer),
         mTurn(turn),
+        mArm(arm),
         current_rs1(0.0),//getcount
         current_rs2(0.0),//getcount
         prev_rs1(0.0),//値保持
@@ -15,7 +16,9 @@ VirtualPointer::VirtualPointer(MotorControl* motorcontrol,Xpointer* xpointer,Ypo
         th(0.0),
         x(0.0),//xpointer
         y(0.0),//ypointer
-        sumlen(0.0)//odometer
+        sumlen(0.0),//odometer
+
+        armtheta(5.0)
         {
         }
 
@@ -24,6 +27,7 @@ void VirtualPointer::calc()
 {
     current_rs1=mMotorControl->get_rightMotor();
     current_rs2=mMotorControl->get_leftMotor();
+
 
 	float rs1 = current_rs1;
 	float rs2 = current_rs2;
@@ -43,4 +47,7 @@ void VirtualPointer::calc()
     //mSpeedmeter->load();
     prev_rs1=rs1;
     prev_rs2=rs2;
+
+    armtheta=mMotorControl->get_motor_arm();
+    mArm->load(armtheta);
 }
