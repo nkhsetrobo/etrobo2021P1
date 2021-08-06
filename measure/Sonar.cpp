@@ -1,22 +1,15 @@
 #include "Sonar.h"
 
-Sonar::Sonar()
-    : Main_Measure()
+Sonar::Sonar(const ev3api::SonarSensor& sonarsensor,SonarMeasure* sonarmeasure)
+    :mSonarSensor(sonarsensor),
+    mSonarMeasure(sonarmeasure)
 {
-    
 }
 
-void Sonar::load(float mload)
-{
-    Svalue=mload;
-}
 
-float Sonar::get_value()
+void Sonar::get_dis()
 {
-    return Svalue;
-}
-
-void Sonar::init()
-{
-
+    int dis=mSonarSensor.getDistance();
+    printf("%d\n",dis);
+    mSonarMeasure->load(dis);
 }

@@ -5,7 +5,7 @@ class Main_Measure{
     public:
         Main_Measure();
         virtual float  get_value();
-        void load(float mload);
+        virtual void load(float mload);
 
 
 };

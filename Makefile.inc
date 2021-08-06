@@ -31,6 +31,7 @@ APPL_CXXOBJS += \
 	VirtualStraight.o\
 	ArmControl.o\
 	Sonar.o\
+	SonarMeasure.o\
 	Section.o 
 
 
