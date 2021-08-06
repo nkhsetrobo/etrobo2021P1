@@ -2,7 +2,8 @@
 #define EV3_APP_VIRTUALCURVE_H_
 #include "Walker.h"
 #include "math.h"
-class VirtualCurve : Walker{
+
+class VirtualCurve : public Walker{
     public:
         VirtualCurve(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn);
         void run();

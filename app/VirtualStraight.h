@@ -2,7 +2,8 @@
 #define EV3_APP_VIRTUALSTRAIGHT_H_
 #include "Walker.h"
 #include "math.h"
-class VirtualStraight : Walker{
+
+class VirtualStraight : public Walker{
     public:
         VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn);
         void run();

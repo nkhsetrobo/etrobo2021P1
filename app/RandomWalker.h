@@ -19,6 +19,8 @@
 #include "Bright_Judge.h"
 #include "Turn_Judge.h"
 #include "Distance_Judge.h"
+#include "Section.h"    //de
+#include "enum.h"    //de
 
 class RandomWalker {
 public:
@@ -28,7 +30,7 @@ public:
                  ScenarioTracer* scenarioTracer,
                  const Starter* starter,
                  SimpleTimer* simpleTimer);
-                void run();
+        void run();
 
 private:
     enum State {
@@ -58,6 +60,8 @@ private:
     void execWaitingForStart();
     void execLineTracing();
     void execScenarioTracing();
+
+    Section* mSection;  //デバック用
 };
 
 #endif  // EV3_APP_RANDOMWALKER_H_

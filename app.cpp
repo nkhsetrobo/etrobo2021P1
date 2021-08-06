@@ -41,13 +41,13 @@ Clock       gClock;
 // オブジェクトの定義
 static Drive           *gDrive;
 static ColorMeasure    *gColorMeasure;
-static Walker          *gWalker;
+Walker          *gWalker;
 static Starter         *gStarter;
 static SimpleTimer     *gScenarioTimer;
 static SimpleTimer     *gWalkerTimer;
-static LineTracer      *gLineTracer;
-static VirtualCurve    *gVirtualCurve;
-static VirtualStraight *gVirtualStraight;
+LineTracer      *gLineTracer;
+VirtualCurve    *gVirtualCurve;
+VirtualStraight *gVirtualStraight;
 static Scenario        *gScenario;
 static ScenarioTracer  *gScenarioTracer;
 static RandomWalker    *gRandomWalker;
@@ -138,7 +138,7 @@ static void user_system_destroy() {
     delete gWalkerTimer;
     delete gScenarioTimer;
     delete gStarter;
-       
+    
     
     
     

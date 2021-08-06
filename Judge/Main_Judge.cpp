@@ -14,7 +14,7 @@ void Main_Judge::run(){
 
 }
 
-float get_value(float value){
+float Main_Judge::get_value(float value){
     return value;
 }
 
@@ -23,6 +23,11 @@ bool Main_Judge::judge()
     return false;
 }
 
-void init(){
+void Main_Judge::set_param(double status[])
+{
+
+}
+
+void Main_Judge::init(){
     
 }
