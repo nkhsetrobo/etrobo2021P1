@@ -10,13 +10,14 @@
 class Main_Judge{
     public:
         Main_Judge();
-        void run();
-        float get_value(float value);
-        void init();
-        bool judge();
-        Bright* mBright;
-        Turn* mTurn;
-        Odometer* mOdometer;
+        virtual void run();
+        virtual float get_value(float value);
+        virtual void init();
+        virtual bool judge();
+        virtual void set_param(double status[]);
+        Bright*     mBright;
+        Turn*       mTurn;
+        Odometer*   mOdometer;
 
     private:
         

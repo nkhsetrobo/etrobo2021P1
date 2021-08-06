@@ -10,6 +10,8 @@
 #include "Clock.h"
 
 #include "RandomWalker.h"
+
+extern Drive*   gDrive;
 extern Bright_Judge *gBright_Judge;
 extern Turn_Judge *gTurn_Judge;
 extern Distance_Judge *gDistance_Judge;
@@ -106,7 +108,14 @@ void RandomWalker::execWaitingForStart() {
         */
 
         double status[]={30,5,1,30,-45};
-        mVirtualStraight->init(status);
+        //mVirtualStraight->init(status);
+
+        mSection = new Section();
+        double walker_status[]={30,5,1,20,0,0};
+        double judge_status[]={15};
+        mSection->set_param(LINETRACER, walker_status, 
+                            DISTANCE, judge_status); 
+
         modeChangeAction();
     }
 }
@@ -116,8 +125,14 @@ void RandomWalker::execWaitingForStart() {
  */
 void RandomWalker::execLineTracing() {
    
+    //mVirtualStraight->run();
     
-    mVirtualStraight->run();
+    bool x = mSection->run();    //デバック用
+    //printf("%d\n",x);   
+    
+    if(x==true){
+        gDrive->run(0,0);
+    }
 
     if (mSimpleTimer->isTimedOut()) {
         mSimpleTimer->stop();

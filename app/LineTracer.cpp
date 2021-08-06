@@ -43,8 +43,9 @@ void LineTracer::run() {
     // 走行体の向きを計算する
     // 走行を行う
     mDrive->run(forw,dire);
+    //printf("%f,%f\n",forw,dire);
+
 }
-    
 
 
 void LineTracer::init(double status[]){
@@ -59,5 +60,7 @@ void LineTracer::init(double status[]){
     forw=status[3];
     edge=status[4];
     bias=status[5];
+
+    //printf("%f,%f,%f,%f,%f,%f\n",p,i,d,forw,edge,bias);
 
 }

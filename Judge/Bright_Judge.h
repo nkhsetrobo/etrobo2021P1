@@ -2,11 +2,12 @@
 #define EV3_JUDGE_BRIGHTJUDGE_H_
 #include "Main_Judge.h"
 
-class Bright_Judge : Main_Judge{
+class Bright_Judge : public Main_Judge{
     public:
         Bright_Judge();
         bool judge();
-        void init(double status[]);
+        void set_param(double status[]);
+        void init();
     private:
         float bvalue;
         float baseline;//判断基準（ゆーざーがきめる）

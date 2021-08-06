@@ -25,20 +25,20 @@ class PID {
         bool debug = false;
         char debug_char=' ';
     private:
-       float diff[2];
-       float integral;
+        float diff[2];
+        float integral;
         float last_integral[40];
-       float target;
-       float limit; 
-       float delta;
-       float Kp;
-       float Ki;
-       float Kd;
-       float DELTAT;
+        float target;
+        float limit; 
+        float delta;
+        float Kp;
+        float Ki;
+        float Kd;
+        float DELTAT;
+        
+        float tgt_limit;
 
-       float tgt_limit;
-
-       bool resetFlg;
+        bool resetFlg;
 
         int sec;
         int cnt;

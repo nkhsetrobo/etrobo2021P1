@@ -18,12 +18,13 @@ void Walker::run()
     mDrive->run(tForward,tTurn);
 
 }
-void Walker::init(double status[])
-{
-    
-}
 
 void Walker::setCommand(int forward, int turn) {
     tForward = forward;
     tTurn    = turn;
+}
+
+void Walker::init(double status[])
+{
+
 }

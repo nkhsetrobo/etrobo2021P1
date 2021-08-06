@@ -27,7 +27,12 @@ bool Bright_Judge::judge()
     
 }
 
-void Bright_Judge::init(double status[]){
+void Bright_Judge::set_param(double status[]){
     baseline=status[0];
     value=status[1];
+}
+
+void Bright_Judge::init()
+{
+    
 }

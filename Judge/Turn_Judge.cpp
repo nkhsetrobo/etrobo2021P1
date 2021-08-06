@@ -19,7 +19,12 @@ bool Turn_Judge::judge()
     }
 }
 
-void Turn_Judge::init(double status[])
+void Turn_Judge::set_param(double status[])
 {
     baseline=status[0];
+}
+
+void Turn_Judge::init()
+{
+
 }

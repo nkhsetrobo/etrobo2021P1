@@ -11,7 +11,7 @@
 
 #include "Walker.h"
 
-class LineTracer : Walker{
+class LineTracer : public Walker{
     public:
         LineTracer(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm);
         void run();
