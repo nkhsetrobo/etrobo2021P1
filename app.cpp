@@ -92,7 +92,7 @@ static void user_system_create() {
     gStarter         = new Starter(gTouchSensor);
     gScenarioTimer   = new SimpleTimer(gClock);
     gWalkerTimer     = new SimpleTimer(gClock);
-    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm,/*gSonarSensor*/);
+    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm/*gSonarSensor*/);
     gDrive           = new Drive(gMotorControl);
     gMain_Measure    = new Main_Measure();
     gBright          = new Bright();
@@ -140,7 +140,7 @@ static void user_system_destroy() {
     gLeftWheel.reset();
     gRightWheel.reset();
     gMotor_Arm.reset();
-    gSonarSensor.reset();
+    //gSonarSensor.reset();
     
     delete gRandomWalker;
     delete gScenarioTracer;
