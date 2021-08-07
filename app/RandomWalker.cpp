@@ -15,6 +15,7 @@ extern Drive*   gDrive;
 extern Bright_Judge *gBright_Judge;
 extern Turn_Judge *gTurn_Judge;
 extern Distance_Judge *gDistance_Judge;
+
 // 定数宣言
 const int RandomWalker::MIN_TIME = 5000 * 1000;    // 切り替え時間の最小値
 const int RandomWalker::MAX_TIME = 15000 * 1000;   // 切り替え時間の最大値
@@ -110,11 +111,14 @@ void RandomWalker::execWaitingForStart() {
         double status[]={30,5,1,30,-45};
         //mVirtualStraight->init(status);
 
-        mSection = new Section();
-        double walker_status[]={30,5,1,20,0,0};
-        double judge_status[]={15};
-        mSection->set_param(LINETRACER, walker_status, 
-                            DISTANCE, judge_status); 
+        /*mSection = new Section();
+        double walker_status[]={30,1,5,30,-40};
+        double judge_status[]={30};
+        mSection->set_param(STRAIGHT, walker_status, 
+                            TURN, judge_status); */
+        
+        mSection_management = new Section_management();
+
 
         modeChangeAction();
     }
@@ -127,8 +131,10 @@ void RandomWalker::execLineTracing() {
    
     //mVirtualStraight->run();
     
-    bool x = mSection->run();    //デバック用
-    //printf("%d\n",x);   
+    //bool x = mSection->run();    //デバック用
+    //printf("%d\n",x);
+
+    bool x = mSection_management->do_run();   
     
     if(x==true){
         gDrive->run(0,0);
