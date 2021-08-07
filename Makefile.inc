@@ -31,7 +31,8 @@ APPL_CXXOBJS += \
 	VirtualStraight.o\
 	ArmControl.o\
 	Sonar.o\
-	Section.o 
+	Section.o \
+	Section_management.o
 
 
 SRCLANG := c++

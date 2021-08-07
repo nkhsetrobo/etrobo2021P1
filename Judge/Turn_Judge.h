@@ -12,6 +12,7 @@ class Turn_Judge : public Main_Judge{
         Main_Judge* mMain_Judge;
         float tvalue;
         float baseline;
+        float diff;
 
 };
 #endif 

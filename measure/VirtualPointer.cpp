@@ -25,8 +25,8 @@ VirtualPointer::VirtualPointer(MotorControl* motorcontrol,Xpointer* xpointer,Ypo
         
 void VirtualPointer::calc()
 {
-    current_rs1=mMotorControl->get_rightMotor();
-    current_rs2=mMotorControl->get_leftMotor();
+    current_rs1=mMotorControl->get_leftMotor();
+    current_rs2=mMotorControl->get_rightMotor();
 
 
 	float rs1 = current_rs1;

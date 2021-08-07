@@ -70,12 +70,12 @@ void VirtualStraight::init(double status[]){
     gy=sin(theta)+y;
 
     mPID->setTarget(0);
-    printf("%f,%f,%f,%f\n",sx,sy,gx,gy);
+   // printf("init %f,%f,%f,%f,%f\n",sx,sy,gx,gy,theta);
 }
 
 float VirtualStraight::calc_distance(float X,float Y,float x1,
                                         float y1,float x2,float y2){
-    float dis=((y2 - y1)*X -(x2 - x1)*Y + x2*y1 - y2*x1);
-    //printf("%f\n",-dis);
+    double dis=((double)(y2 - y1)*X -(x2 - x1)*Y + (x2*y1 - y2*x1));
+   // printf("dis %f,%f,%f,%f,%f\n",-dis,(y2 - y1), (x2 - x1), x2*y1, y2*x1);
     return -dis;
 }

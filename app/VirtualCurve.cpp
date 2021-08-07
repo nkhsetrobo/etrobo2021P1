@@ -33,9 +33,9 @@ void VirtualCurve::run(){
     x=body*cos(theta)+x;
     y=body*sin(theta)+y;
     float distance=calc_distance(rx,ry,x,y);
-    printf("%f,%f,%f,%f\n",x,y,rx,ry);
+    //printf("%f,%f,%f,%f\n",x,y,rx,ry);
     dire=mPID->getOperation(distance);
-    if(0>mdistance)//左回りのときに入る
+    if(0<mdistance)//左回りのときに入る
     {
         dire=dire*-1.0;
     }  
@@ -64,18 +64,18 @@ void VirtualCurve::init(double status[]){
     float y=mYpointer->get_value();//機体のy座標
     float theta=mTurn->get_value();//角度
 
-    sx=body*cos(theta)+x;
-    sy=body*sin(theta)+y;
+    sx = body*cos(theta)+x;
+    sy = body*sin(theta)+y;
     
-    rx=x+mdistance*sin(theta);
-    ry=y+mdistance*cos(theta);
+    rx = x-mdistance*sin(theta);
+    ry = y+mdistance*cos(theta);
     
     mPID->setTarget(fabs(mdistance));
-    printf("%f,%f,%f,%f\n",sx,sy,rx,ry);
+    //printf("%f,%f,%f,%f\n",sx,sy,rx,ry);
 }
 
 float VirtualCurve::calc_distance(float x1,float y1,float x2,float y2){
     float dis=sqrt(pow(x1-x2,2)+pow(y1-y2,2));
-    printf ("%f\n",dis);
+    //printf ("%f\n",dis);
     return dis;
 }

@@ -28,8 +28,8 @@ bool Bright_Judge::judge()
 }
 
 void Bright_Judge::set_param(double status[]){
-    baseline=status[0];
-    value=status[1];
+    baseline=status[0]; //値は1以上
+    value=status[1];    //値は1以上
 }
 
 void Bright_Judge::init()

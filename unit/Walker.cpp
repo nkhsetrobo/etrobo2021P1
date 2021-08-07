@@ -26,5 +26,5 @@ void Walker::setCommand(int forward, int turn) {
 
 void Walker::init(double status[])
 {
-
+    setCommand(status[0], status[1]);
 }

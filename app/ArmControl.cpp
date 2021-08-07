@@ -34,7 +34,7 @@ void ArmControl::run(){
 void ArmControl::first_angle(){
     float theta2=mArm->get_value();
     mMotor_Arm.setPWM(-1);
-    printf("F:%f\n",theta2);
+    //printf("F:%f\n",theta2);
         if(theta2 <= -50){
             mState=LINE_TRACING;
             }
@@ -45,7 +45,7 @@ void ArmControl::angle_fixed(){
     if(Brake_Mood==false){
         mMotor_Arm.setBrake(Brake_Mood);
          mMotor_Arm.setPWM(dire);
-        printf("F2:%f\n",mArm->get_value());
+        //printf("F2:%f\n",mArm->get_value());
     }else{
         mState=SCENARIO_TRACING;
     }

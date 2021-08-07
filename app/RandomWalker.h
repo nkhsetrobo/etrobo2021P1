@@ -21,6 +21,7 @@
 #include "Distance_Judge.h"
 #include "Section.h"    //de
 #include "enum.h"    //de
+#include "Section_management.h"//de
 #include "Drive.h"
 
 class RandomWalker {
@@ -63,6 +64,7 @@ private:
     void execScenarioTracing();
 
     Section* mSection;  //デバック用
+    Section_management* mSection_management;
 };
 
 #endif  // EV3_APP_RANDOMWALKER_H_

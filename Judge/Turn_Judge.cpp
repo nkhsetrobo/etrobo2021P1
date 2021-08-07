@@ -1,4 +1,5 @@
 #include "Turn_Judge.h"
+#include "Section_management.h"
 
 Turn_Judge::Turn_Judge()
     : Main_Judge(),
@@ -12,16 +13,27 @@ Turn_Judge::Turn_Judge()
 bool Turn_Judge::judge()
 {
     tvalue=mTurn->get_value();
-    if(tvalue<baseline){/**/
-        return true;
+    if(diff>=0){
+        if(tvalue>=baseline){/**/
+            return true;
+        }else{
+            return false;
+        }
     }else{
-        return false;
+        if(tvalue<=baseline){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
 
 void Turn_Judge::set_param(double status[])
 {
-    baseline=status[0];
+    float pi = 3.142592;
+    baseline = pi*(status[0])/180+Section_management::ANG;
+    diff = baseline - mTurn->get_value();
+    //printf("baseline %f,%f\n",baseline,Section_management::ANG);
 }
 
 void Turn_Judge::init()

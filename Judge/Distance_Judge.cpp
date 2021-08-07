@@ -1,4 +1,5 @@
 #include "Distance_Judge.h"
+#include "Section_management.h"
 
 Distance_Judge::Distance_Judge()
     : Main_Judge(),
@@ -20,7 +21,7 @@ bool Distance_Judge::judge()
 
 void Distance_Judge::set_param(double status[])
 {
-    baseline=status[0];
+    baseline=status[0]+Section_management::DIST;
 }
 
 void Distance_Judge::init()
