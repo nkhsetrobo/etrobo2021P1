@@ -21,6 +21,9 @@
 #include "VirtualStraight.h"
 #include "Arm.h"
 #include "ArmControl.h"
+#include "Sonar.h"
+#include "SonarMeasure.h"
+#include "SonarSensor.h"
 
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
@@ -39,7 +42,7 @@ using namespace ev3api;
 // オブジェクトを静的に確保する
 ColorSensor gColorSensor(PORT_2);
 TouchSensor gTouchSensor(PORT_1);
-/*SonarSensor gSonorSensor(PORT_3);*/
+SonarSensor gSonarSensor(PORT_3);
 Motor       gMotor_Arm(PORT_A);
 Motor       gLeftWheel(PORT_C);
 Motor       gRightWheel(PORT_B);
@@ -48,6 +51,8 @@ Clock       gClock;
 // オブジェクトの定義
 Drive           *gDrive;
 static ColorMeasure    *gColorMeasure;
+static Sonar           *gSonar;
+static SonarMeasure    *gSonarMeasure;
 Walker          *gWalker;
 static Starter         *gStarter;
 static SimpleTimer     *gScenarioTimer;
@@ -92,10 +97,11 @@ static void user_system_create() {
     gStarter         = new Starter(gTouchSensor);
     gScenarioTimer   = new SimpleTimer(gClock);
     gWalkerTimer     = new SimpleTimer(gClock);
-    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm/*gSonarSensor*/);
+    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm);
     gDrive           = new Drive(gMotorControl);
     gMain_Measure    = new Main_Measure();
     gBright          = new Bright();
+    gSonarMeasure    = new SonarMeasure();
     gArm             = new Arm();
     gXpointer        = new Xpointer();
     gYpointer        = new Ypointer();
@@ -123,6 +129,7 @@ static void user_system_create() {
                                         gStarter,
                                         gWalkerTimer);
     gColorMeasure    = new ColorMeasure(gColorSensor,gBright);
+    gSonar           = new Sonar(gSonarSensor,gSonarMeasure);
     gVirtualPointer  = new VirtualPointer(gMotorControl,gXpointer,gYpointer,gOdometer,gTurn,gArm);
 
     // シナリオを構築する
@@ -140,7 +147,6 @@ static void user_system_destroy() {
     gLeftWheel.reset();
     gRightWheel.reset();
     gMotor_Arm.reset();
-    //gSonarSensor.reset();
     
     delete gRandomWalker;
     delete gScenarioTracer;
@@ -150,10 +156,7 @@ static void user_system_destroy() {
     delete gWalker;
     delete gWalkerTimer;
     delete gScenarioTimer;
-    delete gStarter;
-    
-    
-    
+    delete gStarter;    
     
 }
 
@@ -201,5 +204,6 @@ void tracer_task(intptr_t exinf) {
 void polling_task(intptr_t exinf) {
    gColorMeasure->get_rgb();
    gVirtualPointer->calc();
+   gSonar->get_dis();
     ext_tsk();
 }
