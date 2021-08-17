@@ -10,6 +10,6 @@ Sonar::Sonar(const ev3api::SonarSensor& sonarsensor,SonarMeasure* sonarmeasure)
 void Sonar::get_dis()
 {
     int dis=mSonarSensor.getDistance();
-    printf("%d\n",dis);
+    //printf("%d\n",dis);
     mSonarMeasure->load(dis);
 }

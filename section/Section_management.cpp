@@ -77,7 +77,7 @@ void Section_management::update(int update_dist)
             break;
         case UPDATE_ANG:
             ANG = gTurn->get_value();
-            //printf("ANG %f\n",ANG);
+            printf("ANG %f\n",ANG);
             break;
     }
 }
