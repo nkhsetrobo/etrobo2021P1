@@ -24,6 +24,8 @@
 #include "Sonar.h"
 #include "SonarMeasure.h"
 #include "SonarSensor.h"
+#include "Tail.h"
+#include "TailControl.h"
 
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
@@ -46,6 +48,7 @@ SonarSensor gSonarSensor(PORT_3);
 Motor       gMotor_Arm(PORT_A);
 Motor       gLeftWheel(PORT_C);
 Motor       gRightWheel(PORT_B);
+Motor       gMotor_Tail(PORT_D,true,MEDIUM_MOTOR);
 Clock       gClock;
 
 // オブジェクトの定義
@@ -58,6 +61,8 @@ static Starter         *gStarter;
 static SimpleTimer     *gScenarioTimer;
 static SimpleTimer     *gWalkerTimer;
 LineTracer      *gLineTracer;
+static ArmControl *gArmControl;
+static TailControl *gTailControl;
 VirtualCurve    *gVirtualCurve;
 VirtualStraight *gVirtualStraight;
 static Scenario        *gScenario;
@@ -73,11 +78,11 @@ static Speedmeter      *gSpeedmeter;
 Bright_Judge    *gBright_Judge;
 Distance_Judge  *gDistance_Judge;
 Turn_Judge      *gTurn_Judge;
-static Arm             *gArm;
+static Arm       *gArm;
+static Tail      *gTail;
 static Main_Judge      *gMain_Judge;
 Bright          *gBright;
 static VirtualPointer  *gVirtualPointer;
-static ArmControl *gArmControl;
 // scene object
 static Scene gScenes[] = {
     { TURN_LEFT,   1250 * 1000, 0 },  // 左旋回1.25秒
@@ -97,26 +102,28 @@ static void user_system_create() {
     gStarter         = new Starter(gTouchSensor);
     gScenarioTimer   = new SimpleTimer(gClock);
     gWalkerTimer     = new SimpleTimer(gClock);
-    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm);
+    gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm,gMotor_Tail);
     gDrive           = new Drive(gMotorControl);
     gMain_Measure    = new Main_Measure();
     gBright          = new Bright();
     gSonarMeasure    = new SonarMeasure();
     gArm             = new Arm();
+    gTail            = new Tail();
     gXpointer        = new Xpointer();
     gYpointer        = new Ypointer();
     gOdometer        = new Odometer();
     gTurn            = new Turn();
     gSpeedmeter      = new Speedmeter();
-    gWalker          = new Walker(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
+    gWalker          = new Walker(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gMain_Judge      = new Main_Judge();
     gBright_Judge    = new Bright_Judge();
     gDistance_Judge  = new Distance_Judge();
     gTurn_Judge      = new Turn_Judge();
-    gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
-    gArmControl      = new ArmControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
-    gVirtualStraight = new VirtualStraight(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
-    gVirtualCurve    = new VirtualCurve(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm);
+    gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
+    gArmControl      = new ArmControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
+    gTailControl     = new TailControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
+    gVirtualStraight = new VirtualStraight(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
+    gVirtualCurve    = new VirtualCurve(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gScenario        = new Scenario(0);
     gScenarioTracer  = new ScenarioTracer(gDrive,
                                           gWalker,
@@ -130,7 +137,7 @@ static void user_system_create() {
                                         gWalkerTimer);
     gColorMeasure    = new ColorMeasure(gColorSensor,gBright);
     gSonar           = new Sonar(gSonarSensor,gSonarMeasure);
-    gVirtualPointer  = new VirtualPointer(gMotorControl,gXpointer,gYpointer,gOdometer,gTurn,gArm);
+    gVirtualPointer  = new VirtualPointer(gMotorControl,gXpointer,gYpointer,gOdometer,gTurn,gArm,gTail);
 
     // シナリオを構築する
     for (uint32_t i = 0; i < (sizeof(gScenes)/sizeof(gScenes[0])); i++) {
@@ -147,6 +154,7 @@ static void user_system_destroy() {
     gLeftWheel.reset();
     gRightWheel.reset();
     gMotor_Arm.reset();
+    gMotor_Tail.reset();
     
     delete gRandomWalker;
     delete gScenarioTracer;

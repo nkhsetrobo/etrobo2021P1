@@ -7,6 +7,7 @@
 #include "Turn.h"
 #include "math.h"
 #include "Arm.h"
+#include "Tail.h"
 #define M_PI 3.14159265358979323846//π
 #define D_LEFT 9.0//タイヤの円周
 #define D_RIGHT 9.0//タイヤの円周
@@ -16,7 +17,7 @@
 class VirtualPointer{
     public:
         VirtualPointer(MotorControl* motorcontrol,Xpointer* xpointer,Ypointer* ypointer,
-                            Odometer* odometer,Turn* turn,Arm* arm);
+                            Odometer* odometer,Turn* turn,Arm* arm,Tail* tail);
         void calc();
     private:
         MotorControl* mMotorControl;
@@ -25,6 +26,7 @@ class VirtualPointer{
         Odometer* mOdometer;
         Turn* mTurn;
         Arm* mArm;
+        Tail* mTail;
         float current_rs1;
         float current_rs2;
         float prev_rs1;

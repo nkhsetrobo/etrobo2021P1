@@ -8,14 +8,17 @@
 
 MotorControl::MotorControl( ev3api::Motor& leftWheel,
                             ev3api::Motor& rightWheel,
-                            ev3api::Motor& motor_arm)
+                            ev3api::Motor& motor_arm,
+                            ev3api::Motor& motor_tail)
                     : mLeftWheel(leftWheel),
                       mRightWheel(rightWheel),
-                      mMotor_Arm(motor_arm)
+                      mMotor_Arm(motor_arm),
+                      mMotor_Tail(motor_tail)
                       {
       mLeftWheel.reset();
       mRightWheel.reset();
       mMotor_Arm.reset();
+      mMotor_Tail.reset();
 
 }
 
@@ -36,6 +39,10 @@ int MotorControl::get_rightMotor(){
 }
 int MotorControl::get_motor_arm(){
   return mMotor_Arm.getCount();
+}
+
+int MotorControl::get_motor_tail(){
+  return mMotor_Tail.getCount();
 }
 
 

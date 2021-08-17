@@ -5,7 +5,7 @@
 
 class VirtualStraight : public Walker{
     public:
-        VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm);
+        VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail);
         void run();
         void init(double status[]);
     private:

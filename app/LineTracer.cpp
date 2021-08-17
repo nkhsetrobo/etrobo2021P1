@@ -13,8 +13,8 @@
  * @param lineMonitor     ライン判定
  * @param Drive 走行0
  */
-LineTracer::LineTracer(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm*  arm)
-    : Walker(drive,bright,xpointer,ypointer,turn,arm),
+LineTracer::LineTracer(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm*  arm,Tail* tail)
+    : Walker(drive,bright,xpointer,ypointer,turn,arm,tail),
     mIsInitialized(false),
     p(0),
     i(0),
