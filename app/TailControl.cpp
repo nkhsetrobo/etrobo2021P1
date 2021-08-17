@@ -1,24 +1,21 @@
-#include "ArmControl.h"
+#include "TailControl.h"
 
-ArmControl::ArmControl(ev3api::Motor& motor_arm,Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm*  arm,Tail* tail)
+TailControl::TailControl(ev3api::Motor& motor_tail,Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm*  arm,Tail* tail)
     :Walker(drive,bright,xpointer,ypointer,turn,arm,tail),
-    mMotor_Arm(motor_arm),
+    mMotor_Tail(motor_tail),
     p(0),
     i(0),
     d(0),
     theta(),
     check(0),
-    mState(UNDEFINED),
+    mState(LINE_TRACING),
     Brake_Mood(false)
     {
-        mMotor_Arm.reset();
+        mMotor_Tail.reset();
     }
 
-void ArmControl::run(){
+void TailControl::run(){
    switch (mState) {
-    case UNDEFINED:
-        first_angle();
-        break;
     case LINE_TRACING:
         angle_fixed();
         break;
@@ -31,35 +28,34 @@ void ArmControl::run(){
 
 }
 
-void ArmControl::first_angle(){
-    float theta2=mArm->get_value();
-    mMotor_Arm.setPWM(-1);
+void TailControl::first_angle(){
+    float theta2=mTail->get_value();
+    mMotor_Tail.setPWM(0);
     //printf("F:%f\n",theta2);
-        if(theta2 <= -50){
+        if(theta2 == 0){
             mState=LINE_TRACING;
             }
 }
 
-void ArmControl::angle_fixed(){
+void TailControl::angle_fixed(){
     float dire=0.0;
     if(Brake_Mood==false){
-        mMotor_Arm.setBrake(Brake_Mood);
-         mMotor_Arm.setPWM(dire);
+        mMotor_Tail.setBrake(Brake_Mood);
+         mMotor_Tail.setPWM(dire);
         //printf("F2:%f\n",mArm->get_value());
     }else{
         mState=SCENARIO_TRACING;
     }
 }
 
-void ArmControl::angle_specification(){
-
+void TailControl::angle_specification(){
     float dire;
-    float theta2=mArm->get_value();
+    float theta2=mTail->get_value();
     dire=mPID->getOperation(theta2);
-    mMotor_Arm.setPWM(dire);
+    mMotor_Tail.setPWM(dire);
 }
 
-void ArmControl::init(double status[]){
+void TailControl::init(double status[]){
     p=2;
     i=0;
     d=0;

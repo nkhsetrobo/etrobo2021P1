@@ -1,7 +1,7 @@
 #include "VirtualPointer.h"
 
 VirtualPointer::VirtualPointer(MotorControl* motorcontrol,Xpointer* xpointer,Ypointer* ypointer,
-                            Odometer* odometer,Turn* turn,Arm* arm)
+                            Odometer* odometer,Turn* turn,Arm* arm,Tail* tail)
     :
         mMotorControl(motorcontrol),
         mXpointer(xpointer),
@@ -9,6 +9,7 @@ VirtualPointer::VirtualPointer(MotorControl* motorcontrol,Xpointer* xpointer,Ypo
         mOdometer(odometer),
         mTurn(turn),
         mArm(arm),
+        mTail(tail),
         current_rs1(0.0),//getcount
         current_rs2(0.0),//getcount
         prev_rs1(0.0),//値保持

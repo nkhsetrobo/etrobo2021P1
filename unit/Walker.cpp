@@ -1,13 +1,14 @@
 #include "Walker.h"
 
 
-Walker::Walker(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm)
+Walker::Walker(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail)
    :mDrive(drive),
     mBright(bright),
     mXpointer(xpointer),
     mYpointer(ypointer),
     mTurn(turn),
-    mArm(arm)
+    mArm(arm),
+    mTail(tail)
 {
     mPID = new PID();
 }

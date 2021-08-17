@@ -1,18 +1,18 @@
-#ifndef EV3_APP_ARMCONTROL_H_
-#define EV3_APP_ARMCONTROL_H_
-#include "Arm.h"
+#ifndef EV3_APP_TAILCONTROL_H_
+#define EV3_APP_TAILCONTROL_H_
+#include "Tail.h"
 #include "Walker.h"
 
-class ArmControl : Walker{
+class TailControl : Walker{
     public:
-        ArmControl(ev3api::Motor& motor_arm,Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail);
+        TailControl(ev3api::Motor& motor_arm,Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail);
         void run();
         void init(double status[]);
         void first_angle();
         void angle_specification();
         void angle_fixed();
     private:
-        ev3api::Motor& mMotor_Arm;
+        ev3api::Motor& mMotor_Tail;
         int p;
         int i;
         int d;
@@ -20,7 +20,6 @@ class ArmControl : Walker{
         int check;
         bool Brake_Mood;
         enum State {
-            UNDEFINED,
              LINE_TRACING,
             SCENARIO_TRACING
         };

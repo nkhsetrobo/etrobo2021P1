@@ -13,7 +13,7 @@
 
 class LineTracer : public Walker{
     public:
-        LineTracer(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm);
+        LineTracer(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail);
         void run();
         void init(double status[]);
 

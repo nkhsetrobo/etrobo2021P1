@@ -33,7 +33,8 @@ APPL_CXXOBJS += \
 	Sonar.o\
 	Section.o \
 	Section_management.o \
-	SonarMeasure.o
+	SonarMeasure.o\
+	TailControl.o
 
 
 SRCLANG := c++
