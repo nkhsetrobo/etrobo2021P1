@@ -5,10 +5,9 @@
 
 class TailControl : Walker{
     public:
-        TailControl(ev3api::Motor& motor_arm,Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail);
+        TailControl(ev3api::Motor& motor_tail,Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail);
         void run();
         void init(double status[]);
-        void first_angle();
         void angle_specification();
         void angle_fixed();
     private:

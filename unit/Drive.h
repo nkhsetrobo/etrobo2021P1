@@ -3,6 +3,7 @@
 
 #include "Motor.h"
 #include "MotorControl.h"
+#include "Taikei.h"
 
 class Drive {
 public:
@@ -11,15 +12,16 @@ public:
     
     static const int TURN;
 
-    Drive( MotorControl* motorcontrol);
+    Drive( MotorControl* motorcontrol,Taikei* taikei);
     void init();
-    void run(int mForword,int mTurn);
+    void run(int mForward,int mTurn);
     void setCommand(int forward, int turn);
 
 private:
-    int mForward;
+    float mForward;
     int mTurn;
     MotorControl* mMotorControl;
+    Taikei* mTaikei;
 };
 
 #endif  // EV3_UNIT_WALKER_H_

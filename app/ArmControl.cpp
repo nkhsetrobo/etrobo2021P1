@@ -37,7 +37,7 @@ void ArmControl::first_angle(){
     //printf("F:%f\n",theta2);
         if(theta2 <= -50){
             mState=LINE_TRACING;
-            }
+        }
 }
 
 void ArmControl::angle_fixed(){
