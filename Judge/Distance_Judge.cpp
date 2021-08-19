@@ -12,6 +12,7 @@ Distance_Judge::Distance_Judge()
 bool Distance_Judge::judge()
 {
     dvalue=mOdometer->get_value();
+    //printf("dvalue, baseline, %f,%f\n", dvalue, baseline);
     if(dvalue>=baseline){
         return true;
     }else{

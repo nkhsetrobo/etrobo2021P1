@@ -1,4 +1,5 @@
 #include "VirtualStraight.h"
+#include "Section_management.h"
 
 VirtualStraight::VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail)
     :Walker(drive,bright,xpointer,ypointer,turn,arm,tail),
@@ -29,6 +30,7 @@ void VirtualStraight::run(){
     float x=mXpointer->get_value();//機体のx座標
     float y=mYpointer->get_value();//機体のy座標
     float th=mTurn->get_value(); //角度
+    //th = th-Section_management::ANG;
 
    // printf("%f,%f,%f\n",x,y,th);
 
@@ -58,7 +60,8 @@ void VirtualStraight::init(double status[]){
     forw=status[3];
 
     float pi=3.141592;
-    theta=pi*(status[4])/180;   //θ(シータ)に値を追加
+    theta = pi*(status[4])/180;   //θ(シータ)に値を追加
+    theta = theta+Section_management::ANG;
 
     float x=mXpointer->get_value(); //機体のx座標
     float y=mYpointer->get_value(); //機体のy座標

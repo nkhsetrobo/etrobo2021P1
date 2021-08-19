@@ -71,6 +71,7 @@ void Drive::run(int mForword,int mTurn){
     lPWM=b;
 
     mMotorControl->runcontrol(rPWM,lPWM);
+    //printf("rPWM, lPWM, %d,%d\n",rPWM, lPWM);
 }
 
 /**
