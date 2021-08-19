@@ -9,7 +9,7 @@ class VirtualCurve : public Walker{
         void run();
         void init(double status[]);
     private:
-        Walker* mWalker;
+        //Walker* mWalker;
         bool mIsInitialized;
         float rx;//円の中心のx座標（円で移動するため）
         float ry;//円の中心のy座標

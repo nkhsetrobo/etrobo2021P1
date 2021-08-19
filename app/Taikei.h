@@ -4,7 +4,7 @@
 class Taikei{
     public:
         Taikei();
-        void control(float ns,float ts);//nsは現在速度,tsは目標速度
+        float control(float ns,float ts);//nsは現在速度,tsは目標速度
         void init(double status[]);
     private:
 

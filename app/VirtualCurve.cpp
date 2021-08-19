@@ -23,7 +23,6 @@ VirtualCurve::VirtualCurve(Drive* drive,Bright* bright,Xpointer* xpointer,Ypoint
 void VirtualCurve::run(){
     float dire;
     if (mIsInitialized == false) {
-        mDrive->init();
         mIsInitialized = true;
     }
     float x=mXpointer->get_value();//機体のx座標

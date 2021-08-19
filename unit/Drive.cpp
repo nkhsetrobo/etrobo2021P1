@@ -13,10 +13,11 @@ void Drive::init(){
     mTurn    = 0;
 }
 
-void Drive::run(int forward,int mTurn){     //forword
+void Drive::run(int forward,int turn){    //forword
+    printf("%f\n",mForward);
     mForward=mTaikei->control(mForward,forward);
-    int rPWM=mForward+mTurn;
-    int lPWM=mForward-mTurn;
+    int rPWM=mForward+turn;
+    int lPWM=mForward-turn;
     int a = rPWM;
     int b = lPWM;
     int n=0;

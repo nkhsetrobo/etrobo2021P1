@@ -51,9 +51,6 @@ void VirtualPointer::calc()
     prev_rs1=rs1;
     prev_rs2=rs2;
     nspeed=(len_r+len_l)/2.0;
-    mSpeedmeter->load(nspeed);
-    printf("%f\n",nspeed);
-
     armtheta=mMotorControl->get_motor_arm();
     mArm->load(armtheta);
 }

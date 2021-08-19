@@ -198,7 +198,6 @@ void tracer_task(intptr_t exinf) {
     if (ev3_button_is_pressed(BACK_BUTTON)) {
         wup_tsk(MAIN_TASK);  // バックボタン押下
     } else {
-        gWalker->setCommand(50,0);
         /*gLineTracer->init();
         gLineTracer->run();*/
         gRandomWalker->run();
