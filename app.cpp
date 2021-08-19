@@ -78,6 +78,7 @@ static Speedmeter      *gSpeedmeter;
 Bright_Judge    *gBright_Judge;
 Distance_Judge  *gDistance_Judge;
 Turn_Judge      *gTurn_Judge;
+static Taikei   *gTaikei;
 static Arm       *gArm;
 static Tail      *gTail;
 static Main_Judge      *gMain_Judge;
@@ -103,7 +104,8 @@ static void user_system_create() {
     gScenarioTimer   = new SimpleTimer(gClock);
     gWalkerTimer     = new SimpleTimer(gClock);
     gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm,gMotor_Tail);
-    gDrive           = new Drive(gMotorControl);
+    gTaikei          = new Taikei();
+    gDrive           = new Drive(gMotorControl,gTaikei);
     gMain_Measure    = new Main_Measure();
     gBright          = new Bright();
     gSonarMeasure    = new SonarMeasure();
@@ -121,7 +123,7 @@ static void user_system_create() {
     gTurn_Judge      = new Turn_Judge();
     gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gArmControl      = new ArmControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
-    gTailControl     = new TailControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
+    gTailControl     = new TailControl(gMotor_Tail,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gVirtualStraight = new VirtualStraight(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gVirtualCurve    = new VirtualCurve(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gScenario        = new Scenario(0);
@@ -137,7 +139,7 @@ static void user_system_create() {
                                         gWalkerTimer);
     gColorMeasure    = new ColorMeasure(gColorSensor,gBright);
     gSonar           = new Sonar(gSonarSensor,gSonarMeasure);
-    gVirtualPointer  = new VirtualPointer(gMotorControl,gXpointer,gYpointer,gOdometer,gTurn,gArm,gTail);
+    gVirtualPointer  = new VirtualPointer(gMotorControl,gXpointer,gYpointer,gOdometer,gTurn,gArm,gTail,gSpeedmeter);
 
     // シナリオを構築する
     for (uint32_t i = 0; i < (sizeof(gScenes)/sizeof(gScenes[0])); i++) {
@@ -202,7 +204,9 @@ void tracer_task(intptr_t exinf) {
         double status[]={0,-50};
         gArmControl->init(status);
         gArmControl->run();
-        
+        /*double status2[]={0,100000};
+        gTailControl->init(status2);
+        gTailControl->run();*/    
     }
 
     ext_tsk();

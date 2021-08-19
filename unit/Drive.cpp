@@ -1,9 +1,10 @@
 #include "Drive.h"
 
-Drive::Drive(MotorControl* motorcontrol)
-      :mForward(0),
+Drive::Drive(MotorControl* motorcontrol,Taikei* taikei)
+      :mForward(0.0),//現在速度
        mTurn(0),
-       mMotorControl(motorcontrol) {
+       mMotorControl(motorcontrol),
+       mTaikei(taikei) {
 }
 
 
@@ -12,9 +13,11 @@ void Drive::init(){
     mTurn    = 0;
 }
 
-void Drive::run(int mForword,int mTurn){
-    int rPWM=mForword+mTurn;
-    int lPWM=mForword-mTurn;
+void Drive::run(int forward,int turn){    //forword
+    printf("%f\n",mForward);
+    mForward=mTaikei->control(mForward,forward);
+    int rPWM=mForward+turn;
+    int lPWM=mForward-turn;
     int a = rPWM;
     int b = lPWM;
     int n=0;

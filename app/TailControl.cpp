@@ -8,7 +8,7 @@ TailControl::TailControl(ev3api::Motor& motor_tail,Drive* drive,Bright* bright,X
     d(0),
     theta(),
     check(0),
-    mState(LINE_TRACING),
+    mState(SCENARIO_TRACING),
     Brake_Mood(false)
     {
         mMotor_Tail.reset();
@@ -28,15 +28,6 @@ void TailControl::run(){
 
 }
 
-void TailControl::first_angle(){
-    float theta2=mTail->get_value();
-    mMotor_Tail.setPWM(0);
-    //printf("F:%f\n",theta2);
-        if(theta2 == 0){
-            mState=LINE_TRACING;
-            }
-}
-
 void TailControl::angle_fixed(){
     float dire=0.0;
     if(Brake_Mood==false){
@@ -53,10 +44,11 @@ void TailControl::angle_specification(){
     float theta2=mTail->get_value();
     dire=mPID->getOperation(theta2);
     mMotor_Tail.setPWM(dire);
+    printf("%f\n",dire);
 }
 
 void TailControl::init(double status[]){
-    p=2;
+    p=3;
     i=0;
     d=0;
     check=status[0];//モード番号
@@ -65,5 +57,5 @@ void TailControl::init(double status[]){
     mPID->setKi(i);
     mPID->setKd(d);
     mPID->setTarget(theta);
+    mPID->setLimit(30);
 }
-

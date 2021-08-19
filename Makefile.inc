@@ -34,7 +34,8 @@ APPL_CXXOBJS += \
 	Section.o \
 	Section_management.o \
 	SonarMeasure.o\
-	TailControl.o
+	TailControl.o\
+	Taikei.o
 
 
 SRCLANG := c++

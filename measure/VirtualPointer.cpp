@@ -1,7 +1,7 @@
 #include "VirtualPointer.h"
 
 VirtualPointer::VirtualPointer(MotorControl* motorcontrol,Xpointer* xpointer,Ypointer* ypointer,
-                            Odometer* odometer,Turn* turn,Arm* arm,Tail* tail)
+                            Odometer* odometer,Turn* turn,Arm* arm,Tail* tail,Speedmeter* speedmeter)
     :
         mMotorControl(motorcontrol),
         mXpointer(xpointer),
@@ -10,6 +10,7 @@ VirtualPointer::VirtualPointer(MotorControl* motorcontrol,Xpointer* xpointer,Ypo
         mTurn(turn),
         mArm(arm),
         mTail(tail),
+        mSpeedmeter(speedmeter),
         current_rs1(0.0),//getcount
         current_rs2(0.0),//getcount
         prev_rs1(0.0),//値保持
@@ -37,6 +38,7 @@ void VirtualPointer::calc()
 	float len_l = drs1*M_PI*D_LEFT/360.0;
 	float len_r = drs2*M_PI*D_RIGHT/360.0;
 	float dth=(len_r-len_l)/TREAD;
+    float nspeed=0.0;//speedmeter
 	x+= (len_r+len_l)/2.0*cos(th+dth/2.0); //進行方向 X軸 0度方向
 	y+= (len_r+len_l)/2.0*sin(th+dth/2.0); //横	
 	th+=dth; // 左旋回＋、右旋回-
@@ -48,7 +50,7 @@ void VirtualPointer::calc()
     //mSpeedmeter->load();
     prev_rs1=rs1;
     prev_rs2=rs2;
-
+    nspeed=(len_r+len_l)/2.0;
     armtheta=mMotorControl->get_motor_arm();
     mArm->load(armtheta);
 }

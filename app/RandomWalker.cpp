@@ -108,7 +108,7 @@ void RandomWalker::execWaitingForStart() {
         mVirtualCurve->init(status);
         */
 
-        double status[]={30,5,1,30,-45};
+        double status[]={30,5,1,30,-45,0};
         //mVirtualStraight->init(status);
 
         /*mSection = new Section();
