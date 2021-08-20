@@ -74,10 +74,16 @@ void Section_management::update(int update_dist)
     switch(update_dist){
         case UPDATE_DIST:
             DIST = gOdometer->get_value();
+            printf("DIST %f\n",DIST);
             break;
         case UPDATE_ANG:
             ANG = gTurn->get_value();
             printf("ANG %f\n",ANG);
+            break;
+        case UPDATE_ALL:
+            DIST = gOdometer->get_value();
+            ANG  = gTurn->get_value();
+            printf("DIST, ANG %f,%f\n",DIST ,ANG);
             break;
     }
 }

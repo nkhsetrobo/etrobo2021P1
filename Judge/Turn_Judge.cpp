@@ -13,6 +13,7 @@ Turn_Judge::Turn_Judge()
 bool Turn_Judge::judge()
 {
     tvalue=mTurn->get_value();
+    //printf("diff,tvalue,baseline,%f,%f,%f\n", diff,tvalue,baseline);
     if(diff>=0){
         if(tvalue>=baseline){/**/
             return true;

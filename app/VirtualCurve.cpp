@@ -1,4 +1,5 @@
 #include "VirtualCurve.h"
+#include "Section_management.h"
 
 VirtualCurve::VirtualCurve(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail)
     :Walker(drive,bright,xpointer,ypointer,turn,arm,tail),
@@ -71,6 +72,7 @@ void VirtualCurve::init(double status[]){
     
     mPID->setTarget(fabs(mdistance));
     //printf("%f,%f,%f,%f\n",sx,sy,rx,ry);
+    //printf("x, y, theta,%f,%f,%f\n",x, y, theta);
 }
 
 float VirtualCurve::calc_distance(float x1,float y1,float x2,float y2){
