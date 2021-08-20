@@ -26,7 +26,10 @@
 #include "SonarSensor.h"
 #include "Tail.h"
 #include "TailControl.h"
-
+#include "Color_Judge.h"
+#include "Colorh.h"
+#include "Colors.h"
+#include "Timer.h"
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
 void *__dso_handle=0;
@@ -52,6 +55,7 @@ Motor       gMotor_Tail(PORT_D,true,MEDIUM_MOTOR);
 Clock       gClock;
 
 // オブジェクトの定義
+static Timer     *gTimer;
 Drive           *gDrive;
 static ColorMeasure    *gColorMeasure;
 static Sonar           *gSonar;
@@ -78,11 +82,14 @@ static Speedmeter      *gSpeedmeter;
 Bright_Judge    *gBright_Judge;
 Distance_Judge  *gDistance_Judge;
 Turn_Judge      *gTurn_Judge;
+Color_Judge     *gColor_Judge;
 static Taikei   *gTaikei;
 static Arm       *gArm;
 static Tail      *gTail;
 static Main_Judge      *gMain_Judge;
 Bright          *gBright;
+Colorh           *gColorh;
+Colors           *gColors;
 static VirtualPointer  *gVirtualPointer;
 // scene object
 static Scene gScenes[] = {
@@ -105,9 +112,12 @@ static void user_system_create() {
     gWalkerTimer     = new SimpleTimer(gClock);
     gMotorControl    = new MotorControl(gLeftWheel,gRightWheel,gMotor_Arm,gMotor_Tail);
     gTaikei          = new Taikei();
+    gTimer           = new Timer();
     gDrive           = new Drive(gMotorControl,gTaikei);
     gMain_Measure    = new Main_Measure();
     gBright          = new Bright();
+    gColorh         = new Colorh();
+    gColors         = new Colors();
     gSonarMeasure    = new SonarMeasure();
     gArm             = new Arm();
     gTail            = new Tail();
@@ -121,6 +131,7 @@ static void user_system_create() {
     gBright_Judge    = new Bright_Judge();
     gDistance_Judge  = new Distance_Judge();
     gTurn_Judge      = new Turn_Judge();
+    gColor_Judge     = new Color_Judge();
     gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gArmControl      = new ArmControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gTailControl     = new TailControl(gMotor_Tail,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
@@ -137,7 +148,7 @@ static void user_system_create() {
                                         gScenarioTracer,
                                         gStarter,
                                         gWalkerTimer);
-    gColorMeasure    = new ColorMeasure(gColorSensor,gBright);
+    gColorMeasure    = new ColorMeasure(gColorSensor,gBright,gColorh,gColors);
     gSonar           = new Sonar(gSonarSensor,gSonarMeasure);
     gVirtualPointer  = new VirtualPointer(gMotorControl,gXpointer,gYpointer,gOdometer,gTurn,gArm,gTail,gSpeedmeter);
 
@@ -157,6 +168,8 @@ static void user_system_destroy() {
     gRightWheel.reset();
     gMotor_Arm.reset();
     gMotor_Tail.reset();
+   
+
     
     delete gRandomWalker;
     delete gScenarioTracer;
@@ -196,10 +209,12 @@ void main_task(intptr_t unused) {
  */
 void tracer_task(intptr_t exinf) {
     if (ev3_button_is_pressed(BACK_BUTTON)) {
-        wup_tsk(MAIN_TASK);  // バックボタン押下
+        wup_tsk(MAIN_TASK);
+          // バックボタン押下
     } else {
         /*gLineTracer->init();
         gLineTracer->run();*/
+        
         gRandomWalker->run();
         double status[]={0,-50};
         gArmControl->init(status);
@@ -213,8 +228,9 @@ void tracer_task(intptr_t exinf) {
 }
 
 void polling_task(intptr_t exinf) {
+   gTimer->count();
    gColorMeasure->get_rgb();
    gVirtualPointer->calc();
    gSonar->get_dis();
-    ext_tsk();
+   ext_tsk();
 }

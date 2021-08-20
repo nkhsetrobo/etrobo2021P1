@@ -3,7 +3,8 @@
 #include "math.h"
 Taikei::Taikei()
 :
-a(0.5)
+a(0.5),
+b(0.2)
 {
 
 }
@@ -15,7 +16,7 @@ float Taikei::control(float ns,float ts){
     if(round(ns)>round(ts)){    //roundは四捨五入
         ns=ns-a;
     }else if(round(ns)<round(ts)){
-        ns=ns+a;
+        ns=ns+b;
     }else{
             
     }

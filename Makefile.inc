@@ -35,7 +35,11 @@ APPL_CXXOBJS += \
 	Section_management.o \
 	SonarMeasure.o\
 	TailControl.o\
-	Taikei.o
+	Taikei.o\
+	Colorh.o\
+	Colors.o\
+	Color_Judge.o\
+	Timer.o
 
 
 SRCLANG := c++
