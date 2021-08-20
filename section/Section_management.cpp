@@ -8,7 +8,10 @@ float Section_management::ANG = 0;
 Section_management::Section_management()
     :mState(UNDEFINED)
 {
-
+    mSMspeed=new SMspeed();
+    mSMslalom=new SMslalom();
+    mSMslalomb=new SMslalomb();
+    mSMblock=new SMblock();
 }
 
 bool Section_management::do_run()

@@ -39,7 +39,11 @@ APPL_CXXOBJS += \
 	Colorh.o\
 	Colors.o\
 	Color_Judge.o\
-	Timer.o
+	Timer.o\
+	SMspeed.o\
+	SMslalom.o\
+	SMslalomb.o\
+	SMblock.o
 
 
 SRCLANG := c++

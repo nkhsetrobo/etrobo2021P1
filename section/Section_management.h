@@ -96,7 +96,10 @@ class Section_management{
         Section* mSection;
         State mState;
         Main_Section* mMain_Section;
-
+        SMspeed* mSMspeed;
+        SMslalom* mSMslalom;
+        SMslalomb* mSMslalom;
+        SMblock* mSMblock;
 
 
 };
