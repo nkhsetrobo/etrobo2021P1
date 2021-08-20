@@ -12,7 +12,7 @@ float Taikei::control(float ns,float ts){
     if(ts==0){
         return 0;
     }
-    if(round(ns)>round(ts)){
+    if(round(ns)>round(ts)){    //roundは四捨五入
         ns=ns-a;
     }else if(round(ns)<round(ts)){
         ns=ns+a;
