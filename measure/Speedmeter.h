@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class Speedmeter : Main_Measure{
+class Speedmeter : public Main_Measure{
     public:
         Speedmeter();
         void load(float mload);

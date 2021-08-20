@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class Tail : Main_Measure{
+class Tail : public Main_Measure{
     public:
         Tail();
         void  load(float mload);

@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class Colors : Main_Measure{
+class Colors : public Main_Measure{
     public:
         
         Colors();

@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class Turn : Main_Measure{
+class Turn : public Main_Measure{
     public:
         Turn();
         void load(float mload);

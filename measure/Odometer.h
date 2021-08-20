@@ -2,7 +2,7 @@
 #define EV3_UNIT_ODOMETER_H_
 #include "Main_Measure.h"
 
-class Odometer : Main_Measure{
+class Odometer : public Main_Measure{
     public:
         Odometer();
         void load(float mload);
