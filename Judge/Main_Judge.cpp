@@ -2,12 +2,16 @@
 extern Bright          *gBright;
 extern Odometer        *gOdometer;
 extern Turn            *gTurn;
+extern Colorh         *gColorh;
+extern Colors         *gColors;
 
 Main_Judge::Main_Judge()
 {
     mBright=gBright;
     mTurn=gTurn;
     mOdometer=gOdometer;
+    mColorh=gColorh;
+    mColors=gColors;
 }
 
 void Main_Judge::run(){

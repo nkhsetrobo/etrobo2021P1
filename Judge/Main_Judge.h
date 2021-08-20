@@ -5,6 +5,8 @@
 #include "Bright.h"
 #include "Turn.h"
 #include "Odometer.h"
+#include "Colorh.h"
+#include "Colors.h"
 
 
 class Main_Judge{
@@ -18,7 +20,8 @@ class Main_Judge{
         Bright*     mBright;
         Turn*       mTurn;
         Odometer*   mOdometer;
-
+        Colorh*    mColorh;
+        Colors*    mColors;
     private:
         
 };

@@ -8,7 +8,8 @@ class Taikei{
         void init(double status[]);
     private:
 
-        float a;//加速度
+        float a;//進むときの加速度
+        float b;//止まるときの加速度
 
 };
 #endif
