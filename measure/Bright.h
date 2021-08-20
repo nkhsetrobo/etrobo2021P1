@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class Bright : Main_Measure{
+class Bright : public Main_Measure{
     public:
         
         Bright();

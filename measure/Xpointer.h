@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class Xpointer : Main_Measure{
+class Xpointer : public Main_Measure{
     public:
         Xpointer();
         void load(float mload);

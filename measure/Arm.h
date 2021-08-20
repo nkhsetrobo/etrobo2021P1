@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class Arm : Main_Measure{
+class Arm : public Main_Measure{
     public:
         Arm();
         void load(float mload);

@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class Angular : Main_Measure{
+class Angular : public Main_Measure{
     public:
         Angular();
         void load(float mload);

@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class SonarMeasure : Main_Measure{
+class SonarMeasure : public Main_Measure{
     public:
         SonarMeasure();
         void load(float mload);

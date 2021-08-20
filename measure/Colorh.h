@@ -3,7 +3,7 @@
 
 #include "Main_Measure.h"
 
-class Colorh : Main_Measure{
+class Colorh : public Main_Measure{
     public:
         
         Colorh();
