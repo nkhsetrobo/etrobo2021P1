@@ -31,7 +31,7 @@ bool Section_management::do_run()
         break;
     case END_SECTION:
         end_section();
-        return true;
+        //return true;
         break;   
     }
     return false;
@@ -73,6 +73,8 @@ void Section_management::section_run()
 
 void Section_management::end_section()
 {
+    gonext();
+    mState = UNDEFINED;
     //printf("%f\n",section_idx);
 }
 
@@ -97,4 +99,8 @@ void Section_management::update(int update_dist)
             printf("DIST, ANG %f,%f\n",DIST ,ANG);
             break;
     }
+}
+
+void Section_management::gonext(){
+
 }

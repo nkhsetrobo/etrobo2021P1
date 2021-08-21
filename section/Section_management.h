@@ -36,6 +36,7 @@ class Section_management{
         void end_section();
         virtual  void init();
         void update(int update_dist);
+        virtual void gonext();
         static float DIST;
         static float ANG;
 

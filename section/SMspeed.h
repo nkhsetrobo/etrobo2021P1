@@ -2,12 +2,14 @@
 #define EV3_UNIT_SMSPEED_H_
 
 #include "Section_management.h"
+#include "RandomWalker.h"
 
 class SMspeed : public Section_management{
     public:
     
         SMspeed();
         void init();
+        void gonext();
 
     private:
 
@@ -59,6 +61,10 @@ class SMspeed : public Section_management{
                                 };
 
     Main_Section rspeedpra[100]={ {LINETRACER,{30,3,5,30,RIGHT,0}, DISTANCE,{1200}, UPDATE_ALL},//280固定
+                        
+                                {-1,{}, -1,{}, UNUPDATE}
+                                };
+    Main_Section lspeedpra[100]={ {LINETRACER,{30,3,5,30,LEFT,0}, DISTANCE,{300}, UPDATE_ALL},//280固定
                         
                                 {-1,{}, -1,{}, UNUPDATE}
                                 };

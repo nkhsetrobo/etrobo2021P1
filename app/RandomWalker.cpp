@@ -20,6 +20,12 @@ extern Distance_Judge *gDistance_Judge;
 const int RandomWalker::MIN_TIME = 5000 * 1000;    // 切り替え時間の最小値
 const int RandomWalker::MAX_TIME = 15000 * 1000;   // 切り替え時間の最大値
 
+ SMspeed*   RandomWalker::mSMspeed=new SMspeed();
+ SMslalom*   RandomWalker::mSMslalom=new SMslalom();
+ SMslalomb*   RandomWalker::mSMslalomb=new SMslalomb();
+ SMblock*   RandomWalker::mSMblock=new SMblock();
+ Section_management* RandomWalker::mSection_management;
+
 /**
  * コンストラクタ
  * @param lineTracer      ライントレーサ
@@ -49,10 +55,6 @@ RandomWalker::RandomWalker(LineTracer* lineTracer,
     mTurn_Judge=gTurn_Judge;
     mDistance_Judge=gDistance_Judge;
 
-    mSMspeed=new SMspeed();
-    mSMslalom=new SMslalom();
-    mSMslalomb=new SMslalomb();
-    mSMblock=new SMblock();
 
 }
 
@@ -123,9 +125,9 @@ void RandomWalker::execWaitingForStart() {
         mSection->set_param(STRAIGHT, walker_status, 
                             TURN, judge_status); */
         
-        mSection_management = new SMspeed();
+        
 
-
+        change_situation(mSMspeed);
         modeChangeAction();
     }
 }
@@ -168,4 +170,8 @@ void RandomWalker::execScenarioTracing() {
 
         modeChangeAction();
     }
+}
+
+void RandomWalker::change_situation(Section_management* csituation){
+    mSection_management = csituation;
 }
