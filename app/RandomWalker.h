@@ -11,7 +11,6 @@
 
 #include "Starter.h"
 #include "SimpleTimer.h"
-
 #include "LineTracer.h"
 #include "VirtualCurve.h"
 #include "VirtualStraight.h"
@@ -24,13 +23,13 @@
 #include "Section_management.h"//de
 #include "Drive.h"
 #include "SMspeed.h"
-class SMspeed;
 #include "SMblock.h"
 #include "SMslalom.h"
 #include "SMslalomb.h"
-
-
-
+class SMspeed;
+class SMslalom;
+class SMslalomb;
+class SMblock;
 
 class RandomWalker {
     

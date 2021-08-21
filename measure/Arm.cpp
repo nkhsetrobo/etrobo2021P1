@@ -1,9 +1,10 @@
 #include "Arm.h"
 
-Arm::Arm()
-    : Main_Measure()
+Arm::Arm(ev3api::Motor& motor_arm)
+    : Main_Measure(),
+    mMotor_Arm(motor_arm)
 {
-    
+
 }
 
 void Arm::load(float mload)
@@ -18,5 +19,10 @@ float Arm::get_value()
 
 void Arm::init()
 {
+
+}
+
+void Arm::get_count(){
+    load(mMotor_Arm.getCount());
 
 }

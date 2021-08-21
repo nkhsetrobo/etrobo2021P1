@@ -30,6 +30,8 @@
 #include "Colorh.h"
 #include "Colors.h"
 #include "Timer.h"
+#include "Arm_Judge.h"
+#include "Tail_Judge.h"
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
 void *__dso_handle=0;
@@ -55,42 +57,44 @@ Motor       gMotor_Tail(PORT_D,true,MEDIUM_MOTOR);
 Clock       gClock;
 
 // オブジェクトの定義
-static Timer     *gTimer;
+Timer     *gTimer;
 Drive           *gDrive;
-static ColorMeasure    *gColorMeasure;
-static Sonar           *gSonar;
-static SonarMeasure    *gSonarMeasure;
+ColorMeasure    *gColorMeasure;
+Sonar           *gSonar;
+SonarMeasure    *gSonarMeasure;
 Walker          *gWalker;
-static Starter         *gStarter;
-static SimpleTimer     *gScenarioTimer;
-static SimpleTimer     *gWalkerTimer;
+Starter         *gStarter;
+SimpleTimer     *gScenarioTimer;
+SimpleTimer     *gWalkerTimer;
 LineTracer      *gLineTracer;
-static ArmControl *gArmControl;
-static TailControl *gTailControl;
+ArmControl *gArmControl;
+TailControl *gTailControl;
 VirtualCurve    *gVirtualCurve;
 VirtualStraight *gVirtualStraight;
-static Scenario        *gScenario;
-static ScenarioTracer  *gScenarioTracer;
-static RandomWalker    *gRandomWalker;
-static MotorControl    *gMotorControl;
-static Main_Measure    *gMain_Measure;
-static Xpointer        *gXpointer;
-static Ypointer        *gYpointer;
+Scenario        *gScenario;
+ScenarioTracer  *gScenarioTracer;
+RandomWalker    *gRandomWalker;
+MotorControl    *gMotorControl;
+Main_Measure    *gMain_Measure;
+Xpointer        *gXpointer;
+Ypointer        *gYpointer;
 Odometer        *gOdometer;
 Turn            *gTurn;
-static Speedmeter      *gSpeedmeter;
+Speedmeter      *gSpeedmeter;
+Arm_Judge       *gArm_Judge;
+Tail_Judge      *gTail_Judge;
 Bright_Judge    *gBright_Judge;
 Distance_Judge  *gDistance_Judge;
 Turn_Judge      *gTurn_Judge;
 Color_Judge     *gColor_Judge;
-static Taikei   *gTaikei;
-static Arm       *gArm;
-static Tail      *gTail;
-static Main_Judge      *gMain_Judge;
+Taikei   *gTaikei;
+Arm       *gArm;
+Tail      *gTail;
+Main_Judge      *gMain_Judge;
 Bright          *gBright;
 Colorh           *gColorh;
 Colors           *gColors;
-static VirtualPointer  *gVirtualPointer;
+VirtualPointer  *gVirtualPointer;
 // scene object
 static Scene gScenes[] = {
     { TURN_LEFT,   1250 * 1000, 0 },  // 左旋回1.25秒
@@ -119,7 +123,7 @@ static void user_system_create() {
     gColorh         = new Colorh();
     gColors         = new Colors();
     gSonarMeasure    = new SonarMeasure();
-    gArm             = new Arm();
+    gArm             = new Arm(gMotor_Arm);
     gTail            = new Tail();
     gXpointer        = new Xpointer();
     gYpointer        = new Ypointer();
@@ -132,6 +136,8 @@ static void user_system_create() {
     gDistance_Judge  = new Distance_Judge();
     gTurn_Judge      = new Turn_Judge();
     gColor_Judge     = new Color_Judge();
+    gArm_Judge       = new Arm_Judge();
+    gTail_Judge      = new Tail_Judge();
     gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gArmControl      = new ArmControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gTailControl     = new TailControl(gMotor_Tail,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
@@ -156,6 +162,8 @@ static void user_system_create() {
     for (uint32_t i = 0; i < (sizeof(gScenes)/sizeof(gScenes[0])); i++) {
         gScenario->add(&gScenes[i]);
     }
+    double status[]={0,-50};
+    gArmControl->init(status);
     // 初期化完了通知
     ev3_led_set_color(LED_ORANGE);
 }
@@ -216,8 +224,7 @@ void tracer_task(intptr_t exinf) {
         gLineTracer->run();*/
         
         gRandomWalker->run();
-        double status[]={0,-50};
-        gArmControl->init(status);
+
         gArmControl->run();
         /*double status2[]={0,100000};
         gTailControl->init(status2);
@@ -232,5 +239,6 @@ void polling_task(intptr_t exinf) {
    gColorMeasure->get_rgb();
    gVirtualPointer->calc();
    gSonar->get_dis();
+   gArm->get_count();
    ext_tsk();
 }

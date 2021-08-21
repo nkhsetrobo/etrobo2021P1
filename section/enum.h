@@ -6,13 +6,17 @@
             WALKER,
             LINETRACER,
             CURVE,
-            STRAIGHT
+            STRAIGHT,
+            ARM,
+            TAIL
         };
 
         enum JUDGE_NO
         {
             BRIGHT,
             DISTANCE,
-            TURN
+            TURN,
+            ARMJUDGE,
+            TAILJUDGE
         };
 #endif

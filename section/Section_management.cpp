@@ -3,6 +3,8 @@
 
 extern Odometer        *gOdometer;
 extern Turn            *gTurn;
+extern Arm             *gArm;
+extern Tail            *gTail;
 float Section_management::DIST = 0;
 float Section_management::ANG = 0;
 

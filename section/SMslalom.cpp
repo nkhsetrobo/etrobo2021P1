@@ -8,10 +8,9 @@ SMslalom::SMslalom()
 
 
 void SMslalom::init(){
-    if(_LEFT==0){
-        status=lspeedpra;
-    }else{
-        status=lspeedpra;
-    }
-    
+        status=slalompra;
+}
+
+void SMslalom::gonext(){
+    RandomWalker::change_situation(RandomWalker::mSMblock);
 }

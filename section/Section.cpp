@@ -4,10 +4,13 @@ extern Walker           *gWalker;
 extern LineTracer       *gLineTracer;
 extern VirtualCurve     *gVirtualCurve;
 extern VirtualStraight  *gVirtualStraight;
-
+extern ArmControl       *gArmControl;
+extern TailControl      *gTailControl;
 extern Bright_Judge     *gBright_Judge;
 extern Distance_Judge   *gDistance_Judge;
 extern Turn_Judge       *gTurn_Judge;
+extern Arm_Judge        *gArm_Judge;
+extern Tail_Judge       *gTail_Judge;
 
 Section::Section()
 {
@@ -15,10 +18,14 @@ Section::Section()
     mWalker_list[LINETRACER] = gLineTracer;
     mWalker_list[CURVE]      = gVirtualCurve;
     mWalker_list[STRAIGHT]   = gVirtualStraight;
+    mWalker_list[ARM]        = gArmControl;
+    mWalker_list[TAIL]       = gTailControl;
 
     mJudge_list[BRIGHT]      = gBright_Judge;
     mJudge_list[DISTANCE]    = gDistance_Judge;
     mJudge_list[TURN]        = gTurn_Judge;
+    mJudge_list[ARMJUDGE]    = gArm_Judge;
+    mJudge_list[TAILJUDGE]   = gTail_Judge;
 }
 
 bool Section::run()

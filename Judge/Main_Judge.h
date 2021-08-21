@@ -7,6 +7,9 @@
 #include "Odometer.h"
 #include "Colorh.h"
 #include "Colors.h"
+#include "Tail.h"
+#include "Arm.h"
+
 
 
 class Main_Judge{
@@ -22,6 +25,8 @@ class Main_Judge{
         Odometer*   mOdometer;
         Colorh*    mColorh;
         Colors*    mColors;
+        Arm*       mArm;
+        Tail*      mTail;
     private:
         
 };

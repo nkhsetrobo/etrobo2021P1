@@ -4,6 +4,8 @@ extern Odometer        *gOdometer;
 extern Turn            *gTurn;
 extern Colorh         *gColorh;
 extern Colors         *gColors;
+extern Tail            *gTail;
+extern Arm             *gArm;
 
 Main_Judge::Main_Judge()
 {
@@ -12,6 +14,8 @@ Main_Judge::Main_Judge()
     mOdometer=gOdometer;
     mColorh=gColorh;
     mColors=gColors;
+    mTail=gTail;
+    mArm=gArm;
 }
 
 void Main_Judge::run(){
