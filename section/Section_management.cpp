@@ -1,5 +1,6 @@
 #include "Section_management.h"
 
+
 extern Odometer        *gOdometer;
 extern Turn            *gTurn;
 float Section_management::DIST = 0;
@@ -8,10 +9,12 @@ float Section_management::ANG = 0;
 Section_management::Section_management()
     :mState(UNDEFINED)
 {
-    mSMspeed=new SMspeed();
-    mSMslalom=new SMslalom();
-    mSMslalomb=new SMslalomb();
-    mSMblock=new SMblock();
+    #if defined(MAKE_RIGHT)
+        _LEFT = 0;
+    #else
+         _LEFT = 1;
+    #endif
+
 }
 
 bool Section_management::do_run()
@@ -38,6 +41,7 @@ void Section_management::execUndefined()
 {
     section_idx = 0;
     mState = ADD_SECTION;
+    init();
 }
 
 void Section_management::add_section()
@@ -70,6 +74,10 @@ void Section_management::section_run()
 void Section_management::end_section()
 {
     //printf("%f\n",section_idx);
+}
+
+void Section_management::init(){
+
 }
 
 void Section_management::update(int update_dist)

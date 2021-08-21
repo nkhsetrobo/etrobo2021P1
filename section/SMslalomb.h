@@ -1,5 +1,5 @@
-#ifndef EV3_UNIT_SMSLALOMB_H_
-#define EV3_UNIT_SMSLALOMB_H_
+#ifndef EV3_SECTION_SMSLALOMB_H_
+#define EV3_SECTION_SMSLALOMB_H_
 
 #include "Section_management.h"
 

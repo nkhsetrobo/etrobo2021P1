@@ -48,6 +48,12 @@ RandomWalker::RandomWalker(LineTracer* lineTracer,
     mBright_Judge=gBright_Judge;
     mTurn_Judge=gTurn_Judge;
     mDistance_Judge=gDistance_Judge;
+
+    mSMspeed=new SMspeed();
+    mSMslalom=new SMslalom();
+    mSMslalomb=new SMslalomb();
+    mSMblock=new SMblock();
+
 }
 
 /**
@@ -117,7 +123,7 @@ void RandomWalker::execWaitingForStart() {
         mSection->set_param(STRAIGHT, walker_status, 
                             TURN, judge_status); */
         
-        mSection_management = new Section_management();
+        mSection_management = new SMspeed();
 
 
         modeChangeAction();

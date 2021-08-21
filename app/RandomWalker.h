@@ -23,6 +23,12 @@
 #include "enum.h"    //de
 #include "Section_management.h"//de
 #include "Drive.h"
+#include "SMspeed.h"
+#include "SMblock.h"
+#include "SMslalom.h"
+#include "SMslalomb.h"
+
+
 
 class RandomWalker {
 public:
@@ -65,6 +71,11 @@ private:
 
     Section* mSection;  //デバック用
     Section_management* mSection_management;
+
+    SMspeed* mSMspeed;
+    SMslalom* mSMslalom;
+    SMslalomb* mSMslalomb;
+    SMblock* mSMblock;
 };
 
 #endif  // EV3_APP_RANDOMWALKER_H_

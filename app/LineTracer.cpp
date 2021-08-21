@@ -36,7 +36,7 @@ void LineTracer::run() {
     //mPID->setTarget(0);
     dire=mPID->getOperation(mBright->get_value()); 
     dire=bias+dire;
-    if(edge==-1)
+    if(edge==1)
     {
         dire=dire*-1.0;
     }
