@@ -6,7 +6,8 @@
             WALKER,
             LINETRACER,
             CURVE,
-            STRAIGHT
+            STRAIGHT,
+            //TAIKEI  //デバック
         };
 
         enum JUDGE_NO
