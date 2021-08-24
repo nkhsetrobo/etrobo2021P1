@@ -1,13 +1,21 @@
 #include "Section_management.h"
 
+
 extern Odometer        *gOdometer;
 extern Turn            *gTurn;
+extern Arm             *gArm;
+extern Tail            *gTail;
 float Section_management::DIST = 0;
 float Section_management::ANG = 0;
 
 Section_management::Section_management()
     :mState(UNDEFINED)
 {
+    #if defined(MAKE_RIGHT)
+        _LEFT = 0;
+    #else
+         _LEFT = 1;
+    #endif
 
 }
 
@@ -25,7 +33,7 @@ bool Section_management::do_run()
         break;
     case END_SECTION:
         end_section();
-        return true;
+        //return true;
         break;   
     }
     return false;
@@ -35,6 +43,7 @@ void Section_management::execUndefined()
 {
     section_idx = 0;
     mState = ADD_SECTION;
+    init();
 }
 
 void Section_management::add_section()
@@ -66,7 +75,13 @@ void Section_management::section_run()
 
 void Section_management::end_section()
 {
+    gonext();
+    mState = UNDEFINED;
     //printf("%f\n",section_idx);
+}
+
+void Section_management::init(){
+
 }
 
 void Section_management::update(int update_dist)
@@ -86,4 +101,8 @@ void Section_management::update(int update_dist)
             printf("DIST, ANG %f,%f\n",DIST ,ANG);
             break;
     }
+}
+
+void Section_management::gonext(){
+
 }

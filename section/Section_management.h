@@ -24,20 +24,25 @@ class Section_management{
             UPDATE_ANG,//角度の更新
             UNUPDATE
         };
-
+        enum EDGE{
+            LEFT,//0
+            RIGHT//1
+        };
         Section_management();
         bool do_run();
         void execUndefined();
         void add_section();
         void section_run();
         void end_section();
+        virtual  void init();
         void update(int update_dist);
+        virtual void gonext();
         static float DIST;
         static float ANG;
 
         //void get_param();
     
-    private:
+    protected:
         enum State {
             UNDEFINED,
             ADD_SECTION,
@@ -97,12 +102,15 @@ class Section_management{
                         
                                 {-1,{}, -1,{}, UNUPDATE}
                                 };
+        Main_Section* status;
 
         int section_idx;
         Section* mSection;
         State mState;
         Main_Section* mMain_Section;
+        int _LEFT;
 
+    private:
 
 
 };

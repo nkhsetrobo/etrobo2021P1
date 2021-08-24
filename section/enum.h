@@ -7,13 +7,16 @@
             LINETRACER,
             CURVE,
             STRAIGHT,
-            //TAIKEI  //デバック
+            ARM,
+            TAIL
         };
 
         enum JUDGE_NO
         {
             BRIGHT,
             DISTANCE,
-            TURN
+            TURN,
+            ARMJUDGE,
+            TAILJUDGE
         };
 #endif

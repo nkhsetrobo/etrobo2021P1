@@ -10,6 +10,10 @@
 #include "Distance_Judge.h"
 #include "Turn_Judge.h"
 #include "enum.h"
+#include "ArmControl.h"
+#include "TailControl.h"
+#include "Arm_Judge.h"
+#include "Tail_Judge.h"
 
 class Section{
     public:

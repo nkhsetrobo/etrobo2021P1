@@ -11,7 +11,6 @@
 
 #include "Starter.h"
 #include "SimpleTimer.h"
-
 #include "LineTracer.h"
 #include "VirtualCurve.h"
 #include "VirtualStraight.h"
@@ -23,8 +22,17 @@
 #include "enum.h"    //de
 #include "Section_management.h"//de
 #include "Drive.h"
+#include "SMspeed.h"
+#include "SMblock.h"
+#include "SMslalom.h"
+#include "SMslalomb.h"
+class SMspeed;
+class SMslalom;
+class SMslalomb;
+class SMblock;
 
 class RandomWalker {
+    
 public:
     RandomWalker(LineTracer* lineTracer,
                 VirtualCurve* VirtualCurve,
@@ -33,6 +41,11 @@ public:
                  const Starter* starter,
                  SimpleTimer* simpleTimer);
         void run();
+    static SMspeed* mSMspeed;
+    static SMslalom* mSMslalom;
+    static SMslalomb* mSMslalomb;
+    static SMblock* mSMblock;
+    static void change_situation(Section_management* csituation);
 
 private:
     enum State {
@@ -62,9 +75,10 @@ private:
     void execWaitingForStart();
     void execLineTracing();
     void execScenarioTracing();
-
+    
     Section* mSection;  //デバック用
-    Section_management* mSection_management;
+    static Section_management* mSection_management;
+
 };
 
 #endif  // EV3_APP_RANDOMWALKER_H_

@@ -3,7 +3,7 @@
 #include "Arm.h"
 #include "Walker.h"
 
-class ArmControl : Walker{
+class ArmControl : public Walker{
     public:
         ArmControl(ev3api::Motor& motor_arm,Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail);
         void run();

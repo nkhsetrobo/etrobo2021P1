@@ -3,7 +3,7 @@
 #include "Tail.h"
 #include "Walker.h"
 
-class TailControl : Walker{
+class TailControl :public Walker{
     public:
         TailControl(ev3api::Motor& motor_tail,Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail);
         void run();
