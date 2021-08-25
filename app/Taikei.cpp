@@ -21,7 +21,7 @@ float Taikei::control(float ns,float ts){
     }else{
             
     }
-    printf("%f,%f\n",ns,ts);
+    //printf("%f,%f\n",ns,ts);
     return ns;
 }
 

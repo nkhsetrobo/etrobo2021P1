@@ -31,7 +31,7 @@ void TailControl::angle_fixed(){
     float dire=0.0;
     if(check==0){
          mMotor_Tail.setPWM(dire);
-        //printf("F2:%f\n",mArm->get_value());
+        printf("F2:%f\n",mTail->get_value());
     }else{
         mState=SCENARIO_TRACING;
     }
@@ -42,7 +42,7 @@ void TailControl::angle_specification(){
     float theta2=mTail->get_value();
     dire=mPID->getOperation(theta2);
     mMotor_Tail.setPWM(dire);
-    printf("%f\n",dire);
+    printf("dire %f,theta %f\n",dire,theta2);
 }
 
 void TailControl::init(double status[]){

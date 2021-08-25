@@ -13,6 +13,7 @@ SMslalom::SMslalom()
 
 void SMslalom::init(){
         status=slalompra;
+        printf("slalom\n");
 }
 
 void SMslalom::gonext(){
