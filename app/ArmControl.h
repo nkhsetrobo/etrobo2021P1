@@ -18,7 +18,6 @@ class ArmControl : public Walker{
         int d;
         int theta;  
         int check;
-        bool Brake_Mood;
         enum State {
             UNDEFINED,
              LINE_TRACING,

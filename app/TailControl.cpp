@@ -8,8 +8,7 @@ TailControl::TailControl(ev3api::Motor& motor_tail,Drive* drive,Bright* bright,X
     d(0),
     theta(),
     check(0),
-    mState(SCENARIO_TRACING),
-    Brake_Mood(false)
+    mState(SCENARIO_TRACING)
     {
         mMotor_Tail.reset();
     }
@@ -30,8 +29,7 @@ void TailControl::run(){
 
 void TailControl::angle_fixed(){
     float dire=0.0;
-    if(Brake_Mood==false){
-        mMotor_Tail.setBrake(Brake_Mood);
+    if(check==0){
          mMotor_Tail.setPWM(dire);
         //printf("F2:%f\n",mArm->get_value());
     }else{

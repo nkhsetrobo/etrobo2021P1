@@ -32,6 +32,7 @@
 #include "Timer.h"
 #include "Arm_Judge.h"
 #include "Tail_Judge.h"
+#include "Sonar_Judge.h"
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
 void *__dso_handle=0;
@@ -87,6 +88,7 @@ Bright_Judge    *gBright_Judge;
 Distance_Judge  *gDistance_Judge;
 Turn_Judge      *gTurn_Judge;
 Color_Judge     *gColor_Judge;
+Sonar_Judge     *gSonar_Judge;
 Taikei   *gTaikei;
 Arm       *gArm;
 Tail      *gTail;
@@ -124,7 +126,7 @@ static void user_system_create() {
     gColors         = new Colors();
     gSonarMeasure    = new SonarMeasure();
     gArm             = new Arm(gMotor_Arm);
-    gTail            = new Tail();
+    gTail            = new Tail(gMotor_Tail);
     gXpointer        = new Xpointer();
     gYpointer        = new Ypointer();
     gOdometer        = new Odometer();
@@ -138,6 +140,7 @@ static void user_system_create() {
     gColor_Judge     = new Color_Judge();
     gArm_Judge       = new Arm_Judge();
     gTail_Judge      = new Tail_Judge();
+    gSonar_Judge     = new Sonar_Judge();
     gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gArmControl      = new ArmControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gTailControl     = new TailControl(gMotor_Tail,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
@@ -240,5 +243,6 @@ void polling_task(intptr_t exinf) {
    gVirtualPointer->calc();
    gSonar->get_dis();
    gArm->get_count();
+   gTail->get_count();
    ext_tsk();
 }

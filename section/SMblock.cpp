@@ -5,3 +5,13 @@ SMblock::SMblock()
 {
     
 }
+
+void SMblock::init(){
+        status=blockpra;
+        printf("block\n");
+}
+
+void SMblock::gonext(){
+
+}
+

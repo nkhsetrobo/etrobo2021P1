@@ -1,9 +1,13 @@
 #include "SMslalom.h"
+#include "ev3api.h"
+extern Sonar*        gSonar;
+extern SonarMeasure*  gSonarMeasure;
 
 SMslalom::SMslalom()
     : Section_management()
 {
-    
+    mSonar=gSonar;
+    mSonarMeasure=gSonarMeasure;
 }
 
 
@@ -12,5 +16,9 @@ void SMslalom::init(){
 }
 
 void SMslalom::gonext(){
-    RandomWalker::change_situation(RandomWalker::mSMblock);
+    if(error==0){
+        RandomWalker::change_situation(RandomWalker::mSMblock);
+    }else{
+        RandomWalker::change_situation(RandomWalker::mSMslalomb);
+    }
 }
