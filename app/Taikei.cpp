@@ -1,6 +1,7 @@
 #include "Taikei.h"
 #include "ev3api.h"
 #include "math.h"
+//#include "Section_management.h"　//デバック
 Taikei::Taikei()
 :
 a(0.5),
@@ -20,7 +21,7 @@ float Taikei::control(float ns,float ts){
     }else{
             
     }
-    //printf("%f,%f\n",ns,ts);
+    printf("%f,%f\n",ns,ts);
     return ns;
 }
 

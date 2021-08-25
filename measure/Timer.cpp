@@ -10,6 +10,7 @@ Timer::Timer()
 
 void Timer::count() {
     time++;
+    //printf("%d\n",time);
 }
 
 void Timer::reset() {
