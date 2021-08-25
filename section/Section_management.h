@@ -50,10 +50,10 @@ class Section_management{
             END_SECTION
         };
 
-        Main_Section status[100]={  {LINETRACER,{30,1,5,50,0,0}, DISTANCE,{285}, UPDATE_ALL},//285固定
-                                    //{STRAIGHT, {30,1,5,40,0}, DISTANCE, {2000}, UPDATE_ALL},
+        Main_Section status[100]={  //{LINETRACER,{56,1,5,75,0,0}, DISTANCE,{3000}, UPDATE_ALL},//285固定
+                                    {WALKER,{85,0.0}, DISTANCE,{150}, UPDATE_ALL},
                                 //{CURVE,{30,1,5,25,0,19}, DISTANCE,{52}, UPDATE_DIST},//52
-                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                                 
                                 {CURVE,{30,1,5,30,0,16}, TURN,{154}, UPDATE_ANG},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
@@ -102,8 +102,8 @@ class Section_management{
                         
                                 {-1,{}, -1,{}, UNUPDATE}
                                 };
-        Main_Section* status;
 
+        //Main_Section* status;
         int section_idx;
         Section* mSection;
         State mState;

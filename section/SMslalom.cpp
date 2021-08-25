@@ -8,7 +8,7 @@ SMslalom::SMslalom()
 
 
 void SMslalom::init(){
-        status=slalompra;
+        //status=slalompra;
 }
 
 void SMslalom::gonext(){
