@@ -4,7 +4,8 @@ Drive::Drive(MotorControl* motorcontrol,Taikei* taikei)
       :mForward(0.0),//現在速度
        mTurn(0),
        mMotorControl(motorcontrol),
-       mTaikei(taikei) {
+       mTaikei(taikei)
+       {
 }
 
 
@@ -18,6 +19,8 @@ void Drive::run(int forward,int turn){    //forword
     mForward=mTaikei->control(mForward,forward);
     int rPWM=mForward+turn;
     int lPWM=mForward-turn;
+    //int rPWM=forward+turn;
+    //int lPWM=forward-turn;
     int a = rPWM;
     int b = lPWM;
     int n=0;

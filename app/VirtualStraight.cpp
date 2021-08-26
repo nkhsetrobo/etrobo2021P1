@@ -42,6 +42,7 @@ void VirtualStraight::run(){
     dire=mPID->getOperation(distance);
     
     mDrive->run(forw,dire);
+    //printf("forw, %f\n", forw);
 }
 
 

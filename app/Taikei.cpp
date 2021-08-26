@@ -4,7 +4,7 @@
 //#include "Section_management.h"　//デバック
 Taikei::Taikei()
 :
-a(1.0),
+a(0.5),
 b(0.2)
 {
 

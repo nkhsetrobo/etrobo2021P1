@@ -13,7 +13,7 @@ class SMspeed : public Section_management{
 
     private:
 
-        Main_Section speedpra[100]={ {LINETRACER,{30,1,5,50,LEFT,0}, DISTANCE,{285}, UPDATE_ALL},//280固定
+        Main_Section speedpra[100]={ {LINETRACER,{30,1,5,50,0,0}, DISTANCE,{285}, UPDATE_ALL},//285固定
                                 //{CURVE,{30,1,5,25,0,19}, DISTANCE,{52}, UPDATE_DIST},//52
                                 {CURVE,{30,1,5,35,0,19}, TURN,{160}, UPDATE_ANG},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
