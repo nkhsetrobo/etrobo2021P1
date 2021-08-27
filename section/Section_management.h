@@ -50,7 +50,12 @@ class Section_management{
             END_SECTION
         };
 
-        Main_Section status[100]={  {LINETRACER,{50,1,4,63,0,0}, DISTANCE,{285}, UPDATE_ALL},//285固定
+        float kp = 30;
+        float ki = 1;
+        float kd = 0.3;
+
+
+      Main_Section status[100]={  {LINETRACER,{50,1,4,63,0,0}, DISTANCE,{285}, UPDATE_ALL},//285固定
                                     //{WALKER,{85,0.0}, DISTANCE,{150}, UPDATE_ALL},
                                     //{WALKER,{85,0.0}, DISTANCE,{150}, UPDATE_ALL},
                                 //{CURVE,{30,1,5,25,0,19}, DISTANCE,{52}, UPDATE_DIST},//52
