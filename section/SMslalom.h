@@ -18,8 +18,8 @@ class SMslalom : public Section_management{
         SonarMeasure*  mSonarMeasure;
         Main_Section slalompra[100]={
             {ARM,{1,0},ARMJUDGE,{-10},-1,{},UPDATE_ALL}, 
-            {LINETRACER,{50,1,5,3,LEFT,0}, DISTANCE,{10},-1,{}, UPDATE_ALL},
-            {TAIL,{1,1000},TAILJUDGE,{600},-1,{},UPDATE_ALL},  
+            {LINETRACER,{50,1,5,10,LEFT,0}, DISTANCE,{10},-1,{}, UPDATE_ALL},
+            {TAIL,{1,1000},TAILJUDGE,{200},-1,{},UPDATE_ALL},  
             {LINETRACER,{50,1,5,10,LEFT,0}, DISTANCE,{4},-1,{}, UPDATE_ALL},
             {TAIL,{1,0},TAILJUDGE,{10},-1,{},UPDATE_ALL}, 
             {ARM,{0,-50},ARMJUDGE,{-30},-1,{},UPDATE_ALL},  
