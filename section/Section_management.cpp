@@ -52,7 +52,8 @@ void Section_management::add_section()
         update(status[section_idx].COMMAND);
         mSection = new Section();
         mSection->set_param(status[section_idx].walker, status[section_idx].w_status,
-                            status[section_idx].judge, status[section_idx].j_status);
+                            status[section_idx].judge, status[section_idx].j_status,
+                            status[section_idx].judge2,status[section_idx].j2_status);
         //printf("%d\n",status[section_idx].walker);
 
         mState = SECTION_RUN;
@@ -66,6 +67,11 @@ void Section_management::section_run()
 {
     bool fin = mSection->run();
     if (fin == true){
+        error=mSection->get_error();
+        if(error!=0){
+            mState=END_SECTION;
+            return;
+        }
         //printf("%f\n",section_idx);
         mState = ADD_SECTION;
 

@@ -6,6 +6,7 @@ extern Colorh         *gColorh;
 extern Colors         *gColors;
 extern Tail            *gTail;
 extern Arm             *gArm;
+extern SonarMeasure    *gSonarMeasure;
 
 Main_Judge::Main_Judge()
 {
@@ -16,6 +17,7 @@ Main_Judge::Main_Judge()
     mColors=gColors;
     mTail=gTail;
     mArm=gArm;
+    mSonarMeasure=gSonarMeasure;
 }
 
 void Main_Judge::run(){

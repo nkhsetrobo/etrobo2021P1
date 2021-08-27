@@ -62,16 +62,17 @@ class SMspeed : public Section_management{
                                 {LINETRACER,{30,1,5,50,0,0}, DISTANCE,{200}, UPDATE_ALL},
                                 {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                         
-                                {-1,{}, -1,{}, UNUPDATE}
+                                {-1,{}, -1,{},-1,{0}, UNUPDATE}
                                 };
 
-    Main_Section rspeedpra[100]={ {LINETRACER,{30,3,5,30,RIGHT,0}, DISTANCE,{300}, UPDATE_ALL},//試し用
+    Main_Section rspeedpra[100]={ 
+                                {LINETRACER,{30,3,5,30,RIGHT,0}, DISTANCE,{3000},-1,{0}, UPDATE_ALL},//試し用
                         
-                                {-1,{}, -1,{}, UNUPDATE}
+                                {-1,{}, -1,{},0,{}, UNUPDATE}
                                 };
-    Main_Section lspeedpra[100]={ {LINETRACER,{30,3,5,30,LEFT,0}, DISTANCE,{300}, UPDATE_ALL},//試し用
-                        
-                                {-1,{}, -1,{}, UNUPDATE}
+    Main_Section lspeedpra[100]={ {LINETRACER,{30,3,5,25,LEFT,0}, DISTANCE,{1022},-1,{0}, UPDATE_ALL},//試し用
+                                
+                                {-1,{}, -1,{},0,{}, UNUPDATE}
                                 };
 };
 

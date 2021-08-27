@@ -10,7 +10,9 @@ struct Main_Section{
         int     walker;
         double   w_status[10];
         int     judge;
-        double   j_status[10];
+        double   j_status[10]; 
+        int     judge2;
+        double     j2_status[10];
         int COMMAND;
     };
 
@@ -113,9 +115,8 @@ class Section_management{
         State mState;
         Main_Section* mMain_Section;
         int _LEFT;
-
+        int error;
     private:
-
 
 };
 

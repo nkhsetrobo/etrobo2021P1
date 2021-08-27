@@ -13,16 +13,25 @@ bool Distance_Judge::judge()
 {
     dvalue=mOdometer->get_value();
     //printf("dvalue, baseline, %f,%f\n", dvalue, baseline);
-    if(dvalue>=baseline){
-        return true;
+    if(diff>=0){
+        if(dvalue>=baseline){/**/
+            return true;
+        }else{
+            return false;
+        }
     }else{
-        return false;
+        if(dvalue<=baseline){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
 
 void Distance_Judge::set_param(double status[])
 {
     baseline=status[0]+Section_management::DIST;
+    diff = baseline - mOdometer->get_value();
 }
 
 void Distance_Judge::init()

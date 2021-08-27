@@ -17,7 +17,6 @@ class TailControl :public Walker{
         int d;
         int theta;  
         int check;
-        bool Brake_Mood;
         enum State {
              LINE_TRACING,
             SCENARIO_TRACING

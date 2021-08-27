@@ -8,7 +8,7 @@
             CURVE,
             STRAIGHT,
             ARM,
-            TAIL
+            TAIL,
         };
 
         enum JUDGE_NO
@@ -17,6 +17,7 @@
             DISTANCE,
             TURN,
             ARMJUDGE,
-            TAILJUDGE
+            TAILJUDGE,
+            SONARJUDGE
         };
 #endif

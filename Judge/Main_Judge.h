@@ -9,6 +9,7 @@
 #include "Colors.h"
 #include "Tail.h"
 #include "Arm.h"
+#include "SonarMeasure.h"
 
 
 
@@ -27,6 +28,7 @@ class Main_Judge{
         Colors*    mColors;
         Arm*       mArm;
         Tail*      mTail;
+        SonarMeasure* mSonarMeasure;
     private:
         
 };
