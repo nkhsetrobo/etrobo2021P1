@@ -52,7 +52,8 @@ void Section::set_param(int walker_no, double walker_status[],
                         int judge2_no, double judge2_status[])
 {
     /*printf("set_param : w %d j1 %d j2 %d  w_st %f,%f  j1_st %f,%f j2_st %f,%f \n",walker_no ,judge_no,judge2_no , 
-    walker_status[0],walker_status[1],  judge_status[0],judge_status[1], judge2_status[0],judge2_status[1]);*/
+    walker_status[0],walker_status[1],  judge_status[0],judge_status[1], judge2_status[0],judge2_status[1]);
+    */
     mWalker = mWalker_list[walker_no];
     mMain_Judge = mJudge_list[judge_no];
 

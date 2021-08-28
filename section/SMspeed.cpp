@@ -7,11 +7,12 @@ SMspeed::SMspeed()
 }
 
 void SMspeed::init(){
-    /*if(_LEFT==0){
+    if(_LEFT==0){
         status=rspeedpra;
     }else{
-        status=lspeedpra;
-    }*/
+        //status=lspeedpra;
+         status=speedpra;
+   }
     
 }
 

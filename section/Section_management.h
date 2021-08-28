@@ -57,7 +57,7 @@ class Section_management{
         float kd = 0.3;
 
 
-      Main_Section status[100]={  {LINETRACER,{50,1,4,63,0,0}, DISTANCE,{285}, UPDATE_ALL},//285固定
+      /*Main_Section status[100]={  {LINETRACER,{50,1,4,63,0,0}, DISTANCE,{285}, UPDATE_ALL},//285固定
                                     //{WALKER,{85,0.0}, DISTANCE,{150}, UPDATE_ALL},
                                     //{WALKER,{85,0.0}, DISTANCE,{150}, UPDATE_ALL},
                                 //{CURVE,{30,1,5,25,0,19}, DISTANCE,{52}, UPDATE_DIST},//52
@@ -107,9 +107,9 @@ class Section_management{
                                 {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                         
                                 {-1,{}, -1,{}, UNUPDATE}
-                                };
+                                };*/
 
-        //Main_Section* status;
+        Main_Section* status;
         int section_idx;
         Section* mSection;
         State mState;
