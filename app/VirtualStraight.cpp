@@ -24,8 +24,8 @@ VirtualStraight::VirtualStraight(Drive* drive,Bright* bright,Xpointer* xpointer,
 void VirtualStraight::run(){
     float dire;
     if (mIsInitialized == false) {
-        mDrive->init();
-        mIsInitialized = true;
+        //mDrive->init();
+        //mIsInitialized = true;
     }
     float x=mXpointer->get_value();//機体のx座標
     float y=mYpointer->get_value();//機体のy座標

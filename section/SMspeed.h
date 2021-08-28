@@ -70,8 +70,8 @@ class SMspeed : public Section_management{
                         
                                 {-1,{}, -1,{},0,{}, UNUPDATE}
                                 };
-    Main_Section lspeedpra[100]={ {LINETRACER,{30,3,5,25,LEFT,0}, DISTANCE,{1022},-1,{0}, UPDATE_ALL},//試し用
-                                
+    Main_Section lspeedpra[100]={ {LINETRACER,{30,3,5,35,LEFT,0}, DISTANCE,{1000},-1,{0}, UPDATE_ALL},//試し用
+                                {LINETRACER,{30,3,5,10,LEFT,0}, DISTANCE,{30},-1,{0}, UPDATE_ALL},//試し用
                                 {-1,{}, -1,{},0,{}, UNUPDATE}
                                 };
 };
