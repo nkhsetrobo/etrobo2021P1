@@ -7,6 +7,7 @@ extern Colors         *gColors;
 extern Tail            *gTail;
 extern Arm             *gArm;
 extern SonarMeasure    *gSonarMeasure;
+extern Timer           *gTimer;
 
 Main_Judge::Main_Judge()
 {
@@ -18,6 +19,8 @@ Main_Judge::Main_Judge()
     mTail=gTail;
     mArm=gArm;
     mSonarMeasure=gSonarMeasure;
+    mTimer=gTimer;
+    //printf("Timer,%d,%f",mTimer,mTimer->get_value());
 }
 
 void Main_Judge::run(){

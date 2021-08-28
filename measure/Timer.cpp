@@ -3,9 +3,9 @@
 
  
 Timer::Timer()
-    :time()
+    :Main_Measure(),
+    time()
 {
-
 }
 
 void Timer::count() {
@@ -13,6 +13,14 @@ void Timer::count() {
     //printf("%d\n",time);
 }
 
-void Timer::reset() {
+void Timer::init() {
     time=0;
+}
+
+float Timer::get_value(){
+    return time;
+}
+
+void Timer:: load(float mload){
+
 }

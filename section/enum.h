@@ -18,6 +18,8 @@
             TURN,
             ARMJUDGE,
             TAILJUDGE,
-            SONARJUDGE
+            SONARJUDGE,
+            TIMEJUDGE,
+            COLORJUDGE
         };
 #endif

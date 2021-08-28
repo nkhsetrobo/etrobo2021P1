@@ -10,6 +10,7 @@
 #include "Tail.h"
 #include "Arm.h"
 #include "SonarMeasure.h"
+#include "Timer.h"
 
 
 
@@ -29,6 +30,7 @@ class Main_Judge{
         Arm*       mArm;
         Tail*      mTail;
         SonarMeasure* mSonarMeasure;
+        Timer*     mTimer;
     private:
         
 };

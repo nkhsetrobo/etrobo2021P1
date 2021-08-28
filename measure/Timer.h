@@ -1,11 +1,15 @@
 #ifndef EV3_MEASURE_TIMER_H_
 #define EV3_MEASURE_TIMER_H_
 
-class Timer {
+#include "Main_Measure.h"
+
+class Timer : public Main_Measure{
     public:
         Timer();
+        void load(float mload);
         void count();
-        void reset();
+        float get_value();
+        void init();
 
     private:
         int time;

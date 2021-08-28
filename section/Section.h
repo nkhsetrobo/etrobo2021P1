@@ -15,6 +15,8 @@
 #include "Arm_Judge.h"
 #include "Tail_Judge.h"
 #include "Sonar_Judge.h"
+#include "Time_Judge.h"
+#include "Color_Judge.h"
 
 class Section{
     public:

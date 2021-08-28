@@ -46,7 +46,8 @@ APPL_CXXOBJS += \
 	SMblock.o\
 	Arm_Judge.o\
 	Tail_Judge.o\
-	Sonar_Judge.o
+	Sonar_Judge.o\
+	Time_Judge.o
 
 
 SRCLANG := c++

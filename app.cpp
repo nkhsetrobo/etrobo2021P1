@@ -33,6 +33,7 @@
 #include "Arm_Judge.h"
 #include "Tail_Judge.h"
 #include "Sonar_Judge.h"
+#include "Time_Judge.h"
 // デストラクタ問題の回避
 // https://github.com/ETrobocon/etroboEV3/wiki/problem_and_coping
 void *__dso_handle=0;
@@ -97,6 +98,7 @@ Bright          *gBright;
 Colorh           *gColorh;
 Colors           *gColors;
 VirtualPointer  *gVirtualPointer;
+Time_Judge      *gTime_Judge;
 // scene object
 static Scene gScenes[] = {
     { TURN_LEFT,   1250 * 1000, 0 },  // 左旋回1.25秒
@@ -141,6 +143,7 @@ static void user_system_create() {
     gArm_Judge       = new Arm_Judge();
     gTail_Judge      = new Tail_Judge();
     gSonar_Judge     = new Sonar_Judge();
+    gTime_Judge      = new Time_Judge();
     gLineTracer      = new LineTracer(gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gArmControl      = new ArmControl(gMotor_Arm,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
     gTailControl     = new TailControl(gMotor_Tail,gDrive,gBright,gXpointer,gYpointer,gTurn,gArm,gTail);
@@ -230,6 +233,7 @@ void tracer_task(intptr_t exinf) {
         gRandomWalker->run();
 
         gArmControl->run();
+        gTailControl->run();
         /*double status2[]={0,100000};
         gTailControl->init(status2);
         gTailControl->run();*/    
