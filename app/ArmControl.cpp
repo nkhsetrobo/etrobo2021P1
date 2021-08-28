@@ -8,7 +8,7 @@ ArmControl::ArmControl(ev3api::Motor& motor_arm,Drive* drive,Bright* bright,Xpoi
     d(0),
     theta(),
     check(0),
-    mState(SCENARIO_TRACING)
+    mState(LINE_TRACING)
     {
         mMotor_Arm.reset();
     }

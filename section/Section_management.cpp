@@ -54,7 +54,7 @@ void Section_management::add_section()
         mSection->set_param(status[section_idx].walker, status[section_idx].w_status,
                             status[section_idx].judge, status[section_idx].j_status,
                             status[section_idx].judge2,status[section_idx].j2_status);
-        printf("%d\n",status[section_idx].walker);
+        //printf("%d\n",status[section_idx].walker);
 
         mState = SECTION_RUN;
 

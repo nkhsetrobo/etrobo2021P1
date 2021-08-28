@@ -32,7 +32,7 @@ class SMspeed : public Section_management{
                                 {CURVE,{30,1,5,30,0,-17}, TURN,{-80},-1,{}, UNUPDATE},//30
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {STRAIGHT,{30,1,5,40,-80}, DISTANCE,{1},-1,{}, UPDATE_DIST},
+                                {STRAIGHT,{30,1,5,40,-80}, DISTANCE,{},-1,{}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                                 
                                 {CURVE,{30,1,5,30,0,16}, TURN,{80},-1,{}, UPDATE_DIST},//30
@@ -65,8 +65,8 @@ class SMspeed : public Section_management{
                         
                                 {-1,{}, -1,{},0,{}, UNUPDATE}
                                 };
-    Main_Section lspeedpra[100]={ {LINETRACER,{30,3,5,30,LEFT,0}, DISTANCE,{1020},-1,{0}, UPDATE_ALL},//試し用
-                        
+    Main_Section lspeedpra[100]={ {LINETRACER,{30,3,5,35,LEFT,0}, DISTANCE,{1000},-1,{0}, UPDATE_ALL},//試し用
+                                {LINETRACER,{30,3,5,10,LEFT,0}, DISTANCE,{30},-1,{0}, UPDATE_ALL},//試し用
                                 {-1,{}, -1,{},0,{}, UNUPDATE}
                                 };
 };

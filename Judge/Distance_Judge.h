@@ -13,6 +13,7 @@ class Distance_Judge : public Main_Judge {
         Main_Judge* mMain_Judge;
         float dvalue;
         float baseline;//判断基準（ゆーざーがきめる）dvalue以下なら右以上なら左
+        float diff;
 };
 
 #endif

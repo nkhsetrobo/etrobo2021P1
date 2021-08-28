@@ -167,6 +167,7 @@ static void user_system_create() {
     }
     double status[]={0,-50};
     gArmControl->init(status);
+    gArmControl->first_angle();
     // 初期化完了通知
     ev3_led_set_color(LED_ORANGE);
 }
