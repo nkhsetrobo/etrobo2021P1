@@ -12,7 +12,7 @@ struct Main_Section{
         int     judge;
         double   j_status[10]; 
         int     judge2;
-        double     j2_status[10];
+        double   j2_status[10];
         int COMMAND;
     };
 
