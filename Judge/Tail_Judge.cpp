@@ -11,7 +11,7 @@ Tail_Judge::Tail_Judge()
 bool Tail_Judge::judge()
 {
     tvalue=mTail->get_value();
-    printf("tvalue, baseline, %f,%f\n", tvalue, baseline);
+    //printf("tvalue, baseline, %f,%f\n", tvalue, baseline);
     if(diff>=0){
         if(tvalue>=baseline){/**/
             return true;

@@ -20,7 +20,7 @@ bool Time_Judge::judge()
 
 void Time_Judge::set_param(double status[])
 {
-    baseline=status[0];
+    baseline=status[0]+mTimer->get_value();
 }
 
 void Time_Judge::init()
