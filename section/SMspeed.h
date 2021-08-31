@@ -10,6 +10,9 @@ class SMspeed : public Section_management{
         SMspeed();
         void init();
         void gonext();
+        float kp = 30;
+        float ki = 1;
+        float kd = 0.5;
 
     private:
 
