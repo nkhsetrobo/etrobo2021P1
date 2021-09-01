@@ -11,6 +11,7 @@ void SMspeed::init(){
         status=rspeedpra;
     }else{
         status=lspeedpra;
+        //status=speedpra;
     }
     
 }

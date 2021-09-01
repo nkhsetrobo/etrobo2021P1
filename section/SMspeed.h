@@ -16,49 +16,94 @@ class SMspeed : public Section_management{
 
     private:
 
-        Main_Section speedpra[100]={ {LINETRACER,{30,1,5,50,LEFT,0}, DISTANCE,{285},-1,{},UPDATE_ALL},//280固定
+        Main_Section speedpra[100]={  //{LINETRACER,{40,1,1,85,0,0}, DISTANCE,{285},-1,{0}, UPDATE_ALL},//285固定
+                                    //{WALKER,{85,0.0}, DISTANCE,{150}, UPDATE_ALL},
+                                    //{WALKER,{85,0.0}, DISTANCE,{150}, UPDATE_ALL},
                                 //{CURVE,{30,1,5,25,0,19}, DISTANCE,{52}, UPDATE_DIST},//52
-                                {CURVE,{30,1,5,35,0,19}, TURN,{160},-1,{}, UPDATE_ANG},
-                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
-
-                                {STRAIGHT,{30,1,5,40,158}, DISTANCE,{38},-1,{}, UPDATE_DIST},//40 STRAIGHT,{10,0,0,30,251}, DISTANCE,{376}
-                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
-
-                                {CURVE,{30,1,5,30,0,-17}, TURN,{70},-1,{},UNUPDATE},//25
-                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
-
-                                {STRAIGHT,{30,1,5,40,70}, DISTANCE,{45},-1,{}, UPDATE_DIST},//45
-                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
-
-
-                                //ここから3つS字カーブ
-                                {CURVE,{30,1,5,30,0,-17}, TURN,{-80},-1,{}, UNUPDATE},//30
-                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
-
-                                {STRAIGHT,{30,1,5,40,-80}, DISTANCE,{},-1,{}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                                 
-                                {CURVE,{30,1,5,30,0,16}, TURN,{80},-1,{}, UPDATE_DIST},//30
+                                {LINETRACER,{25,1,0.5,85,0,0}, DISTANCE,{165}, -1,{0}, UPDATE_ALL},//285固定
+                                    //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                //第1コーナー
+                                {LINETRACER,{30,1,1,80,0,0}, DISTANCE,{60}, -1,{0}, UPDATE_ALL},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {LINETRACER,{30,1,0.5,85,0,0}, DISTANCE,{65}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
-                                {STRAIGHT,{30,1,5,40,70}, DISTANCE,{35},-1,{},UPDATE_DIST},
+                                {CURVE,{65,1,1,60,0,19}, TURN,{160},-1,{0}, UPDATE_ANG},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {CURVE,{30,1,5,40,0,13}, TURN,{160},-1,{}, UPDATE_DIST},
+                                {STRAIGHT,{45,1,1,70,160}, DISTANCE,{50},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {STRAIGHT,{30,1,5,40,80}, DISTANCE,{1},-1,{}, UPDATE_DIST},
+                                {CURVE,{55,1,1,65,0,-15}, TURN,{80},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {CURVE,{30,1,5,40,0,-17}, TURN,{0},-1,{}, UPDATE_DIST},
+                                {STRAIGHT,{35,1,1,85,80}, DISTANCE,{45},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {STRAIGHT,{30,1,5,30,-20}, DISTANCE,{20},-1,{}, UPDATE_DIST},
+                                {CURVE,{50,1,0.5,65,0,-10}, TURN,{40},-1,{0}, UNUPDATE},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                {CURVE,{35,1,1,55,0,-10}, TURN,{0},-1,{0}, UNUPDATE},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                {CURVE,{35,1,1,50,0,-25}, TURN,{-35},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{30,1,5,50,LEFT,0}, DISTANCE,{200},-1,{0}, UPDATE_ALL},
-                                {WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNUPDATE},
+                                {STRAIGHT,{35,1,1,85,-35}, DISTANCE,{30},-1,{0}, UPDATE_DIST},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {CURVE,{50,1,0.5,65,0,10}, TURN,{-10},-1,{0}, UNUPDATE},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                {CURVE,{40,1,1,55,0,10}, TURN,{50},-1,{0}, UNUPDATE},
+                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                {CURVE,{35,1,1,50,0,25}, TURN,{95},-1,{0}, UNUPDATE},
+                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+
+                                {CURVE,{55,1,1,65,0,30}, TURN,{},-1,{0}, UNUPDATE},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {CURVE,{55,1,1,65,0,-10}, TURN,{-15},-1,{0}, UNUPDATE},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+
+                               /* //ここから3つS字カーブ
+                                {CURVE,{70,1,1,60,0,23}, TURN,{80},-1,{0}, UNUPDATE},//30
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {STRAIGHT,{30,1,1,40,-25}, DISTANCE,{0},-1,{0}, UPDATE_DIST},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                
+                                {CURVE,{55,1,1,50,0,22}, TURN,{83},-1,{0}, UNUPDATE},//30
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},*/
+
+
+                                {STRAIGHT,{35,1,1,60,82}, DISTANCE,{30},-1,{0}, UPDATE_DIST},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {CURVE,{55,1,1,50,0,18}, TURN,{171},-1,{0}, UNUPDATE},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {STRAIGHT,{40,1,1,50,172}, DISTANCE,{17},-1,{0}, UPDATE_DIST},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                //{STRAIGHT,{30,1,5,40,70}, DISTANCE,{0}, UPDATE_DIST},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {CURVE,{55,1,1,50,0,-18}, TURN,{-2},-1,{0}, UNUPDATE},
+                                //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
+
+                                //{LINETRACER,{40,1,1,40,0,0}, DISTANCE,{10},-1,{0}, UPDATE_DIST},
+                                //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
+
+                                //{LINETRACER,{40,1,1,40,0,0}, DISTANCE,{10},-1,{0}, UPDATE_ALL},
+                                //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
+
+                                {STRAIGHT,{40,1,1,60,-2}, DISTANCE,{160},-1,{0}, UPDATE_DIST},
+                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                         
                                 {-1,{}, -1,{},-1,{0}, UNUPDATE}
                                 };
@@ -68,12 +113,12 @@ class SMspeed : public Section_management{
                         
                                 {-1,{}, -1,{},0,{}, UNUPDATE}
                                 };
-    Main_Section lspeedpra[100]={ {LINETRACER,{kp,ki,kd,85,0,0}, DISTANCE,{185}, -1,{0}, UPDATE_ALL},//285固定
+    Main_Section lspeedpra[100]={ {LINETRACER,{25,ki,kd,85,0,0}, DISTANCE,{165}, -1,{0}, UPDATE_ALL},//285固定
                                     //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
                                 //第1コーナー
-                                {LINETRACER,{25,ki,kd,75,0,0}, DISTANCE,{45}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{30,ki,1,80,0,0}, DISTANCE,{60}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {LINETRACER,{kp,ki,kd,85,0,0}, DISTANCE,{45}, -1,{0}, UPDATE_ALL},
@@ -89,10 +134,10 @@ class SMspeed : public Section_management{
 
 
                                 //第3コーナー
-                                {LINETRACER,{65,ki,0.5,85,0,0}, DISTANCE,{55}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{55,ki,0.5,70,0,0}, DISTANCE,{55}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{kp,ki,kd,75,0,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{kp,ki,kd,85,0,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
@@ -100,28 +145,34 @@ class SMspeed : public Section_management{
                                 {LINETRACER,{60,1,1,65,0,0}, DISTANCE,{75}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{kp,ki,kd,75,0,0}, DISTANCE,{25}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{kp,ki,kd,75,0,0}, DISTANCE,{20}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                                 
-                                {LINETRACER,{45,1,1,45,0,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{45,1,1,75,0,0}, DISTANCE,{40}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{kp,ki,kd,80,0,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{kp,ki,kd,85,0,0}, DISTANCE,{40}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
                                 //第4コーナー
-                                {LINETRACER,{45,ki,0.5,80,0,0}, DISTANCE,{45}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{45,ki,0.5,75,0,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{kp,ki,kd,85,0,0}, DISTANCE,{25}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{35,ki,kd,85,0,0}, DISTANCE,{30}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                                 
 
-                                //第5コーナー
+                                //第5コーナーからゴールまで
                                 {LINETRACER,{55,ki,kd,85,0,0}, DISTANCE,{350}, -1,{0}, UPDATE_ALL},
-                                {LINETRACER,{30,1,1,15,0,0}, DISTANCE,{30}, -1,{0}, UPDATE_ALL},
+                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
+                                {LINETRACER,{30,1,5,50,0,0}, DISTANCE,{90}, -1,{0}, UPDATE_ALL},
+                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {LINETRACER,{30,1,5,30,0,0}, DISTANCE,{30}, -1,{0}, UPDATE_ALL},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                        
                                 {-1,{}, -1,{}, UNUPDATE}
                                 };
 };
