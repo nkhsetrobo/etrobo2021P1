@@ -15,9 +15,9 @@ float Taikei::control(float ns,float ts){
         return 0;
     }
     if(round(ns)>round(ts)){    //roundは四捨五入
-        ns=ns-a;
+        ns=ns-b;
     }else if(round(ns)<round(ts)){
-        ns=ns+b;
+        ns=ns+a;
     }else{
             
     }
