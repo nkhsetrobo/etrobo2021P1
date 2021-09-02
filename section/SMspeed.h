@@ -164,12 +164,8 @@ class SMspeed : public Section_management{
 
                                 //第5コーナーからゴールまで
                                 {LINETRACER,{55,ki,kd,85,0,0}, DISTANCE,{350}, -1,{0}, UPDATE_ALL},
-                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{30,1,5,50,0,0}, DISTANCE,{90}, -1,{0}, UPDATE_ALL},
-                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{30,1,5,30,0,0}, DISTANCE,{30}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                         
                                 {-1,{}, -1,{}, UNUPDATE}
