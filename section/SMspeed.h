@@ -113,10 +113,13 @@ class SMspeed : public Section_management{
                                 {LINETRACER,{kp,ki,kd,75,0,0}, DISTANCE,{25}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                                 
-                                {LINETRACER,{45,1,3,45,0,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{40,1,1,5,0,0}, DISTANCE,{15}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{kp,ki,kd,80,0,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{40,1,0.5,45,0,0}, DISTANCE,{20}, -1,{0}, UPDATE_ALL},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {LINETRACER,{kp,ki,kd,85,0,0}, DISTANCE,{40}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
@@ -129,10 +132,10 @@ class SMspeed : public Section_management{
                                 
 
                                 //第5コーナー
-                                {LINETRACER,{60,ki,kd,85,0,0}, DISTANCE,{600}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{60,ki,kd,85,0,0}, DISTANCE,{350}, -1,{0}, UPDATE_ALL},
                                 {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{30,1,5,50,0,0}, DISTANCE,{200}, UPDATE_ALL},
+                                //{LINETRACER,{30,1,5,50,0,0}, DISTANCE,{200}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                         
                                 {-1,{}, -1,{}, UNUPDATE}
