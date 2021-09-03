@@ -134,10 +134,10 @@ class SMspeed : public Section_management{
                                 {LINETRACER,{kp,ki,kd,75,0,0}, DISTANCE,{25}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                                 
-                                {LINETRACER,{40,1,0.5,5,0,0}, DISTANCE,{15}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{45,1,0.3,5,0,0}, DISTANCE,{15}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{40,1,0.5,45,0,0}, DISTANCE,{20}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{45,1,0.2,45,0,0}, DISTANCE,{20}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {LINETRACER,{kp,ki,kd,85,0,0}, DISTANCE,{40}, -1,{0}, UPDATE_ALL},
