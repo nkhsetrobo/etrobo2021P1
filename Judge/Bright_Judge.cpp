@@ -11,6 +11,7 @@ Bright_Judge::Bright_Judge()
 bool Bright_Judge::judge()
 {
     bvalue=mBright->get_value();//黒で１白で0
+    //printf("value, bvalue,%f,%f\n", value, bvalue);
     if(value>0){
         if(bvalue >= baseline){
             return true;
