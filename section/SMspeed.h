@@ -154,7 +154,7 @@ class SMspeed : public Section_management{
 
                                 //第5コーナー
                                 {LINETRACER,{60,ki,kd,85,0,0}, DISTANCE,{350}, -1,{0}, UPDATE_ALL},
-                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 //{LINETRACER,{30,1,5,50,0,0}, DISTANCE,{200}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},

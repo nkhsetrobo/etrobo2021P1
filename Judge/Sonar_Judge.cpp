@@ -11,8 +11,7 @@ Sonar_Judge::Sonar_Judge()
 bool Sonar_Judge::judge()
 {
     svalue=mSonarMeasure->get_value();
-    //printf("%f,%f\n",baseline,svalue);
-    //printf("dvalue, baseline, %f,%f\n", dvalue, baseline);
+    printf("BASELINE,%f,SVALUE,%f\n",baseline,svalue);
     if(svalue<=baseline){
         return true;
     }else{
