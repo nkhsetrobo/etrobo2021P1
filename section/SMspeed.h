@@ -102,7 +102,7 @@ class SMspeed : public Section_management{
                                 //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
 
                                 {STRAIGHT,{40,1,1,60,-2}, DISTANCE,{160},-1,{0}, UPDATE_DIST},
-                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                         
                                 {-1,{}, -1,{},-1,{0}, UNUPDATE}
                                 };
@@ -167,7 +167,7 @@ class SMspeed : public Section_management{
 
                                 //第5コーナー
                                 {LINETRACER,{60,ki,kd,85,0,0}, DISTANCE,{340}, -1,{0}, UPDATE_ALL},
-                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 //{LINETRACER,{30,1,5,50,0,0}, DISTANCE,{200}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
