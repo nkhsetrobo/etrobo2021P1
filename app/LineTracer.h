@@ -16,6 +16,8 @@ class LineTracer : public Walker{
         LineTracer(Drive* drive,Bright* bright,Xpointer* xpointer,Ypointer* ypointer,Turn* turn,Arm* arm,Tail* tail);
         void run();
         void init(double status[]);
+        static int LEFT_EDGE;
+        static int RIGHT_EDGE;
 
     private:
         bool  mIsInitialized;
