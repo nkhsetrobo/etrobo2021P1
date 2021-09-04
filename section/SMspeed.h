@@ -158,7 +158,10 @@ class SMspeed : public Section_management{
                                 {-1,{}, -1,{}, UNUPDATE}
                                 };
 
-        Main_Section speedpra[100]={ {LINETRACER,{25,1,0.5,85,LineTracer::LEFT_EDGE,0}, DISTANCE,{165}, -1,{0}, UPDATE_ALL},
+        Main_Section speedpra[100]={{CURVE,{0,0,0,45,30,15}, TURN,{180},-1,{0}, UNUPDATE},//35,1,0.5
+                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+            
+             {LINETRACER,{25,1,0.5,85,LineTracer::LEFT_EDGE,0}, DISTANCE,{165}, -1,{0}, UPDATE_ALL},
                                     //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 //第1コーナー
@@ -172,20 +175,20 @@ class SMspeed : public Section_management{
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
-                                {CURVE,{45,1,0.5,45,0,19}, TURN,{155},-1,{0}, UPDATE_ANG},
+                                {CURVE,{45,1,0.5,45,15,19}, TURN,{155},-1,{0}, UPDATE_ANG},//45,1,0.5
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {STRAIGHT,{45,1,1,85,155}, DISTANCE,{49},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {CURVE,{45,1,0.5,45,0,-15}, TURN,{74},-1,{0}, UNUPDATE},
+                                {CURVE,{35,1,0.5,45,-35,-15}, TURN,{69},-1,{0}, UNUPDATE},//35,1,0.5
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {STRAIGHT,{35,1,1,85,73}, DISTANCE,{40},-1,{0}, UPDATE_DIST},
+                                {STRAIGHT,{35,1,1,85,69}, DISTANCE,{40},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
-                                {CURVE,{45,1,0.5,50,0,-12}, TURN,{-25},-1,{0}, UNUPDATE},
+                                {CURVE,{45,1,0.5,50,-40,-12}, TURN,{-27},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                                                                 /*{CURVE,{50,1,0.5,65,0,-10}, TURN,{40},-1,{0}, UNUPDATE},
@@ -195,40 +198,43 @@ class SMspeed : public Section_management{
                                                                                 {CURVE,{35,1,1,50,0,-25}, TURN,{-32},-1,{0}, UNUPDATE},
                                                                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},*/
 
-                                {STRAIGHT,{35,1,1,85,-25}, DISTANCE,{20},-1,{0}, UPDATE_DIST},
+                                {STRAIGHT,{35,1,1,85,-26}, DISTANCE,{21},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {CURVE,{45,1,0.3,70,0,12}, TURN,{76},-1,{0}, UNUPDATE},
+                                {CURVE,{45,1,0.5,40,30,11}, TURN,{72},-1,{0}, UNUPDATE},//45,1,0.5
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED}, 
                                 //ここまでS字カーブ
 
 
-                                {STRAIGHT,{35,1,1,85,80}, DISTANCE,{34},-1,{0}, UPDATE_DIST},
+                                {STRAIGHT,{35,1,1,85,72}, DISTANCE,{35},-1,{0}, UPDATE_DIST},
+                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {CURVE,{45,1,1,50,20,18}, TURN,{153},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {CURVE,{45,1,1,50,0,18}, TURN,{156},-1,{0}, UNUPDATE},
-                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
-
-                                {STRAIGHT,{40,1,1,85,156}, DISTANCE,{32},-1,{0}, UPDATE_DIST},
+                                {STRAIGHT,{40,1,1,85,153}, DISTANCE,{30},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 //{STRAIGHT,{30,1,5,40,70}, DISTANCE,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {CURVE,{50,1,1,50,0,-17}, TURN,{19},-1,{0}, UNUPDATE},
+                                {CURVE,{50,1,1,50,30,-16}, TURN,{17},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
 
-                                {STRAIGHT,{25,1,0.5,85,19}, BRIGHT,{-0.2,-1},-1,{0}, UPDATE_DIST},
+                                {STRAIGHT,{25,1,0.5,85,17}, BRIGHT,{-0.2,-1},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{37,1,1,85,LineTracer::LEFT_EDGE,0}, DISTANCE,{190},-1,{0}, UPDATE_ALL},
+                                {LINETRACER,{45,1,1,55,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
 
-                                {LINETRACER,{30,1,0.6,30,LineTracer::LEFT_EDGE,0}, TURN,{-90},-1,{0}, UPDATE_ALL},
-                                //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
-
-                                {LINETRACER,{30,1,0.6,30,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{0}, UPDATE_ALL},
+                                {LINETRACER,{35,1,1,85,LineTracer::LEFT_EDGE,0}, DISTANCE,{170},-1,{0}, UPDATE_ALL},
                                 {WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
+
+                                {LINETRACER,{30,1,0.6,85,LineTracer::LEFT_EDGE,0}, TURN,{-80},-1,{0}, UPDATE_ALL},
+                                //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
+
+                                //{LINETRACER,{30,1,0.6,30,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{0}, UPDATE_ALL},
+                                //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
 
                                 //{STRAIGHT,{40,1,1,85,10}, DISTANCE,{160},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
