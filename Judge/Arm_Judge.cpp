@@ -11,7 +11,7 @@ Arm_Judge::Arm_Judge()
 bool Arm_Judge::judge()
 {
     avalue=mArm->get_value();
-    printf("%f,%f\n",baseline,avalue);
+    //printf("%f,%f\n",baseline,avalue);
     //printf("dvalue, baseline, %f,%f\n", dvalue, baseline);
     if(avalue>=baseline){
         return true;//腕の角度が規定値を超えたとき

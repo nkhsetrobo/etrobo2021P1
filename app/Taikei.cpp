@@ -4,7 +4,7 @@
 //#include "Section_management.h"　//デバック
 Taikei::Taikei()
 :
-a(0.5),
+a(1.0),
 b(0.2)
 {
 
@@ -15,9 +15,9 @@ float Taikei::control(float ns,float ts){
         return 0;
     }
     if(round(ns)>round(ts)){    //roundは四捨五入
-        ns=ns-a;
+        ns=ns-b;
     }else if(round(ns)<round(ts)){
-        ns=ns+b;
+        ns=ns+a;
     }else{
             
     }

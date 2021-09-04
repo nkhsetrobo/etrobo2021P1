@@ -8,6 +8,9 @@
 
 #include "LineTracer.h"
 
+int LineTracer::LEFT_EDGE = 0;
+int LineTracer::RIGHT_EDGE= 1; 
+
 /**
  * コンストラクタ
  * @param lineMonitor     ライン判定
