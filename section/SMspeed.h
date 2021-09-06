@@ -158,8 +158,8 @@ class SMspeed : public Section_management{
                                 {-1,{}, -1,{}, UNUPDATE}
                                 };
 
-        Main_Section speedpra[100]={{CURVE,{0,0,0,45,30,15}, TURN,{180},-1,{0}, UNUPDATE},//35,1,0.5
-                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+        Main_Section speedpra[100]={//{CURVE,{0,0,0,45,30,-15}, TURN,{180},-1,{0}, UNUPDATE},//35,1,0.5
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
             
              {LINETRACER,{25,1,0.5,85,LineTracer::LEFT_EDGE,0}, DISTANCE,{165}, -1,{0}, UPDATE_ALL},
                                     //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
