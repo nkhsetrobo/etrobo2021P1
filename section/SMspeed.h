@@ -303,7 +303,7 @@ class SMspeed : public Section_management{
                                 {LINETRACER,{30,1,0.6,85,LineTracer::LEFT_EDGE,0}, TURN,{-80},-1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
 
-                                //{LINETRACER,{30,1,0.6,30,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{0}, UPDATE_ALL},
+                                {LINETRACER,{30,1,0.6,30,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
 
                                 //{STRAIGHT,{40,1,1,85,10}, DISTANCE,{160},-1,{0}, UPDATE_DIST},
