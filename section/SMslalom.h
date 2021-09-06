@@ -56,8 +56,8 @@ class SMslalom : public Section_management{
             {CURVE,{10,2,0.6,6,0,27},TURN,{-85} ,-1,{}, UNUPDATE},
             {WALKER,{10,0},DISTANCE,{15},-1,{},UPDATE_DIST},
             {CURVE,{10,1,0.6,6,0,18},BRIGHT,{-0.1,-1}, -1,{},UNUPDATE},
-            {LINETRACER,{14,1,0.5,6,LEFT,0}, DISTANCE,{10},-1,{}, UPDATE_ALL},
-            {WALKER,{10,0}, SONARJUDGE,{38},-1,{}, UNDEFINED},
+            {LINETRACER,{19,1,0.5,6,LEFT,0}, DISTANCE,{10},-1,{}, UPDATE_ALL},
+            {WALKER,{10,0}, SONARJUDGE,{60},-1,{}, UNDEFINED},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
 
             {-1,{}, -1,{},-1,{}, UNUPDATE}

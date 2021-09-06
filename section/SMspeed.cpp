@@ -10,8 +10,8 @@ void SMspeed::init(){
     if(_LEFT==0){
         status=rspeedpra;
     }else{
-        //status=lspeedpra;
-        status=speedpra;
+        status=lspeedpra;
+        //status=speedpra;
     }
     
 }
