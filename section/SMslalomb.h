@@ -21,8 +21,8 @@ class SMslalomb : public Section_management{
              {CURVE,{10,2,0.6,11,0,-45},TURN,{-85} ,-1,{}, UNUPDATE},
              {WALKER,{10,0},DISTANCE,{15},-1,{},UPDATE_DIST},
              {CURVE,{10,1,0.6,6,0,-20},BRIGHT,{-0.3,-1}, -1,{},UNUPDATE},
-             {LINETRACER,{14,1,0.5,6,RIGHT,0}, DISTANCE,{8},SONARJUDGE,{38}, UPDATE_ALL},
-             {WALKER,{10,0},SONARJUDGE,{30},-1,{}, UPDATE_ALL},
+             {LINETRACER,{14,1,0.5,6,RIGHT,0}, DISTANCE,{8},-1,{}, UPDATE_ALL},
+             {WALKER,{10,0},SONARJUDGE,{60},-1,{}, UPDATE_ALL},
                         
             {-1,{}, -1,{},-1,{}, UNUPDATE}
                                 };
