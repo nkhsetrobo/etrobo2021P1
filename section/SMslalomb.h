@@ -14,7 +14,7 @@ class SMslalomb : public Section_management{
 
     private:
         Main_Section slalombpra[100]={
-             {CURVE,{10,2,0.6,11,0,-26.5}, TURN,{-38},-1,{}, UNUPDATE},
+             {CURVE,{10,2,0.6,11,0,-24.5}, TURN,{-43},-1,{}, UNUPDATE},
              //{WALKER,{0,-10},TURN,{-50},-1,{},UNUPDATE},
              //{WALKER,{10,0},DISTANCE,{10},-1,{},UNUPDATE},
             //{CURVE,{10,2,0.6,11,0,10},TURN,{-30} ,-1,{}, UNUPDATE},

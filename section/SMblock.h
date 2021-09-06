@@ -12,7 +12,7 @@ class SMblock : public Section_management{
 
     private:
     Main_Section blockpra[100]={
-             {WALKER,{0,0},DISTANCE,{0},-1,{}},
+             {WALKER,{0,0},DISTANCE,{1},-1,{}},
                         
             {-1,{}, -1,{}, UNUPDATE}
                                 };
