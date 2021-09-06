@@ -127,7 +127,7 @@ void RandomWalker::execWaitingForStart() {
         
         
 
-        change_situation(mSMblock);//mSMspeedに直す
+        change_situation(mSMspeed);
         modeChangeAction();
     }
 }

@@ -8,7 +8,7 @@ SMblock::SMblock()
 
 void SMblock::init(){
         status=blockpra;
-        printf("block\n");
+        //printf("block\n");
 }
 
 void SMblock::gonext(){

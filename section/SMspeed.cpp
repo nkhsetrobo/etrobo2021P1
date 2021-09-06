@@ -8,10 +8,11 @@ SMspeed::SMspeed()
 
 void SMspeed::init(){
     if(_LEFT==0){
-        status=rspeedpra;
+        //status=rspeedpra;
+        status=rspeedpraA;
     }else{
         status=lspeedpra;
-        //status=speedpra;
+        //status=lspeedpraA;
     }
     
 }

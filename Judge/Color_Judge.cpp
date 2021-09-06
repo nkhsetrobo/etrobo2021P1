@@ -15,7 +15,7 @@ bool Color_Judge::judge()
 {
     hvalue=mColorh->get_value();
     svalue=mColors->get_value();
-    printf("h,%f s,%f\n",hvalue,svalue);
+    //printf("h,%f s,%f\n",hvalue,svalue);
     if(sbaseline>svalue){
         return false;
     }
