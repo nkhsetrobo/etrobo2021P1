@@ -12,7 +12,13 @@ SMslalom::SMslalom()
 
 
 void SMslalom::init(){
-        status=slalompra;
+    if(_LEFT==0){
+        status=rslalompra;
+    }else{
+        status=lslalompra;
+    }
+    
+        
         printf("slalom\n");
 }
 
