@@ -9,7 +9,12 @@ SMslalomb::SMslalomb()
 
 
 void SMslalomb::init(){
-        status=slalombpra;
+        
+    if(_LEFT==0){
+        status=rslalombpra;
+    }else{
+        status=lslalombpra;
+    }
         printf("slalomb\n");
 }
 
