@@ -84,16 +84,17 @@ class SMslalom : public Section_management{
             {WALKER,{12,0},DISTANCE,{13},-1,{}, UPDATE_ALL},
             {TAIL,{0,0},TAILJUDGE,{10},-1,{},UPDATE_ALL}, 
             {ARM,{0,-50},ARMJUDGE,{-30},-1,{},UPDATE_ALL}, 
-            {LINETRACER,{15,1,0.5,10,LineTracer::RIGHT_EDGE,0}, DISTANCE,{10},-1,{}, UPDATE_ALL},
+            /*↑----------------いじらないで------------------↑*/
             /*スラロム登った*/
-            {WALKER,{0,10},TURN,{50},-1,{}, UPDATE_ANG},
+            {LINETRACER,{15,1,0.5,10,LineTracer::RIGHT_EDGE,0}, DISTANCE,{10},-1,{}, UPDATE_ALL},//distanceをいじる
+            {WALKER,{0,10},TURN,{50},-1,{}, UPDATE_ANG},//その場旋回50度
             //{STRAIGHT,{10,1,0.5,3,-50}, DISTANCE,{1},-1,{}, UPDATE_DIST},
             /*{WALKER,{0,0}, TIMEJUDGE,{50}, UNUPDATE},*/
-            {CURVE,{10,2,0.6,15,0,-21}, TURN,{-43},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.6,15,0,-21}, TURN,{-43},-1,{}, UNUPDATE},//カーブの配列最後が半径、turnがその角度で止める
             {CURVE,{10,2,0.6,12,0,19}, TURN,{30},-1,{}, UNUPDATE},
             //{CURVE,{10,2,0.6,13,0,27}, TURN,{0},-1,{}, UNUPDATE},
             {CURVE,{10,2,0.6,12,0,-45}, TURN,{5},-1,{}, UNUPDATE},
-            {CURVE,{10,2,0.6,13,0,-10}, TURN,{-3},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.6,13,0,-10}, TURN,{-3},-1,{}, UNUPDATE},//ここまでやってくれると助かる
             //{WALKER,{7,0},DISTANCE,{8},-1,{},UPDATE_DIST},
             {WALKER,{7,0},DISTANCE,{4},SONARJUDGE,{16.5},UPDATE_DIST},
             {CURVE,{10,2,0.6,15,0,-26}, TURN,{-10},-1,{}, UNUPDATE},
