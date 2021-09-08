@@ -286,7 +286,7 @@ class SMspeed : public Section_management{
 
 
                                 //ここから3つS字カーブ
-                                {LINETRACER,{kp,ki,kd,35,LineTracer::LEFT_EDGE,-30}, DISTANCE,{47}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{kp,ki,0.4,35,LineTracer::LEFT_EDGE,-30}, DISTANCE,{47}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {LINETRACER,{kp,ki,kd,65,LineTracer::LEFT_EDGE,0}, DISTANCE,{38}, -1,{0}, UPDATE_ALL},
