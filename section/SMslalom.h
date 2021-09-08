@@ -20,7 +20,7 @@ class SMslalom : public Section_management{
         float kp=10.0;
         float ki=1;
         float kd=0.5;
-        float ks=13;
+        float ks=12;
         Main_Section lslalompra[100]={
             /*スラロムに登る*/
             {LINETRACER,{10,1,1,25,LineTracer::LEFT_EDGE,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
@@ -61,15 +61,15 @@ class SMslalom : public Section_management{
             {WALKER,{0,-10},TURN,{-95},-1,{}, UPDATE_ANG},
             {STRAIGHT,{10,1,0.1,15,-95}, DISTANCE,{7},-1,{}, UPDATE_DIST},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
-            {CURVE,{10,2,0.1,15,0,-28},TURN,{-126} ,-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.1,15,0,-29.5},TURN,{-126} ,-1,{}, UNUPDATE},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
-            {CURVE,{10,2,0.6,15,0,20},TURN,{-95} ,-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.6,15,0,21},TURN,{-95} ,-1,{}, UNUPDATE},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
-            {WALKER,{10,0},DISTANCE,{8},-1,{},UPDATE_DIST},
-            {CURVE,{10,1,0.6,15,0,17.5},BRIGHT,{-0.1,-1}, -1,{},UNUPDATE},
-            {LINETRACER,{19,1,0.5,15,LineTracer::LEFT_EDGE,0}, DISTANCE,{10},-1,{}, UPDATE_ALL},
-            {WALKER,{-10,0}, DISTANCE,{-5},-1,{}, UNDEFINED},
-            {LINETRACER,{19,1,0.5,15,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{}, UPDATE_ALL},
+            {WALKER,{10,0},DISTANCE,{5},-1,{},UPDATE_DIST},
+            {CURVE,{10,1,0.6,15,0,18.5},BRIGHT,{-0.1,-1}, -1,{},UNUPDATE},
+            {LINETRACER,{19,1,0.5,10,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{}, UPDATE_ALL},
+            //{WALKER,{-10,0}, DISTANCE,{-5},-1,{}, UNDEFINED},
+            //{LINETRACER,{19,1,0.5,15,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{}, UPDATE_ALL},
             {WALKER,{15,0}, SONARJUDGE,{85},-1,{}, UNDEFINED},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
 
@@ -78,8 +78,8 @@ class SMslalom : public Section_management{
 
     Main_Section rslalompra[100]={
             /*スラロムに登る*/
-            {LINETRACER,{10,1,1,25,LineTracer::RIGHT_EDGE,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
-            {LINETRACER,{10,1,1,10,LineTracer::RIGHT_EDGE,0}, DISTANCE,{5}, -1,{0}, UPDATE_ALL},
+            {LINETRACER,{15,1,1,25,LineTracer::RIGHT_EDGE,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
+            {LINETRACER,{15,1,1,10,LineTracer::RIGHT_EDGE,0}, DISTANCE,{5}, -1,{0}, UPDATE_ALL},
             {WALKER,{0,0}, TIMEJUDGE,{10},-1,{},UPDATE_ALL},
             {ARM,{1,-80},ARMJUDGE,{-70},-1,{},UPDATE_ALL},
             {WALKER,{7,0}, TIMEJUDGE,{400},-1,{},UPDATE_ALL},
