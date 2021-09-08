@@ -310,7 +310,7 @@ class SMspeed : public Section_management{
                                 {LINETRACER,{kp,ki,kd,50,LineTracer::LEFT_EDGE,-15}, DISTANCE,{60}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{35,ki,kd,60,LineTracer::LEFT_EDGE,0}, TURN,{-80}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{kp,ki,kd,85,LineTracer::LEFT_EDGE,0}, DISTANCE,{190}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {LINETRACER,{kp,ki,kd,20,LineTracer::LEFT_EDGE,0}, TURN,{-80}, -1,{0}, UPDATE_ALL},
