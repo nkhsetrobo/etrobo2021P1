@@ -38,11 +38,11 @@ class SMspeed : public Section_management{
                                 {STRAIGHT,{kp,ki,kd,85,-152}, DISTANCE,{50},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {CURVE,{kp,ki,kd,45,30,15}, TURN,{-68},-1,{0}, UNUPDATE},
+                                {CURVE,{kp,ki,kd,45,30,15}, TURN,{-62},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {STRAIGHT,{kp,ki,kd,85,-68}, DISTANCE,{39},-1,{0}, UPDATE_DIST},
-                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                {STRAIGHT,{kp,ki,kd,85,-62}, DISTANCE,{39},-1,{0}, UPDATE_DIST},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
                                 {CURVE,{kp,ki,kd,50,0,12}, TURN,{25},-1,{0}, UNUPDATE},
@@ -299,7 +299,7 @@ class SMspeed : public Section_management{
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {LINETRACER,{kp,ki,kd,55,LineTracer::LEFT_EDGE,0}, DISTANCE,{25}, -1,{0}, UPDATE_ALL},
-                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
                                 //第4コーナー
