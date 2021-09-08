@@ -20,6 +20,7 @@ class SMslalom : public Section_management{
         float kp=10.0;
         float ki=1;
         float kd=0.5;
+        float ks=13;
         Main_Section lslalompra[100]={
             /*スラロムに登る*/
             {LINETRACER,{10,1,1,25,LineTracer::LEFT_EDGE,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
@@ -42,13 +43,13 @@ class SMslalom : public Section_management{
             {WALKER,{0,-5},TURN,{-45},-1,{}, UPDATE_ANG},
             //{STRAIGHT,{10,1,0.5,3,-50}, DISTANCE,{1},-1,{}, UPDATE_DIST},
             /*{WALKER,{0,0}, TIMEJUDGE,{50}, UNUPDATE},*/
-            {CURVE,{10,2,0.1,12,0,20}, TURN,{40},-1,{}, UNUPDATE},
-            {CURVE,{10,2,0.1,12,0,-19}, TURN,{-33},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.1,ks,0,20}, TURN,{40},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.1,ks,0,-19}, TURN,{-33},-1,{}, UNUPDATE},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
             //{CURVE,{10,2,0.6,13,0,27}, TURN,{0},-1,{}, UNUPDATE},
-            {CURVE,{10,2,0.1,12,0,20.5}, TURN,{-5},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.1,ks,0,20.5}, TURN,{-5},-1,{}, UNUPDATE},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
-            {CURVE,{10,2,0.1,12,0,11}, TURN,{1},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.1,ks,0,11}, TURN,{1},-1,{}, UNUPDATE},
             {WALKER,{7,0},DISTANCE,{10},-1,{},UPDATE_DIST},
             {WALKER,{7,0},DISTANCE,{8},SONARJUDGE,{16.5},UPDATE_DIST},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
@@ -80,7 +81,7 @@ class SMslalom : public Section_management{
             {LINETRACER,{10,1,1,25,LineTracer::RIGHT_EDGE,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},
             {LINETRACER,{10,1,1,10,LineTracer::RIGHT_EDGE,0}, DISTANCE,{5}, -1,{0}, UPDATE_ALL},
             {WALKER,{0,0}, TIMEJUDGE,{10},-1,{},UPDATE_ALL},
-            {ARM,{1,-80},ARMJUDGE,{-65},-1,{},UPDATE_ALL},
+            {ARM,{1,-80},ARMJUDGE,{-70},-1,{},UPDATE_ALL},
             {WALKER,{7,0}, TIMEJUDGE,{400},-1,{},UPDATE_ALL},
             {WALKER,{-8,0},DISTANCE,{-4.2},-1,{},UPDATE_ALL},
             {ARM,{1,0},ARMJUDGE,{-10},-1,{},UNUPDATE}, 
@@ -98,13 +99,13 @@ class SMslalom : public Section_management{
             {WALKER,{0,5},TURN,{45},-1,{}, UPDATE_ANG},
             //{STRAIGHT,{10,1,0.5,3,-50}, DISTANCE,{1},-1,{}, UPDATE_DIST},
             /*{WALKER,{0,0}, TIMEJUDGE,{50}, UNUPDATE},*/
-            {CURVE,{10,2,0.1,12,0,-20}, TURN,{-40},-1,{}, UNUPDATE},
-            {CURVE,{10,2,0.1,12,0,21}, TURN,{33},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.1,ks,0,-20}, TURN,{-40},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.1,ks,0,21}, TURN,{33},-1,{}, UNUPDATE},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
             //{CURVE,{10,2,0.6,13,0,27}, TURN,{0},-1,{}, UNUPDATE},
-            {CURVE,{10,2,0.1,12,0,-22.5}, TURN,{5},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.1,ks,0,-22.5}, TURN,{5},-1,{}, UNUPDATE},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
-            {CURVE,{10,2,0.1,12,0,-11}, TURN,{-1},-1,{}, UNUPDATE},
+            {CURVE,{10,2,0.1,ks,0,-11}, TURN,{-1},-1,{}, UNUPDATE},
             {WALKER,{7,0},DISTANCE,{8},-1,{},UPDATE_DIST},
             {WALKER,{7,0},DISTANCE,{6},SONARJUDGE,{16.5},UPDATE_DIST},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
