@@ -251,7 +251,7 @@ class SMspeed : public Section_management{
 
 
         Main_Section lspeedpraA[100]={ 
-                                {LINETRACER,{20,ki,0.2,85,LineTracer::LEFT_EDGE,0}, DISTANCE,{180}, -1,{0}, UPDATE_ALL},//285固定
+                                {LINETRACER,{kp,ki,kd,85,LineTracer::LEFT_EDGE,0}, DISTANCE,{175}, -1,{0}, UPDATE_ALL},//285固定
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
 
@@ -262,6 +262,8 @@ class SMspeed : public Section_management{
                                 {LINETRACER,{kp,ki,kd,65,LineTracer::LEFT_EDGE,0}, DISTANCE,{45}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
+                                {LINETRACER,{kp,ki,kd,60,LineTracer::LEFT_EDGE,0}, DISTANCE,{20}, -1,{0}, UPDATE_ALL},
+                                //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 //第2コーナー
                                 {LINETRACER,{30,ki,0.5,55,LineTracer::LEFT_EDGE,0}, DISTANCE,{80}, -1,{0}, UPDATE_ALL},
@@ -310,6 +312,9 @@ class SMspeed : public Section_management{
 
                                 {LINETRACER,{35,ki,kd,60,LineTracer::LEFT_EDGE,0}, TURN,{-80}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
+
+                                {LINETRACER,{kp,ki,kd,20,LineTracer::LEFT_EDGE,0}, TURN,{-80}, -1,{0}, UPDATE_ALL},
+                                {WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 //{LINETRACER,{30,1,5,50,0,0}, DISTANCE,{200}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
