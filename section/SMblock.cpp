@@ -7,7 +7,14 @@ SMblock::SMblock()
 }
 
 void SMblock::init(){
-        status=blockpra;
+        if(_LEFT==0){
+        status=rblockpra;
+    }else{
+        //status=lspeedpra;
+        status=lblockpra;
+        //status=speedpra;
+    }
+;
         //printf("block\n");
 }
 

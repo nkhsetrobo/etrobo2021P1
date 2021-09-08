@@ -14,15 +14,15 @@ class SMslalomb : public Section_management{
 
     private:
         Main_Section lslalombpra[100]={
-             {CURVE,{10,2,0.6,11,0,-24.5}, TURN,{-43},-1,{}, UNUPDATE},
+             {CURVE,{10,2,0.6,11,0,-22.5}, TURN,{-40},-1,{}, UNUPDATE},
              //{WALKER,{0,-10},TURN,{-50},-1,{},UNUPDATE},
              //{WALKER,{10,0},DISTANCE,{10},-1,{},UNUPDATE},
             //{CURVE,{10,2,0.6,11,0,10},TURN,{-30} ,-1,{}, UNUPDATE},
-             {CURVE,{10,2,0.6,11,0,-45},TURN,{-85} ,-1,{}, UNUPDATE},
+             {CURVE,{10,2,0.6,11,0,-55.5},TURN,{-85} ,-1,{}, UNUPDATE},
              {WALKER,{10,0},DISTANCE,{15},-1,{},UPDATE_DIST},
-             {CURVE,{10,1,0.6,6,0,-20},BRIGHT,{-0.3,-1}, -1,{},UNUPDATE},
+             {CURVE,{10,1,0.6,6,0,-15},BRIGHT,{-0.3,-1}, -1,{},UNUPDATE},
              {LINETRACER,{14,1,0.5,6,RIGHT,0}, DISTANCE,{8},-1,{}, UPDATE_ALL},
-             {WALKER,{10,0},SONARJUDGE,{60},-1,{}, UPDATE_ALL},
+             {WALKER,{10,0},SONARJUDGE,{85},-1,{}, UPDATE_ALL},
                         
             {-1,{}, -1,{},-1,{}, UNUPDATE}
                                 };
@@ -30,17 +30,16 @@ class SMslalomb : public Section_management{
 
 
 
-        Main_Section rslalombpra[100]={//未変更
-             {CURVE,{10,2,0.6,11,0,24.5}, TURN,{43},-1,{}, UNUPDATE},
+        Main_Section rslalombpra[100]={
+            {CURVE,{10,2,0.6,6,0,22}, TURN,{43},-1,{}, UNUPDATE},
              //{WALKER,{0,-10},TURN,{-50},-1,{},UNUPDATE},
              //{WALKER,{10,0},DISTANCE,{10},-1,{},UNUPDATE},
-            //{CURVE,{10,2,0.6,11,0,10},TURN,{-30} ,-1,{}, UNUPDATE},
-             {CURVE,{10,2,0.6,11,0,45},TURN,{85} ,-1,{}, UNUPDATE},
+             //{CURVE,{10,2,0.6,11,0,10},TURN,{-30} ,-1,{}, UNUPDATE},
+             {CURVE,{10,2,0.6,11,0,48.5},TURN,{95} ,-1,{}, UNUPDATE},
              {WALKER,{10,0},DISTANCE,{15},-1,{},UPDATE_DIST},
-             {CURVE,{10,1,0.6,6,0,20},BRIGHT,{-0.3,-1}, -1,{},UNUPDATE},
-             {LINETRACER,{14,1,0.5,6,LEFT,0}, DISTANCE,{8},-1,{}, UPDATE_ALL},
-             {WALKER,{10,0},SONARJUDGE,{60},-1,{}, UPDATE_ALL},
-                        
+             {CURVE,{10,1,0.6,6,0,14},BRIGHT,{-0.3,-1}, -1,{},UNUPDATE},
+             {LINETRACER,{14,1,0.5,6,RIGHT,0}, DISTANCE,{8},-1,{}, UPDATE_ALL},
+             {WALKER,{10,0},SONARJUDGE,{85},-1,{}, UPDATE_ALL},
             {-1,{}, -1,{},-1,{}, UNUPDATE}
                                 };
 };
