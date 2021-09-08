@@ -22,7 +22,7 @@ class SMslalomb : public Section_management{
              {WALKER,{10,0},DISTANCE,{15},-1,{},UPDATE_DIST},
              {CURVE,{10,1,0.6,6,0,-15},BRIGHT,{-0.3,-1}, -1,{},UNUPDATE},
              {LINETRACER,{14,1,0.5,6,RIGHT,0}, DISTANCE,{8},-1,{}, UPDATE_ALL},
-             {WALKER,{10,0},SONARJUDGE,{85},-1,{}, UPDATE_ALL},
+             {WALKER,{10,0},SONARJUDGE,{50},-1,{}, UPDATE_ALL},
                         
             {-1,{}, -1,{},-1,{}, UNUPDATE}
                                 };

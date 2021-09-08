@@ -70,7 +70,7 @@ class SMslalom : public Section_management{
             {LINETRACER,{19,1,0.5,10,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{}, UPDATE_ALL},
             //{WALKER,{-10,0}, DISTANCE,{-5},-1,{}, UNDEFINED},
             //{LINETRACER,{19,1,0.5,15,LineTracer::LEFT_EDGE,0}, DISTANCE,{20},-1,{}, UPDATE_ALL},
-            {WALKER,{15,0}, SONARJUDGE,{85},-1,{}, UNDEFINED},
+            {WALKER,{15,0}, SONARJUDGE,{50},-1,{}, UNDEFINED},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
 
             {-1,{}, -1,{},-1,{}, UNUPDATE}
@@ -105,9 +105,9 @@ class SMslalom : public Section_management{
             //{CURVE,{10,2,0.6,13,0,27}, TURN,{0},-1,{}, UNUPDATE},
             {CURVE,{10,2,0.1,ks,0,-22.5}, TURN,{5},-1,{}, UNUPDATE},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
-            {CURVE,{10,2,0.1,ks,0,-11}, TURN,{-1},-1,{}, UNUPDATE},
-            {WALKER,{7,0},DISTANCE,{8},-1,{},UPDATE_DIST},
-            {WALKER,{7,0},DISTANCE,{6},SONARJUDGE,{16.5},UPDATE_DIST},
+            {CURVE,{10,2,0.1,ks,0,-11}, TURN,{-3},-1,{}, UNUPDATE},
+            {WALKER,{7,0},DISTANCE,{6},-1,{},UPDATE_DIST},
+            {WALKER,{7,0},DISTANCE,{8},SONARJUDGE,{16.5},UPDATE_DIST},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
             //{CURVE,{10,2,0.6,15,0,26}, TURN,{10},-1,{}, UNUPDATE},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
@@ -128,7 +128,7 @@ class SMslalom : public Section_management{
             {LINETRACER,{19,1,0.5,15,LineTracer::RIGHT_EDGE,0}, DISTANCE,{10},-1,{}, UPDATE_ALL},
             {WALKER,{-10,0}, DISTANCE,{-5},-1,{}, UNDEFINED},
             {LINETRACER,{19,1,0.5,15,LineTracer::RIGHT_EDGE,0}, DISTANCE,{10},-1,{}, UPDATE_ALL},
-            {WALKER,{15,0}, SONARJUDGE,{85},-1,{}, UNDEFINED},
+            {WALKER,{15,0}, SONARJUDGE,{50},-1,{}, UNDEFINED},
             //{WALKER,{0,0}, DISTANCE,{12000},-1,{}, UNDEFINED},
 
             {-1,{}, -1,{},-1,{}, UNUPDATE}
