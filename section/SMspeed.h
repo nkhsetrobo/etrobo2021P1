@@ -299,7 +299,7 @@ class SMspeed : public Section_management{
 
 
                                 //第4コーナー
-                                {LINETRACER,{0,0,0,35,LineTracer::LEFT_EDGE,22}, DISTANCE,{18}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{kp,ki,kd,35,LineTracer::LEFT_EDGE,22}, DISTANCE,{18}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {LINETRACER,{kp,ki,kd,65,LineTracer::LEFT_EDGE,0}, DISTANCE,{22}, -1,{0}, UPDATE_ALL},
@@ -307,7 +307,7 @@ class SMspeed : public Section_management{
                                 
 
                                 //第5コーナー
-                                {LINETRACER,{0,0,0,50,LineTracer::LEFT_EDGE,-15}, DISTANCE,{60}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{kp,ki,kd,50,LineTracer::LEFT_EDGE,-15}, DISTANCE,{60}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {LINETRACER,{35,ki,kd,60,LineTracer::LEFT_EDGE,0}, TURN,{-80}, -1,{0}, UPDATE_ALL},
