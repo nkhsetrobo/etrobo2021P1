@@ -50,13 +50,13 @@ class SMspeed : public Section_management{
 
                                
                                 //ここからS字カーブ
-                                {CURVE,{kp,ki,kd,45,27,12}, TURN,{100},-1,{0}, UNUPDATE},
+                                {CURVE,{kp,ki,kd,35,27,12}, TURN,{100},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {STRAIGHT,{kp,ki,kd,60,100}, DISTANCE,{35},-1,{0}, UPDATE_DIST},
+                                {STRAIGHT,{kp,ki,kd,60,100}, DISTANCE,{36.5},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {CURVE,{kp,ki,kd,45,27,-12}, TURN,{0},-1,{0}, UNUPDATE},
+                                {CURVE,{kp,ki,kd,35,27,-12}, TURN,{0},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED}, 
                                 //ここまでS字カーブ
 
@@ -67,15 +67,15 @@ class SMspeed : public Section_management{
 
 
                                 //第4コーナー
-                                {LINETRACER,{kp,ki,kd,35,LineTracer::RIGHT_EDGE,22}, DISTANCE,{25}, -1,{0}, UPDATE_ALL},//22
+                                {LINETRACER,{kp,ki,kd,55,LineTracer::RIGHT_EDGE,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},//22
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{kp,ki,kd,65,LineTracer::RIGHT_EDGE,0}, DISTANCE,{15}, -1,{0}, UPDATE_ALL},
+                                //{LINETRACER,{kp,ki,kd,65,LineTracer::RIGHT_EDGE,0}, DISTANCE,{18}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
                                 
 
                                 //U字カーブ
-                                {CURVE,{kp,ki,kd,55,24,21}, TURN,{158},-1,{0}, UNUPDATE},
+                                {CURVE,{kp,ki,kd,55,24,23.5}, TURN,{158},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {LINETRACER,{kp,ki,0.4,85,LineTracer::RIGHT_EDGE,0}, DISTANCE,{190}, -1,{0}, UPDATE_ALL},
