@@ -67,7 +67,7 @@ class SMspeed : public Section_management{
 
 
                                 //第4コーナー
-                                {LINETRACER,{kp,ki,kd,55,LineTracer::RIGHT_EDGE,0}, DISTANCE,{35}, -1,{0}, UPDATE_ALL},//22
+                                {LINETRACER,{kp,ki,kd,50,LineTracer::RIGHT_EDGE,0}, DISTANCE,{43}, -1,{0}, UPDATE_ALL},//22
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 //{LINETRACER,{kp,ki,kd,65,LineTracer::RIGHT_EDGE,0}, DISTANCE,{18}, -1,{0}, UPDATE_ALL},
@@ -75,7 +75,7 @@ class SMspeed : public Section_management{
                                 
 
                                 //U字カーブ
-                                {CURVE,{kp,ki,kd,55,24,23.5}, TURN,{158},-1,{0}, UNUPDATE},
+                                {CURVE,{kp,ki,kd,55,24,23.5}, TURN,{80},-1,{0}, UNUPDATE},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 {LINETRACER,{kp,ki,0.4,85,LineTracer::RIGHT_EDGE,0}, DISTANCE,{190}, -1,{0}, UPDATE_ALL},
