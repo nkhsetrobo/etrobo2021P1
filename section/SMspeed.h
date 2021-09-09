@@ -12,8 +12,8 @@ class SMspeed : public Section_management{
         void init();
         void gonext();
         float kp = 30;
-        float ki = 1;
-        float kd = 0.5;
+        float ki = 5;
+        float kd = 2.5;
 
     private:
 
@@ -85,7 +85,7 @@ class SMspeed : public Section_management{
                                 //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
 
                                 {LINETRACER,{kp,ki,kd,85,LineTracer::RIGHT_EDGE,0}, TURN,{80},-1,{0}, UPDATE_ALL},
-                                {WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
+                                //{WALKER,{0,0}, DISTANCE,{12000},-1,{0}, UNDEFINED},
 
                                 //{STRAIGHT,{40,1,1,85,10}, DISTANCE,{160},-1,{0}, UPDATE_DIST},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
@@ -157,7 +157,7 @@ class SMspeed : public Section_management{
                                 {LINETRACER,{kp,ki,0.4,85,LineTracer::RIGHT_EDGE,0}, DISTANCE,{190}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
-                                {LINETRACER,{kp,ki,kd,20,LineTracer::RIGHT_EDGE,0}, TURN,{-80}, -1,{0}, UPDATE_ALL},
+                                {LINETRACER,{kp,ki,kd,20,LineTracer::RIGHT_EDGE,0}, TURN,{80}, -1,{0}, UPDATE_ALL},
                                 //{WALKER,{0,0}, DISTANCE,{12000}, UNDEFINED},
 
                                 //{LINETRACER,{30,1,5,50,0,0}, DISTANCE,{200}, UPDATE_ALL},
