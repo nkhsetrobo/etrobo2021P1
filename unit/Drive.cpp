@@ -15,6 +15,7 @@ void Drive::init(){
 
 void Drive::run(int forward,int turn){    //forword
     //printf("%f\n",mForward);
+
     mForward=mTaikei->control(mForward,forward);
     int rPWM=mForward+turn;
     int lPWM=mForward-turn;
@@ -25,28 +26,22 @@ void Drive::run(int forward,int turn){    //forword
     
 
 
-    if (a>85){               /*rPWMが85より大きいときは*/
-	    n=a-85;
-	
-	    if(b>85){
-		    m=b-85;
-		
-		    if (a>b){         /*両方85より大きいときはここで大きさ比較する*/
-			    a=a-n;
-                b=b-n;
-	    	}else if(a<b){
-			    a=a-m;
-                b=b-m;
-    		}
-	    }
-	    a=a-n;              /*a>85かつb<85の時*/
-        b=b-n;	
-    }
 
-    if(b > 85){
-	    b=b-m;             /*lBPMが85より大きくrPBMが85以下の時*/
-	    a=a-m;
+    if(a<b){
+        if(b>=85){
+            m=b-85;
+            a-=m;
+            b=85;
+        }
+    }else{
+        if(a>=85){
+            n=a-85;
+            b-=n;
+            a=85;
+        }
     }
+ 
+
 
     if (a<-85){               /*rPWMが-85未満ときは*/
 	    n=a+85;
@@ -70,7 +65,9 @@ void Drive::run(int forward,int turn){    //forword
 	    b=b-m;             /*lBPMが-85未満かつrPBMが-85未満の時*/
 	    a=a-m;
     }
+
     rPWM=a;
+
     lPWM=b;
 
     mMotorControl->runcontrol(rPWM,lPWM);

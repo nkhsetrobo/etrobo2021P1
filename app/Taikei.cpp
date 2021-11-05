@@ -1,11 +1,11 @@
 #include "Taikei.h"
 #include "ev3api.h"
 #include "math.h"
-//#include "Section_management.h"　//デバック
+//#include "Section_management.h" //デバック
 Taikei::Taikei()
 :
-a(1.0),
-b(0.2)
+a(0.6),
+b(0.5)
 {
 
 }

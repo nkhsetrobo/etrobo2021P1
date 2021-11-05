@@ -33,7 +33,7 @@ void VirtualCurve::run(){
     x=body*cos(theta)+x;
     y=body*sin(theta)+y;
     float distance=calc_distance(rx,ry,x,y);
-    //printf("%f,%f,%f,%f\n",x,y,rx,ry);
+    //printf("%f,%f,%f,%f,%f\n",x,y,rx,ry,distance);
     dire=mPID->getOperation(distance);
     if(0<mdistance)//左回りのときに入る
     {

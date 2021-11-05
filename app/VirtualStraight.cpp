@@ -73,7 +73,7 @@ void VirtualStraight::init(double status[]){
     gy=sin(theta)+y;
 
     mPID->setTarget(0);
-   // printf("init %f,%f,%f,%f,%f\n",sx,sy,gx,gy,theta);
+    printf("init %f,%f,%f,%f,%f\n",sx,sy,gx,gy,theta);
 }
 
 float VirtualStraight::calc_distance(float X,float Y,float x1,

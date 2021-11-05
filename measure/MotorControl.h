@@ -28,6 +28,8 @@ class MotorControl{
         ev3api::Motor& mRightWheel;
         ev3api::Motor& mMotor_Arm;
         ev3api::Motor& mMotor_Tail;
+        int ls;
+        int rs;
         //Tail* mTail;
         //Arm* mArm;
         //Turn* mTurn;
